@@ -8,6 +8,18 @@ export const repoRoot = path.resolve(here, "..");
 export const dataDir = path.join(repoRoot, "data");
 export const briefsDir = path.join(repoRoot, "briefs");
 
+// Minimal .env loader for local runs (CI provides real env vars). Existing
+// environment variables always win; the file never overrides them.
+try {
+  const envFile = readFileSync(path.join(repoRoot, ".env"), "utf8");
+  for (const line of envFile.split("\n")) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (m && process.env[m[1]!] === undefined && m[2]) process.env[m[1]!] = m[2];
+  }
+} catch {
+  // no .env file - fine
+}
+
 export function loadParams(): Params {
   const raw = readFileSync(path.join(repoRoot, "config", "params.v1.json"), "utf8");
   return JSON.parse(raw) as Params;
