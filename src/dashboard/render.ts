@@ -50,7 +50,14 @@ function lineChart(series: SeriesPoint[]): string {
     series.map((p, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(p[key]).toFixed(1)}`).join(" ");
   // Dedupe tick labels: with tiny ranges the rounded mid-tick can collide
   // with an endpoint label (e.g. day zero renders $0/$1/$1 otherwise).
-  const ticks = [...new Map([lo, lo + (hi - lo) / 2, hi].map((t) => [money(t), t]).reverse()).values()];
+  const ticks: number[] = [];
+  const tickLabels = new Set<string>();
+  for (const t of [lo, hi, lo + (hi - lo) / 2]) {
+    if (!tickLabels.has(money(t))) {
+      tickLabels.add(money(t));
+      ticks.push(t);
+    }
+  }
   const zeroY = y(0);
   const points = series
     .map(
