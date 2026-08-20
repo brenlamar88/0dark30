@@ -8,7 +8,7 @@ Personal agentic trading platform — wheel-first option income with a gated swi
 - Part 3 — build phases with promotion gates
 - Part 4 — explicitly out of scope
 
-**Phase 1 (shadow mode) is live** — daily cycles screen the universe, run the risk engine, journal every proposal, render the morning brief to `briefs/`, mark the shadow book against SPY, and regenerate the dashboard at [`docs/index.html`](docs/index.html) (enable GitHub Pages → deploy from branch → `/docs` to get it as a URL). Setup details: [`docs/PHASE1.md`](docs/PHASE1.md).
+**Phase 1 (shadow mode) is live** — daily cycles screen the universe, run the risk engine, journal every proposal, render the morning brief to `docs/briefs/`, mark the shadow book against SPY, and regenerate the dashboard at [`docs/index.html`](docs/index.html). The repo is linked to Vercel (project `0dark30`), which serves `docs/` as a static site and auto-deploys on every cycle's commit — the dashboard URL lives in the Vercel project overview. Setup details: [`docs/PHASE1.md`](docs/PHASE1.md).
 
 **Phase 2 (paper execution) is built and shipped dark** — order lifecycle, reconciler with divergence freeze, and human approvals (Telegram or an `approvals/` file edit) against the Alpaca paper account. It activates with one repository variable when the Phase 1 gate is met: [`docs/PHASE2.md`](docs/PHASE2.md).
 
