@@ -63,7 +63,7 @@
     "shadowStatus": "open",
     "entryMid": 1.605,
     "currentMid": 1.605,
-    "shadowPnl": null,
+    "shadowPnl": 0,
     "closedReason": null
   },
   {
@@ -130,7 +130,7 @@
     "shadowStatus": "open",
     "entryMid": 0.755,
     "currentMid": 0.755,
-    "shadowPnl": null,
+    "shadowPnl": 0,
     "closedReason": null
   },
   {
@@ -197,7 +197,7 @@
     "shadowStatus": "open",
     "entryMid": 0.56,
     "currentMid": 0.56,
-    "shadowPnl": null,
+    "shadowPnl": 0,
     "closedReason": null
   }
 ]

@@ -30,17 +30,59 @@
   th { color:#8b949e; font-weight:600; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-20 21:32 UTC.</p>
+<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-20 21:33 UTC.</p>
 
 <div class="tiles">
-<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">—</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">—</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$0</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$0</div><div class="tile-note">the null hypothesis</div></div>
 <div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">3 / 0</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">0</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">0/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">1</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">1/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
-<p class="muted">No scoreboard rows yet — the chart appears after the first postclose cycle.</p>
+
+<figure class="chart" aria-label="Cumulative shadow book profit and loss versus SPY buy-and-hold on the same pool">
+<svg viewBox="0 0 760 300" role="img" id="pnl-chart">
+  <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$0</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$1</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$1</text>
+  <line class="zero" x1="56" x2="744" y1="272.0" y2="272.0"/>
+  <path class="line s1" d="M56.0,272.0"/>
+  <path class="line s2" d="M56.0,272.0"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="272.0" r="3"/>
+  <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
+  <text class="tick" x="56" y="292">2026-08-20</text>
+  <text class="tick" x="744" y="292" text-anchor="end">2026-08-20</text>
+  <rect id="hover-capture" x="56" y="16" width="688" height="256" fill="transparent"/>
+</svg>
+<div id="tooltip" class="tooltip" hidden></div>
+<figcaption class="legend">
+  <span><i class="swatch s1"></i>Shadow book P&amp;L</span>
+  <span><i class="swatch s2"></i>SPY buy-and-hold (null hypothesis)</span>
+</figcaption>
+</figure>
+<script>
+(function () {
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0}];
+  var svg = document.getElementById("pnl-chart");
+  var cap = document.getElementById("hover-capture");
+  var tip = document.getElementById("tooltip");
+  var xh = document.getElementById("xhair");
+  var PADL = 56, PADR = 16, W = 760;
+  function fmt(n) { return (n < 0 ? "-$" : "$") + Math.abs(Math.round(n)).toLocaleString(); }
+  cap.addEventListener("mousemove", function (e) {
+    var box = svg.getBoundingClientRect();
+    var px = ((e.clientX - box.left) / box.width) * W;
+    var frac = (px - PADL) / (W - PADL - PADR);
+    var i = Math.max(0, Math.min(data.length - 1, Math.round(frac * (data.length - 1))));
+    var xpos = PADL + (data.length === 1 ? 0 : (i / (data.length - 1)) * (W - PADL - PADR));
+    xh.setAttribute("x1", xpos); xh.setAttribute("x2", xpos); xh.removeAttribute("visibility");
+    tip.hidden = false;
+    tip.innerHTML = "<strong>" + data[i].date + "</strong><br>Shadow: " + fmt(data[i].shadow) + "<br>SPY: " + fmt(data[i].spy);
+    tip.style.left = Math.min(box.width - 170, (xpos / W) * box.width + 12) + "px";
+    tip.style.top = "12px";
+  });
+  cap.addEventListener("mouseleave", function () { tip.hidden = true; xh.setAttribute("visibility", "hidden"); });
+})();
+</script>
 <h2>Recent proposals</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>Sym</th><th>Contract</th><th>Δ</th><th>DTE</th><th>Prem</th><th>Collat</th><th>RoC/yr</th><th>Status</th><th>P&amp;L</th></tr></thead>
@@ -50,26 +92,28 @@
 <td>$56</td><td>$5,550</td>
 <td>8.3%</td>
 <td>open</td>
-<td>—</td></tr>
+<td>$0</td></tr>
 <tr>
 <td>2026-08-20</td><td>XLE</td><td class="mono">XLE260930P00060000</td>
 <td>0.22</td><td>41</td>
 <td>$76</td><td>$6,000</td>
 <td>10.7%</td>
 <td>open</td>
-<td>—</td></tr>
+<td>$0</td></tr>
 <tr>
 <td>2026-08-20</td><td>SLV</td><td class="mono">SLV260925P00057500</td>
 <td>0.28</td><td>36</td>
 <td>$161</td><td>$5,750</td>
 <td>27.7%</td>
 <td>open</td>
-<td>—</td></tr></tbody>
+<td>$0</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td colspan="6" class="muted">none yet</td></tr></tbody>
+<tbody><tr><td>2026-08-20</td><td>762.62</td>
+<td>$0</td><td>$0</td>
+<td>3</td><td>0</td></tr></tbody>
 </table></div>
 <p class="muted">Kill criteria and gates live in PLAN.md. Numbers are pre-cost and pre-tax; nothing here proves anything until months accumulate.</p>
 </body></html>
