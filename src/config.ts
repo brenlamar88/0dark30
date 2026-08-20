@@ -6,7 +6,7 @@ import type { Params, UniverseEntry } from "./types.js";
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const repoRoot = path.resolve(here, "..");
 export const dataDir = path.join(repoRoot, "data");
-export const briefsDir = path.join(repoRoot, "briefs");
+export const briefsDir = path.join(repoRoot, "docs", "briefs");
 
 // Minimal .env loader for local runs (CI provides real env vars). Existing
 // environment variables always win; the file never overrides them.

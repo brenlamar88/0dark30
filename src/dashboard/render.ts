@@ -200,10 +200,12 @@ export function renderDashboard(journal: Journal, params: Params): string {
   .scroll { overflow-x:auto; }
   th, td { border-bottom:1px solid #21262d; padding:.35rem .5rem; text-align:left; white-space:nowrap; }
   th { color:#8b949e; font-weight:600; }
+  a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
 <p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $${pool.toLocaleString()} pool, rule version <span class="mono">${esc(params.ruleVersion)}</span>, no orders anywhere. Not financial advice. Generated ${generatedAt}.</p>
 ${frozen ? `<p class="banner freeze">TRADING FROZEN: ${esc(String(frozen.reason ?? "unexplained divergence"))} (${esc(String(frozen.at ?? ""))}) — clear data/state/freeze.json with a journaled reason to resume.</p>` : ""}
+${dates.length ? `<p><a href="briefs/${dates[dates.length - 1]}.html">Latest morning brief (${dates[dates.length - 1]}) →</a></p>` : ""}
 <div class="tiles">
 ${statTile("Shadow book P&L", last ? money(last.shadow) : "—", "realized + unrealized, pre-cost")}
 ${statTile("SPY same-pool P&L", last ? money(last.spy) : "—", "the null hypothesis")}

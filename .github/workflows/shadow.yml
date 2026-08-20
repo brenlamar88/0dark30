@@ -90,8 +90,7 @@ jobs:
         run: |
           git config user.name "0dark30-shadow"
           git config user.email "actions@users.noreply.github.com"
-          git add data briefs
-          git add docs/index.html 2>/dev/null || true
+          git add data docs
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
