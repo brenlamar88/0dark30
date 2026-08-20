@@ -94,6 +94,53 @@ Answer in writing, committed to this repo:
 | Max acceptable drawdown in dollars (write the number). Answer: $2500 for now until the account grows then i will be more risk adverse| Becomes the hard halt in the risk engine |
 | Minutes per day you'll actually spend. Answer: as much time as i need | Sizes the approval flow; if the answer is <5, cut the swing module now |
 
+### 2.1.1 Phase 0 verdict (answers committed 2026-08-20)
+
+The worksheet did its job: two of the five answers materially change the plan.
+
+**The $1,000 pool cannot execute the wheel — at all.** A cash-secured put reserves
+strike × 100. Even a $10 underlying consumes the entire pool for a single
+position with zero diversification — and liquid, "fundamentally ownable,"
+optionable names under $10 essentially don't exist. Covered calls have the same
+wall: 100 shares of anything worth owning costs more than the pool. This isn't a
+sizing tweak; below roughly **$10k** (single liquid ETF wheel, still fully
+concentrated) or **$25k** (4–6 names, the design's real minimum), the core
+strategy is arithmetically unavailable. The alternatives that *are* available at
+$1k — buying long options, or swing-trading sub-$1k positions in a taxable
+account — are exactly the negative-expectancy retail patterns Part 1 exists to
+avoid. The plan does not bend its rules to fit the capital; the capital gates
+the phases.
+
+**The drawdown answer is incoherent with the pool and gets replaced.** A $2,500
+halt on a $1,000 pool never fires before zero. The risk engine uses a
+**percentage halt instead: 25% of the dedicated pool from its high-water mark**,
+recomputed as the pool grows. (At $1,000 that's $250; at $50k it's $12.5k. When
+"more risk-averse later" arrives, the percentage is the knob — edited in code,
+journaled, per §2.5.)
+
+**What this does to the roadmap — and why it costs zero time:**
+
+- **Phases 1 and 2 were always paper. They proceed exactly as designed**, but
+  the paper pool is set to **$50,000 simulated** — the scale the system is being
+  built *for*, so the screener, risk caps, and scoreboard are exercised
+  realistically instead of against a universe $1k would distort.
+- **Phase 3 (live) acquires a capital gate in addition to its engineering
+  gate:** dedicated pool ≥ $10k → live ETF wheel, one name, half-size; ≥ $25k →
+  the full design. Until then the real $1,000 does what the v1 conversation
+  already concluded real money should do — sits in the index — while the system
+  earns trust on paper. Phases 1–2 take ~4–6 months to pass anyway; the pool and
+  the gates race each other, and nothing is idle.
+- **The swing module's shadow gate is unchanged** (signals don't care about pool
+  size), but its PDT note is now live: margin account under $25k equity means
+  max 3 day-trades per 5 business days — overnight swings are fine, same-day
+  round-trips are budgeted.
+- Taxable account confirmed → the scoreboard's tax-drag adjustment (§2.7) and
+  wash-sale tracking are mandatory, not optional; if an IRA ever becomes
+  available for the pool, revisit §2.9.
+- "As much time as I need" keeps the swing module *eligible* and supports the
+  richer 5-run daily cadence. It is not a reason to add discretionary knobs —
+  the directives in §2.0 stand.
+
 ### 2.2 Architecture
 
 ```
@@ -211,7 +258,7 @@ V1 §7's tax-lot-aware logging from day one is right — keep it, and add:
 | **0 — Reality** (1 week) | The worksheet in 2.1, committed to this repo. Broker + data accounts opened (Alpaca paper; Schwab developer app registered). | Numbers written down. |
 | **1 — Shadow** (4–6 weeks build, then running) | Data layer, signal engine v1, risk engine, journal, morning brief with proposal cards (no orders anywhere — proposals log what they *would* do). Scoreboard from day one. | 8+ weeks of shadow proposals with sane behavior; scoreboard rendering; you still actually read the brief. |
 | **2 — Paper** (running 2–3 months) | Full order lifecycle + reconciler against **Alpaca paper**, incl. assignments, partial fills, GTC management orders, Telegram approvals. | 2–3 months where reconciler stayed green, lifecycle handled ≥1 assignment correctly, and paper wheel P&L behaves as designed (not necessarily beats SPY yet — this gate is *engineering* correctness). |
-| **3 — Capped live** (6+ months) | Schwab adapter (or `manual` adapter: bot proposes, you tap the trade into the Schwab app, reconciler ingests the fill). ≤ 50% of the dedicated pool. Weekly ritual: Schwab re-auth + review the scoreboard. | 6 live months, no halt-worthy engineering failures, scoreboard supports continuing. |
+| **3 — Capped live** (6+ months) | Schwab adapter (or `manual` adapter: bot proposes, you tap the trade into the Schwab app, reconciler ingests the fill). ≤ 50% of the dedicated pool. Weekly ritual: Schwab re-auth + review the scoreboard. **Entry requires the capital gate from §2.1.1:** pool ≥ $10k (ETF wheel, one name, half-size) or ≥ $25k (full design). | 6 live months, no halt-worthy engineering failures, scoreboard supports continuing. |
 | **4 — Full pool / swing decision** | Remaining capital; swing module promoted **only** if its independent 6-month shadow gate passed. | Ongoing: annual kill-criteria review. |
 
 The `manual` adapter is the recommended way to *start* Phase 3: it defers the Schwab OAuth machinery until the system has proven it deserves the integration work, and it costs you ~60 seconds per approved trade.
