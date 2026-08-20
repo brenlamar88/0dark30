@@ -48,7 +48,9 @@ function lineChart(series: SeriesPoint[]): string {
   const y = (v: number) => PAD.t + (1 - (v - lo) / (hi - lo)) * (H - PAD.t - PAD.b);
   const pathFor = (key: "shadow" | "spy") =>
     series.map((p, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)},${y(p[key]).toFixed(1)}`).join(" ");
-  const ticks = [lo, lo + (hi - lo) / 2, hi];
+  // Dedupe tick labels: with tiny ranges the rounded mid-tick can collide
+  // with an endpoint label (e.g. day zero renders $0/$1/$1 otherwise).
+  const ticks = [...new Map([lo, lo + (hi - lo) / 2, hi].map((t) => [money(t), t]).reverse()).values()];
   const zeroY = y(0);
   const points = series
     .map(
