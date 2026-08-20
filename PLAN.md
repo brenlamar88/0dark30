@@ -89,10 +89,10 @@ Answer in writing, committed to this repo:
 | Question | Why it gates everything |
 |---|---|
 | Dedicated capital for this system (not total account) Answer: $1000| Determines universe: <$25k → ETF wheel + no swing (PDT); $25–50k → 4–6 names, capped; $50k+ → the full design |
-| Cash or margin account.   | CSP collateral treatment, PDT exposure |
-| Taxable or IRA | Wheel throws off short-term gains; an IRA shelters the churn (see 2.9) |
-| Max acceptable drawdown in dollars (write the number) | Becomes the hard halt in the risk engine |
-| Minutes per day you'll actually spend | Sizes the approval flow; if the answer is <5, cut the swing module now |
+| Cash or margin account. Answer: I have both cash and margin  | CSP collateral treatment, PDT exposure |
+| Taxable or IRA. Answer: Taxable account | Wheel throws off short-term gains; an IRA shelters the churn (see 2.9) |
+| Max acceptable drawdown in dollars (write the number). Answer: $2500 for now until the account grows then i will be more risk adverse| Becomes the hard halt in the risk engine |
+| Minutes per day you'll actually spend. Answer: as much time as i need | Sizes the approval flow; if the answer is <5, cut the swing module now |
 
 ### 2.2 Architecture
 
