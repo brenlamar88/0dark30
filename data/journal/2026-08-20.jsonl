@@ -8,3 +8,5 @@
 {"ts":"2026-08-20T21:17:23.022Z","type":"cycle.premarket.done","ruleVersion":"wheel-v1","payload":{"proposed":3,"blocked":0,"brief":"/home/runner/work/0dark30/0dark30/briefs/2026-08-20.html"}}
 {"ts":"2026-08-20T21:33:27.361Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-08-20"}}
 {"ts":"2026-08-20T21:33:27.752Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":762.62,"realizedTotal":0,"unrealized":0,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}
+{"ts":"2026-08-20T21:45:03.763Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-08-20"}}
+{"ts":"2026-08-20T21:45:04.258Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":762.62,"realizedTotal":0,"unrealized":0,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}
