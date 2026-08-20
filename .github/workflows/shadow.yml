@@ -19,6 +19,11 @@ on:
         default: premarket
         type: choice
         options: [premarket, postclose]
+  # Manual kick without Actions-write permission: commit ".trigger" containing
+  # "premarket" or "postclose". The workflow's own data/briefs commits use
+  # GITHUB_TOKEN, which GitHub never recurses on, so this cannot loop.
+  push:
+    paths: [".trigger"]
 
 permissions:
   contents: write
@@ -41,6 +46,10 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "cycle=${{ inputs.cycle }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "push" ] && grep -qx "postclose" .trigger 2>/dev/null; then
+            echo "cycle=postclose" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            echo "cycle=premarket" >> "$GITHUB_OUTPUT"
           elif [ "$(date -u +%H)" -lt 16 ]; then
             echo "cycle=premarket" >> "$GITHUB_OUTPUT"
           else
