@@ -126,6 +126,7 @@ export interface Proposal {
   ivRank: IvRank;
   checks: RiskCheck[];
   verdict: "proposed" | "blocked";
+  createdAt?: string; // ISO; absent on proposals from before Phase 2
   ttlHours: number;
   screenNotes: string[];
   llm: LlmAnalysis | null;

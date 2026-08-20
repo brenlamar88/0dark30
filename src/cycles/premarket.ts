@@ -1,7 +1,9 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
-import { briefsDir, daysBetween, loadParams, loadUniverse, todayEt } from "../config.js";
+import { briefsDir, daysBetween, executionMode, loadParams, loadUniverse, todayEt } from "../config.js";
+import { getFreeze } from "../exec/store.js";
+import { shortId, telegramSendProposals } from "../exec/approvals.js";
 import { dailyCloses, latestPrices, putChain, realizedVolAnnualized } from "../data/alpaca.js";
 import { earningsInWindow } from "../data/earnings.js";
 import { atmIvProxy, ivRankFor } from "../data/ivrank.js";
@@ -73,12 +75,16 @@ export async function runPremarket(): Promise<void> {
     openShadow.map((p) => ({ underlying: p.underlying, sector: p.sector, collateral: p.collateral })),
     spyVol,
   );
+  // In paper mode the reconciler's verdict carries into the risk engine: an
+  // unresolved divergence blocks new proposals at the source (PLAN.md 2.5 #1).
+  state.reconcilerGreen = getFreeze() === null;
   const proposals: Proposal[] = [];
   for (const c of top) {
     const { checks, verdict } = evaluate(c, state, params);
     const proposal: Proposal = {
       id: randomUUID(),
       date: today,
+      createdAt: new Date().toISOString(),
       ruleVersion: params.ruleVersion,
       strategy: "csp",
       underlying: c.underlying,
@@ -126,6 +132,17 @@ export async function runPremarket(): Promise<void> {
 
   await journal.saveProposals(today, proposals);
   for (const p of proposals) await journal.event("proposal." + p.verdict, p);
+
+  if (executionMode() === "paper") {
+    const proposed = proposals.filter((p) => p.verdict === "proposed");
+    await telegramSendProposals(proposed);
+    if (proposed.length > 0) {
+      console.log(
+        "approval ids: " + proposed.map((p) => `${p.underlying}=${shortId(p.id)}`).join(", ") +
+          ` (approve via approvals/${today}.json or Telegram)`,
+      );
+    }
+  }
 
   const html = renderBrief(today, proposals, {
     marketNote: llm?.marketNote ?? null,

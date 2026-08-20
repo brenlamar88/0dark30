@@ -8,7 +8,9 @@ Personal agentic trading platform — wheel-first option income with a gated swi
 - Part 3 — build phases with promotion gates
 - Part 4 — explicitly out of scope
 
-**Phase 1 (shadow mode) is built** — see [`docs/PHASE1.md`](docs/PHASE1.md) for the 15-minute setup (Alpaca paper keys → GitHub Actions secrets). Daily cycles screen the universe, run the risk engine, journal every proposal, render the morning brief to `briefs/`, and mark the shadow book against SPY. There is **no execution code** in this phase.
+**Phase 1 (shadow mode) is live** — daily cycles screen the universe, run the risk engine, journal every proposal, render the morning brief to `briefs/`, mark the shadow book against SPY, and regenerate the dashboard at [`docs/index.html`](docs/index.html) (enable GitHub Pages → deploy from branch → `/docs` to get it as a URL). Setup details: [`docs/PHASE1.md`](docs/PHASE1.md).
+
+**Phase 2 (paper execution) is built and shipped dark** — order lifecycle, reconciler with divergence freeze, and human approvals (Telegram or an `approvals/` file edit) against the Alpaca paper account. It activates with one repository variable when the Phase 1 gate is met: [`docs/PHASE2.md`](docs/PHASE2.md).
 
 ```
 npm install

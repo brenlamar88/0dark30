@@ -10,6 +10,9 @@ name: shadow-cycles
 on:
   schedule:
     - cron: "30 12 * * 1-5" # premarket
+    - cron: "30 14 * * 1-5" # midday (10:30 ET during EDT) - no-op until EXECUTION_MODE=paper
+    - cron: "0 17 * * 1-5" # midday (13:00 ET)
+    - cron: "30 19 * * 1-5" # midday (15:30 ET)
     - cron: "15 21 * * 1-5" # postclose
   workflow_dispatch:
     inputs:
@@ -18,7 +21,7 @@ on:
         required: true
         default: premarket
         type: choice
-        options: [premarket, postclose]
+        options: [premarket, midday, postclose]
   # Manual kick without Actions-write permission: commit ".trigger" containing
   # "premarket" or "postclose". The workflow's own data/briefs commits use
   # GITHUB_TOKEN, which GitHub never recurses on, so this cannot loop.
@@ -46,14 +49,16 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "cycle=${{ inputs.cycle }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event_name }}" = "push" ] && grep -qx "postclose" .trigger 2>/dev/null; then
-            echo "cycle=postclose" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event_name }}" = "push" ]; then
-            echo "cycle=premarket" >> "$GITHUB_OUTPUT"
-          elif [ "$(date -u +%H)" -lt 16 ]; then
-            echo "cycle=premarket" >> "$GITHUB_OUTPUT"
+            c=$(cat .trigger 2>/dev/null | tr -d '[:space:]')
+            case "$c" in midday|postclose) ;; *) c=premarket ;; esac
+            echo "cycle=$c" >> "$GITHUB_OUTPUT"
           else
-            echo "cycle=postclose" >> "$GITHUB_OUTPUT"
+            case "$(date -u +%H)" in
+              12|13) echo "cycle=premarket" >> "$GITHUB_OUTPUT" ;;
+              14|15|17|18|19|20) echo "cycle=midday" >> "$GITHUB_OUTPUT" ;;
+              *) echo "cycle=postclose" >> "$GITHUB_OUTPUT" ;;
+            esac
           fi
       - name: Check secrets
         id: secrets
@@ -76,6 +81,9 @@ jobs:
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          EXECUTION_MODE: ${{ vars.EXECUTION_MODE }}
         run: npm run cycle:${{ steps.which.outputs.cycle }}
       - name: Commit shadow record
         if: steps.secrets.outputs.configured == 'true'
@@ -83,6 +91,7 @@ jobs:
           git config user.name "0dark30-shadow"
           git config user.email "actions@users.noreply.github.com"
           git add data briefs
+          git add docs/index.html 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

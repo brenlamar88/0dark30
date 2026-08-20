@@ -1,7 +1,10 @@
 import { runPremarket } from "./cycles/premarket.js";
 import { runPostclose } from "./cycles/postclose.js";
+import { runMidday } from "./cycles/midday.js";
 import { loadParams } from "./config.js";
 import { Journal } from "./journal/journal.js";
+import { writeDashboard } from "./dashboard/render.js";
+import { clearFreeze, getFreeze } from "./exec/store.js";
 
 const cmd = process.argv[2];
 
@@ -34,10 +37,37 @@ switch (cmd) {
   case "postclose":
     await runPostclose();
     break;
+  case "midday":
+    await runMidday();
+    break;
   case "report":
     await report();
     break;
+  case "dashboard": {
+    const params = loadParams();
+    console.log("wrote", writeDashboard(new Journal(params.ruleVersion), params));
+    break;
+  }
+  case "unfreeze": {
+    // Deliberate friction (PLAN.md 2.5): requires a written reason, journaled.
+    const reason = process.argv.slice(3).join(" ").trim();
+    const frozen = getFreeze();
+    if (!frozen) {
+      console.log("Not frozen.");
+      break;
+    }
+    if (!reason) {
+      console.log("A written reason is required: tsx src/cli.ts unfreeze <why this divergence is explained>");
+      process.exit(1);
+    }
+    const params = loadParams();
+    const journal = new Journal(params.ruleVersion);
+    await journal.event("freeze.cleared", { was: frozen, reason });
+    clearFreeze();
+    console.log("Freeze cleared and journaled.");
+    break;
+  }
   default:
-    console.log("usage: tsx src/cli.ts <premarket|postclose|report>");
+    console.log("usage: tsx src/cli.ts <premarket|midday|postclose|report|dashboard|unfreeze>");
     process.exit(1);
 }

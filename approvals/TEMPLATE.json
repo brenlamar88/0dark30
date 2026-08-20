@@ -1,0 +1,5 @@
+{
+  "_how": "Approve/reject Phase 2 proposals by short id (first 8 chars, shown in the brief, Telegram, and run log). This file is read by the midday cycle on the date it names. Example: {\"approve\": [\"ab12cd34\"], \"reject\": []}. Inert while EXECUTION_MODE is shadow.",
+  "approve": [],
+  "reject": []
+}

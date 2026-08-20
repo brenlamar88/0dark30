@@ -41,6 +41,16 @@ export const env = {
   journalBackend: (process.env.JOURNAL_BACKEND ?? "local") as "local" | "supabase",
 };
 
+/**
+ * Phase gate flag (PLAN.md Part 3). "shadow" = Phase 1, proposals only.
+ * "paper" = Phase 2, orders flow to the Alpaca paper account after human
+ * approval. Set as a GitHub Actions repository *variable* EXECUTION_MODE so
+ * the flip is visible in the repo settings, not buried in a secret.
+ */
+export function executionMode(): "shadow" | "paper" {
+  return process.env.EXECUTION_MODE === "paper" ? "paper" : "shadow";
+}
+
 export function todayEt(): string {
   // Trading dates are US/Eastern regardless of where the job runs.
   const fmt = new Intl.DateTimeFormat("en-CA", {

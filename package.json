@@ -9,7 +9,9 @@
   },
   "scripts": {
     "cycle:premarket": "tsx src/cli.ts premarket",
+    "cycle:midday": "tsx src/cli.ts midday",
     "cycle:postclose": "tsx src/cli.ts postclose",
+    "dashboard": "tsx src/cli.ts dashboard",
     "screen": "tsx src/cli.ts screen",
     "report": "tsx src/cli.ts report",
     "typecheck": "tsc --noEmit",

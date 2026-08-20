@@ -29,7 +29,7 @@
       "spyRealizedVol20dAnnualizedMax": 0.3,
       "comment": "PLAN.md 2.5 specified VIX > 30; Alpaca serves no VIX index, so the freeze uses 20-day SPY realized vol annualized > 30% as the deterministic proxy."
     },
-    "proposalTtlHours": 4
+    "proposalTtlHours": 6
   },
   "maxProposalsPerDay": 5
 }

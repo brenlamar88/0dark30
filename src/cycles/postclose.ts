@@ -1,6 +1,10 @@
-import { daysBetween, loadParams, todayEt } from "../config.js";
+import { daysBetween, executionMode, loadParams, todayEt } from "../config.js";
 import { dailyCloses, optionMids } from "../data/alpaca.js";
 import { Journal } from "../journal/journal.js";
+import { alpacaPaper } from "../broker/alpacaPaper.js";
+import { syncOrders } from "./midday.js";
+import { loadOrders } from "../exec/store.js";
+import { writeDashboard } from "../dashboard/render.js";
 import type { Proposal } from "../types.js";
 
 /**
@@ -76,6 +80,28 @@ export async function runPostclose(): Promise<void> {
   const realizedTotal = closed.reduce((a, p) => a + (p.shadowPnl ?? 0), 0);
   const unrealized = stillOpen.reduce((a, p) => a + (p.shadowPnl ?? 0), 0);
 
+  // Paper-book accounting (Phase 2): broker fills are truth. Realized premium
+  // P&L = sell fills minus buy fills across our option orders, in dollars.
+  let paper: Record<string, unknown> = {};
+  if (executionMode() === "paper") {
+    try {
+      await syncOrders(alpacaPaper, journal);
+      const orders = loadOrders().filter((o) => o.status === "filled");
+      const cash = orders.reduce(
+        (a, o) => a + (o.side === "sell" ? 1 : -1) * (o.filledAvgPrice ?? 0) * o.filledQty * 100,
+        0,
+      );
+      const positions = await alpacaPaper.getPositions();
+      paper = {
+        paper_premium_cashflow: cash,
+        paper_open_positions: positions.length,
+        paper_filled_orders: orders.length,
+      };
+    } catch (err) {
+      await journal.event("paper.accounting.error", { error: String(err) });
+    }
+  }
+
   await journal.appendScoreboard({
     date: today,
     spy_close: spyClose,
@@ -85,8 +111,10 @@ export async function runPostclose(): Promise<void> {
     shadow_closed_count: closed.length,
     realized_today: realizedToday,
     rule_version: params.ruleVersion,
+    ...paper,
   });
-  await journal.event("cycle.postclose.done", { spyClose, realizedTotal, unrealized });
+  const dashboardPath = writeDashboard(journal, params);
+  await journal.event("cycle.postclose.done", { spyClose, realizedTotal, unrealized, dashboardPath });
   console.log(
     `postclose done: SPY ${spyClose ?? "n/a"}, shadow realized $${realizedTotal.toFixed(0)}, ` +
       `unrealized $${unrealized.toFixed(0)}, open ${stillOpen.length}`,
