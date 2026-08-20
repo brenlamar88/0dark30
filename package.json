@@ -1,0 +1,29 @@
+{
+  "name": "0dark30",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal shadow-mode wheel screener: mechanical signals, risk engine, journal, morning brief. Phase 1 - no execution.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "cycle:premarket": "tsx src/cli.ts premarket",
+    "cycle:postclose": "tsx src/cli.ts postclose",
+    "screen": "tsx src/cli.ts screen",
+    "report": "tsx src/cli.ts report",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.120.0",
+    "@supabase/supabase-js": "^2.112.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "comment": "Phase 1 universe: liquid, optionable ETFs in a price band that fits the simulated pool's 12% per-position cap ($6k => underlyings under ~$60). ETFs avoid single-name earnings gap risk while the IV-rank history bootstraps. EDIT THIS LIST YOURSELF - it is a liquidity-screened starting point, not a recommendation. Single names may be added later and must carry hasEarnings: true so the catalyst check engages.",
+  "symbols": [
+    { "symbol": "XLF", "sector": "financials", "hasEarnings": false },
+    { "symbol": "XLU", "sector": "utilities", "hasEarnings": false },
+    { "symbol": "XBI", "sector": "biotech", "hasEarnings": false },
+    { "symbol": "GDX", "sector": "gold-miners", "hasEarnings": false },
+    { "symbol": "SLV", "sector": "silver", "hasEarnings": false },
+    { "symbol": "KWEB", "sector": "china-internet", "hasEarnings": false },
+    { "symbol": "EWZ", "sector": "brazil", "hasEarnings": false },
+    { "symbol": "FXI", "sector": "china-largecap", "hasEarnings": false },
+    { "symbol": "XLE", "sector": "energy", "hasEarnings": false },
+    { "symbol": "IWM", "sector": "us-smallcap", "hasEarnings": false }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ruleVersion": "wheel-v1",
+  "pool": {
+    "simulatedValueUsd": 50000,
+    "comment": "Phase 1-2 run against a simulated pool per PLAN.md 2.1.1. Live capital gate: >=10k ETF wheel, >=25k full design."
+  },
+  "csp": {
+    "dteMin": 30,
+    "dteMax": 45,
+    "deltaMin": 0.2,
+    "deltaMax": 0.3,
+    "profitTargetFraction": 0.5,
+    "manageAtDte": 21
+  },
+  "screen": {
+    "maxSpreadFractionOfMid": 0.1,
+    "minOpenInterest": 500,
+    "minBid": 0.05,
+    "ivRankMin": 30,
+    "ivRankMinObservations": 60,
+    "earningsBufferDays": 1
+  },
+  "risk": {
+    "maxPositionFractionOfPool": 0.12,
+    "maxSectorFractionOfPool": 0.25,
+    "minCashBufferFraction": 0.1,
+    "maxDrawdownFractionOfHighWaterMark": 0.25,
+    "volFreeze": {
+      "spyRealizedVol20dAnnualizedMax": 0.3,
+      "comment": "PLAN.md 2.5 specified VIX > 30; Alpaca serves no VIX index, so the freeze uses 20-day SPY realized vol annualized > 30% as the deterministic proxy."
+    },
+    "proposalTtlHours": 4
+  },
+  "maxProposalsPerDay": 5
+}

@@ -1,0 +1,83 @@
+# Shadow-mode daily cycles (PLAN.md Phase 1). Read-only market data; no orders
+# exist anywhere in this codebase. Journal + briefs are committed back to the
+# branch so the shadow record is auditable in git history.
+#
+# Cron is UTC. 12:30/21:15 UTC = 8:30am/5:15pm ET during daylight time; both
+# drift an hour later in winter, which is harmless for a premarket/postclose
+# pair. Requires repo secrets: ALPACA_KEY_ID, ALPACA_SECRET_KEY
+# (optionally ANTHROPIC_API_KEY, FINNHUB_API_KEY).
+name: shadow-cycles
+on:
+  schedule:
+    - cron: "30 12 * * 1-5" # premarket
+    - cron: "15 21 * * 1-5" # postclose
+  workflow_dispatch:
+    inputs:
+      cycle:
+        description: "Which cycle to run"
+        required: true
+        default: premarket
+        type: choice
+        options: [premarket, postclose]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shadow-cycles
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Determine cycle
+        id: which
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "cycle=${{ inputs.cycle }}" >> "$GITHUB_OUTPUT"
+          elif [ "$(date -u +%H)" -lt 16 ]; then
+            echo "cycle=premarket" >> "$GITHUB_OUTPUT"
+          else
+            echo "cycle=postclose" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check secrets
+        id: secrets
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+        run: |
+          if [ -z "$ALPACA_KEY_ID" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::ALPACA_KEY_ID secret not set - shadow cycle skipped. See docs/PHASE1.md."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install
+        if: steps.secrets.outputs.configured == 'true'
+        run: npm ci
+      - name: Run cycle
+        if: steps.secrets.outputs.configured == 'true'
+        env:
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: npm run cycle:${{ steps.which.outputs.cycle }}
+      - name: Commit shadow record
+        if: steps.secrets.outputs.configured == 'true'
+        run: |
+          git config user.name "0dark30-shadow"
+          git config user.email "actions@users.noreply.github.com"
+          git add data briefs
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "shadow: ${{ steps.which.outputs.cycle }} $(date -u +%F)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
