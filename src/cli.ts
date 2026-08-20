@@ -43,6 +43,11 @@ switch (cmd) {
   case "report":
     await report();
     break;
+  case "backtest": {
+    const { runBacktest } = await import("./backtest/run.js");
+    await runBacktest();
+    break;
+  }
   case "dashboard": {
     const params = loadParams();
     console.log("wrote", writeDashboard(new Journal(params.ruleVersion), params));
@@ -68,6 +73,6 @@ switch (cmd) {
     break;
   }
   default:
-    console.log("usage: tsx src/cli.ts <premarket|midday|postclose|report|dashboard|unfreeze>");
+    console.log("usage: tsx src/cli.ts <premarket|midday|postclose|report|dashboard|backtest|unfreeze>");
     process.exit(1);
 }

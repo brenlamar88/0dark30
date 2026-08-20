@@ -205,7 +205,7 @@ export function renderDashboard(journal: Journal, params: Params): string {
 <h1>0dark30 — shadow dashboard</h1>
 <p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $${pool.toLocaleString()} pool, rule version <span class="mono">${esc(params.ruleVersion)}</span>, no orders anywhere. Not financial advice. Generated ${generatedAt}.</p>
 ${frozen ? `<p class="banner freeze">TRADING FROZEN: ${esc(String(frozen.reason ?? "unexplained divergence"))} (${esc(String(frozen.at ?? ""))}) — clear data/state/freeze.json with a journaled reason to resume.</p>` : ""}
-${dates.length ? `<p><a href="briefs/${dates[dates.length - 1]}.html">Latest morning brief (${dates[dates.length - 1]}) →</a></p>` : ""}
+<p>${dates.length ? `<a href="briefs/${dates[dates.length - 1]}.html">Latest morning brief (${dates[dates.length - 1]}) →</a>` : ""}${existsSync(path.join(repoRoot, "docs", "backtest.html")) ? `${dates.length ? " · " : ""}<a href="backtest.html">Model-based backtest study →</a>` : ""}</p>
 <div class="tiles">
 ${statTile("Shadow book P&L", last ? money(last.shadow) : "—", "realized + unrealized, pre-cost")}
 ${statTile("SPY same-pool P&L", last ? money(last.spy) : "—", "the null hypothesis")}

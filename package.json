@@ -12,6 +12,7 @@
     "cycle:midday": "tsx src/cli.ts midday",
     "cycle:postclose": "tsx src/cli.ts postclose",
     "dashboard": "tsx src/cli.ts dashboard",
+    "cycle:backtest": "tsx src/cli.ts backtest",
     "screen": "tsx src/cli.ts screen",
     "report": "tsx src/cli.ts report",
     "typecheck": "tsc --noEmit",
