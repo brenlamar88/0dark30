@@ -43,10 +43,12 @@ export async function runPremarket(): Promise<void> {
   const expiryLte = addDays(today, params.csp.dteMax);
 
   const candidates: Candidate[] = [];
+  const screenedOut: { symbol: string; reason: string }[] = [];
   for (const entry of universe) {
     const price = prices[entry.symbol];
     if (price === undefined) {
       await journal.event("data.price.missing", { symbol: entry.symbol });
+      screenedOut.push({ symbol: entry.symbol, reason: "no price data this run" });
       continue;
     }
     try {
@@ -56,18 +58,29 @@ export async function runPremarket(): Promise<void> {
       const earnings = entry.hasEarnings
         ? await earningsInWindow(entry.symbol, today, addDays(expiryLte, params.screen.earningsBufferDays))
         : false;
-      const candidate = screenCsp({ entry, price, puts, ivRank, earningsInWindow: earnings }, params, today);
-      if (candidate) candidates.push(candidate);
+      const result = screenCsp({ entry, price, puts, ivRank, earningsInWindow: earnings }, params, today);
+      if (result.candidate) candidates.push(result.candidate);
+      else if (result.rejection) {
+        screenedOut.push({ symbol: entry.symbol, reason: result.rejection });
+        await journal.event("screen.rejected", { symbol: entry.symbol, reason: result.rejection });
+      }
     } catch (err) {
       await journal.event("data.chain.error", {
         symbol: entry.symbol,
         error: err instanceof Error ? err.message : String(err),
       });
+      screenedOut.push({ symbol: entry.symbol, reason: "option-chain fetch failed this run" });
     }
   }
 
   candidates.sort((a, b) => b.rocAnnualizedAtBid - a.rocAnnualizedAtBid);
   const top = candidates.slice(0, params.maxProposalsPerDay);
+  for (const c of candidates.slice(params.maxProposalsPerDay)) {
+    screenedOut.push({
+      symbol: c.underlying,
+      reason: `passed the screen but ranked below the top ${params.maxProposalsPerDay} by annualized return-on-capital`,
+    });
+  }
 
   // Risk engine runs sequentially so each accepted proposal counts against the
   // caps for the next one - same as live sizing would.
@@ -151,6 +164,7 @@ export async function runPremarket(): Promise<void> {
     ruleVersion: params.ruleVersion,
     openShadowCount: openShadow.length,
     llmDegraded: llm === null,
+    screenedOut,
   });
   mkdirSync(briefsDir, { recursive: true });
   const briefPath = path.join(briefsDir, `${today}.html`);

@@ -3,6 +3,7 @@ import path from "node:path";
 import { repoRoot } from "../config.js";
 import type { Params, Proposal } from "../types.js";
 import type { Journal } from "../journal/journal.js";
+import { shortName } from "../risk/explain.js";
 
 const money = (n: number) => `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -153,7 +154,11 @@ export function renderDashboard(journal: Journal, params: Params): string {
 <td>${p.delta === null ? "?" : Math.abs(p.delta).toFixed(2)}</td><td>${p.dte}</td>
 <td>${money(p.premiumAtMid)}</td><td>${money(p.collateral)}</td>
 <td>${(p.rocAnnualizedAtBid * 100).toFixed(1)}%</td>
-<td>${p.verdict === "blocked" ? "blocked" : p.shadowStatus}${p.closedReason ? ` (${esc(p.closedReason)})` : ""}</td>
+<td${p.verdict === "blocked" ? ` title="${esc(p.checks.filter((c) => !c.pass).map((c) => c.detail).join("; "))}"` : ""}>${
+        p.verdict === "blocked"
+          ? `blocked by ${esc(p.checks.filter((c) => !c.pass).map((c) => shortName(c.name)).join(", ") || "risk engine")}`
+          : p.shadowStatus
+      }${p.closedReason ? ` (${esc(p.closedReason)})` : ""}</td>
 <td>${p.shadowPnl === null ? "—" : money(p.shadowPnl)}</td></tr>`,
     )
     .join("\n");

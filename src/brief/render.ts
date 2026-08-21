@@ -1,4 +1,5 @@
 import type { Proposal } from "../types.js";
+import { explainCheck, verdictHeadline } from "../risk/explain.js";
 
 const money = (n: number) => `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
 const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
@@ -25,11 +26,21 @@ function proposalCard(p: Proposal): string {
       <div><dt>Quote</dt><dd>${p.bid.toFixed(2)} / ${p.ask.toFixed(2)}</dd></div>
       <div><dt>Effective basis if assigned</dt><dd>${(p.strike - p.mid).toFixed(2)}</dd></div>
     </dl>
-    ${
-      blocked
-        ? `<p class="fail">Risk engine: ${failedChecks.map((c) => `${esc(c.name)} - ${esc(c.detail)}`).join("; ")}</p>`
-        : ""
-    }
+    <p class="${blocked ? "fail" : "pass"}">${esc(verdictHeadline(p.checks))}</p>
+    ${failedChecks
+      .map(
+        (c) =>
+          `<p class="fail">✗ ${esc(c.detail)}<br><span class="why">${esc(explainCheck(c))}</span></p>`,
+      )
+      .join("")}
+    <details class="checks"><summary>All ${p.checks.length} risk checks</summary>
+      ${p.checks
+        .map(
+          (c) =>
+            `<p class="${c.pass ? "ok" : "fail"}">${c.pass ? "✓" : "✗"} <strong>${esc(c.name)}</strong> - ${esc(c.detail)}<br><span class="why">${esc(explainCheck(c))}</span></p>`,
+        )
+        .join("")}
+    </details>
     ${p.llm ? `<p class="rationale">${esc(p.llm.rationale)}</p>` : ""}
     ${flags
       .map((f) => `<p class="flag ${f.severity}">${f.severity.toUpperCase()}: ${esc(f.flag)} <span class="mono">(${esc(f.source)})</span></p>`)
@@ -49,6 +60,7 @@ export function renderBrief(
     ruleVersion: string;
     openShadowCount: number;
     llmDegraded: boolean;
+    screenedOut?: { symbol: string; reason: string }[];
   },
 ): string {
   const proposed = proposals.filter((p) => p.verdict === "proposed");
@@ -66,7 +78,10 @@ export function renderBrief(
   .card header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
   dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .5rem; margin: .8rem 0; }
   dt { color: #8b949e; font-size: .8em; } dd { margin: 0; font-weight: 600; }
-  .fail { color: #f85149; } .flag.warning { color: #d29922; } .flag.veto { color: #f85149; } .flag.info, .note { color: #8b949e; font-size: .9em; }
+  .fail { color: #f85149; } .pass { color: #199e70; } .ok { color: #199e70; } .flag.warning { color: #d29922; } .flag.veto { color: #f85149; } .flag.info, .note { color: #8b949e; font-size: .9em; }
+  .why { color: #8b949e; font-size: .88em; font-style: italic; }
+  details.checks { margin: .5rem 0; } details.checks summary { cursor: pointer; color: #8b949e; font-size: .85em; }
+  details.checks p { margin: .4rem 0 .4rem .8rem; font-size: .9em; }
   .rationale { border-left: 3px solid #30363d; padding-left: .8rem; color: #c9d1d9; }
   footer { color: #8b949e; font-size: .8em; margin-top: .5rem; }
   .banner { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: .8rem 1rem; }
@@ -79,5 +94,12 @@ ${context.llmDegraded ? `<p class="note">LLM analyst layer unavailable this run 
 <h2>Proposals (${proposed.length})</h2>
 ${proposed.length ? proposed.map(proposalCard).join("\n") : "<p>No candidates cleared the screen and risk engine today. A quiet day is a valid output.</p>"}
 ${blocked.length ? `<h2>Blocked by risk engine (${blocked.length})</h2>${blocked.map(proposalCard).join("\n")}` : ""}
+${
+  context.screenedOut?.length
+    ? `<h2>Screened out (${context.screenedOut.length})</h2>
+<p class="note">Every universe symbol that produced no proposal today, and which rule eliminated it. "No candidate" is a decision too.</p>
+${context.screenedOut.map((s) => `<p class="note"><strong>${esc(s.symbol)}</strong> — ${esc(s.reason)}</p>`).join("\n")}`
+    : ""
+}
 </body></html>`;
 }
