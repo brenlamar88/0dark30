@@ -62,8 +62,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.605,
-    "currentMid": 1.605,
-    "shadowPnl": 0,
+    "currentMid": 1.19,
+    "shadowPnl": 41.5,
     "closedReason": null
   },
   {
@@ -129,8 +129,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.755,
-    "currentMid": 0.755,
-    "shadowPnl": 0,
+    "currentMid": 0.75,
+    "shadowPnl": 0.5000000000000004,
     "closedReason": null
   },
   {
@@ -196,8 +196,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.56,
-    "currentMid": 0.56,
-    "shadowPnl": 0,
+    "currentMid": 0.45999999999999996,
+    "shadowPnl": 10.000000000000009,
     "closedReason": null
   }
 ]
