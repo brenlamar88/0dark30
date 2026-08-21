@@ -8,6 +8,7 @@ import { dailyCloses, latestPrices, putChain, realizedVolAnnualized } from "../d
 import { earningsInWindow } from "../data/earnings.js";
 import { atmIvProxy, ivRankFor } from "../data/ivrank.js";
 import { screenCsp } from "../signals/wheelScreener.js";
+import { writeDashboard } from "../dashboard/render.js";
 import { evaluate, shadowState } from "../risk/engine.js";
 import { analyzeProposals } from "../llm/analyst.js";
 import { renderBrief } from "../brief/render.js";
@@ -154,6 +155,10 @@ export async function runPremarket(): Promise<void> {
   mkdirSync(briefsDir, { recursive: true });
   const briefPath = path.join(briefsDir, `${today}.html`);
   writeFileSync(briefPath, html);
+  // Refresh the dashboard here too - otherwise the front page shows
+  // yesterday's state until postclose and a working morning looks like a
+  // silent failure.
+  writeDashboard(journal, params);
   await journal.event("cycle.premarket.done", {
     proposed: proposals.filter((p) => p.verdict === "proposed").length,
     blocked: proposals.filter((p) => p.verdict === "blocked").length,
