@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0dark30 - 2026-08-21</title>
+<style>
+  :root { color-scheme: dark; }
+  body { background:#0d1117; color:#e6edf3; font: 15px/1.5 system-ui, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.3rem; } h3 { font-size: 1rem; margin: 0; }
+  .mono { font-family: ui-monospace, monospace; color: #8b949e; font-size: .85em; }
+  .card { border: 1px solid #30363d; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+  .card.blocked { opacity: .6; border-style: dashed; }
+  .card header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+  dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .5rem; margin: .8rem 0; }
+  dt { color: #8b949e; font-size: .8em; } dd { margin: 0; font-weight: 600; }
+  .fail { color: #f85149; } .flag.warning { color: #d29922; } .flag.veto { color: #f85149; } .flag.info, .note { color: #8b949e; font-size: .9em; }
+  .rationale { border-left: 3px solid #30363d; padding-left: .8rem; color: #c9d1d9; }
+  footer { color: #8b949e; font-size: .8em; margin-top: .5rem; }
+  .banner { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: .8rem 1rem; }
+</style></head><body>
+<h1>0dark30 morning brief - 2026-08-21</h1>
+<p class="banner"><strong>SHADOW MODE.</strong> Nothing here is an order, a recommendation, or financial advice; these are journaled outputs of mechanical rule version <span class="mono">wheel-v1</span> being evaluated against its own scoreboard. Simulated pool: $50,000.</p>
+
+<p class="note">LLM analyst layer unavailable this run - mechanical output only (by design, the brief never depends on it).</p>
+<p class="note">SPY 20d realized vol: 13.0% - open shadow positions: 3</p>
+<h2>Proposals (0)</h2>
+<p>No candidates cleared the screen and risk engine today. A quiet day is a valid output.</p>
+<h2>Blocked by risk engine (3)</h2>
+  <article class="card blocked">
+    <header>
+      <h3>BLOCKED Sell SLV 2026-09-25 $58.5 put (35 DTE, 0.29&Delta;)</h3>
+      <span class="mono">SLV260925P00058500</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$196</dd></div>
+      <div><dt>Collateral</dt><dd>$5,850</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>34.2%</dd></div>
+      <div><dt>IV rank</dt><dd>100 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>1.92 / 1.99</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>56.55</dd></div>
+    </dl>
+    <p class="fail">Risk engine: per-name-cap - post-trade SLV exposure $11600 vs cap $6000</p>
+    
+    
+    
+    <p class="note">iv-rank low confidence (1/60 observations) - threshold not yet enforced</p>
+    <footer>Shadow mode: no order exists. Proposal TTL 6h. Management plan if this were live: GTC buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+
+  <article class="card blocked">
+    <header>
+      <h3>BLOCKED Sell XLE 2026-09-30 $60 put (40 DTE, 0.22&Delta;)</h3>
+      <span class="mono">XLE260930P00060000</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$76</dd></div>
+      <div><dt>Collateral</dt><dd>$6,000</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>10.9%</dd></div>
+      <div><dt>IV rank</dt><dd>100 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>0.72 / 0.79</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>59.24</dd></div>
+    </dl>
+    <p class="fail">Risk engine: per-name-cap - post-trade XLE exposure $12000 vs cap $6000</p>
+    
+    
+    
+    <p class="note">iv-rank low confidence (1/60 observations) - threshold not yet enforced</p>
+    <footer>Shadow mode: no order exists. Proposal TTL 6h. Management plan if this were live: GTC buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+
+  <article class="card blocked">
+    <header>
+      <h3>BLOCKED Sell XLF 2026-10-02 $55.5 put (42 DTE, 0.27&Delta;)</h3>
+      <span class="mono">XLF261002P00055500</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$56</dd></div>
+      <div><dt>Collateral</dt><dd>$5,550</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>8.5%</dd></div>
+      <div><dt>IV rank</dt><dd>100 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>0.54 / 0.58</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>54.94</dd></div>
+    </dl>
+    <p class="fail">Risk engine: per-name-cap - post-trade XLF exposure $11100 vs cap $6000</p>
+    
+    
+    
+    <p class="note">iv-rank low confidence (1/60 observations) - threshold not yet enforced</p>
+    <footer>Shadow mode: no order exists. Proposal TTL 6h. Management plan if this were live: GTC buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+</body></html>
