@@ -31,13 +31,13 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-25 13:25 UTC.</p>
+<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-25 17:40 UTC.</p>
 
 <p><a href="briefs/2026-08-25.html">Latest morning brief (2026-08-25) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
 <div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$54</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
 <div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$55</div><div class="tile-note">the null hypothesis</div></div>
-<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">3 / 0</div><div class="tile-note">shadow positions</div></div>
+<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">5 / 0</div><div class="tile-note">shadow positions</div></div>
 <div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">4</div><div class="tile-note">postclose rows recorded</div></div>
 <div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">4/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
@@ -89,18 +89,39 @@
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>Sym</th><th>Contract</th><th>Δ</th><th>DTE</th><th>Prem</th><th>Collat</th><th>RoC/yr</th><th>Status</th><th>P&amp;L</th></tr></thead>
 <tbody><tr>
-<td>2026-08-25</td><td>XLE</td><td class="mono">XLE261002P00060000</td>
-<td>0.28</td><td>38</td>
-<td>$84</td><td>$6,000</td>
-<td>13.1%</td>
+<td>2026-08-25</td><td>XLF</td><td class="mono">XLF261002P00056500</td>
+<td>0.26</td><td>38</td>
+<td>$52</td><td>$5,650</td>
+<td>8.5%</td>
+<td title="post-trade XLF exposure $11200 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-08-25</td><td>XLU</td><td class="mono">XLU260925P00042000</td>
+<td>0.26</td><td>31</td>
+<td>$39</td><td>$4,200</td>
+<td>10.4%</td>
+<td>open</td>
+<td>—</td></tr>
+<tr>
+<td>2026-08-25</td><td>XLE</td><td class="mono">XLE260925P00060000</td>
+<td>0.27</td><td>31</td>
+<td>$81</td><td>$6,000</td>
+<td>15.5%</td>
 <td title="post-trade XLE exposure $12000 vs cap $6000">blocked by the single-name cap</td>
 <td>—</td></tr>
 <tr>
-<td>2026-08-25</td><td>SLV</td><td class="mono">SLV260925P00058000</td>
-<td>0.30</td><td>31</td>
-<td>$139</td><td>$5,800</td>
-<td>27.8%</td>
-<td title="post-trade SLV exposure $11550 vs cap $6000">blocked by the single-name cap</td>
+<td>2026-08-25</td><td>IBIT</td><td class="mono">IBIT260925P00042000</td>
+<td>0.27</td><td>31</td>
+<td>$101</td><td>$4,200</td>
+<td>28.0%</td>
+<td>open</td>
+<td>—</td></tr>
+<tr>
+<td>2026-08-25</td><td>SLV</td><td class="mono">SLV260925P00058500</td>
+<td>0.28</td><td>31</td>
+<td>$148</td><td>$5,850</td>
+<td>29.2%</td>
+<td title="post-trade SLV exposure $11600 vs cap $6000">blocked by the single-name cap</td>
 <td>—</td></tr>
 <tr>
 <td>2026-08-24</td><td>XLF</td><td class="mono">XLF261002P00055500</td>
