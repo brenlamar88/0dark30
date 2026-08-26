@@ -199,8 +199,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.5,
-    "currentMid": 0.5,
-    "shadowPnl": null,
+    "currentMid": 0.535,
+    "shadowPnl": -3.500000000000003,
     "closedReason": null
   }
 ]
