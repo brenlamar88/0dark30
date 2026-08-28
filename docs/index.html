@@ -31,15 +31,15 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-28 05:25 UTC.</p>
+<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-28 22:29 UTC.</p>
 
 <p><a href="briefs/2026-08-26.html">Latest morning brief (2026-08-26) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
-<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$109</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$561</div><div class="tile-note">the null hypothesis</div></div>
-<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">6 / 0</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">13</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">13/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$25</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$437</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">5 / 1</div><div class="tile-note">shadow positions</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">14</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">14/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 
@@ -47,9 +47,9 @@
 <svg viewBox="0 0 760 300" role="img" id="pnl-chart">
   <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$0</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$561</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$281</text>
   <line class="zero" x1="56" x2="744" y1="272.0" y2="272.0"/>
-  <path class="line s1" d="M56.0,272.0 L170.7,248.3 L285.3,247.4 L400.0,251.7 L514.7,243.3 L629.3,222.1 L744.0,222.1"/>
-  <path class="line s2" d="M56.0,272.0 L170.7,181.7 L285.3,246.9 L400.0,177.2 L514.7,172.7 L629.3,16.0 L744.0,16.0"/>
-  <circle class="pt s1" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s1" data-i="1" cx="170.7" cy="248.3" r="3"/><circle class="pt s2" data-i="1" cx="170.7" cy="181.7" r="3"/><circle class="pt s1" data-i="2" cx="285.3" cy="247.4" r="3"/><circle class="pt s2" data-i="2" cx="285.3" cy="246.9" r="3"/><circle class="pt s1" data-i="3" cx="400.0" cy="251.7" r="3"/><circle class="pt s2" data-i="3" cx="400.0" cy="177.2" r="3"/><circle class="pt s1" data-i="4" cx="514.7" cy="243.3" r="3"/><circle class="pt s2" data-i="4" cx="514.7" cy="172.7" r="3"/><circle class="pt s1" data-i="5" cx="629.3" cy="222.1" r="3"/><circle class="pt s2" data-i="5" cx="629.3" cy="16.0" r="3"/><circle class="pt s1" data-i="6" cx="744.0" cy="222.1" r="3"/><circle class="pt s2" data-i="6" cx="744.0" cy="16.0" r="3"/>
+  <path class="line s1" d="M56.0,272.0 L170.7,248.3 L285.3,247.4 L400.0,251.7 L514.7,243.3 L629.3,222.1 L744.0,260.6"/>
+  <path class="line s2" d="M56.0,272.0 L170.7,181.7 L285.3,246.9 L400.0,177.2 L514.7,172.7 L629.3,16.0 L744.0,72.8"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s1" data-i="1" cx="170.7" cy="248.3" r="3"/><circle class="pt s2" data-i="1" cx="170.7" cy="181.7" r="3"/><circle class="pt s1" data-i="2" cx="285.3" cy="247.4" r="3"/><circle class="pt s2" data-i="2" cx="285.3" cy="246.9" r="3"/><circle class="pt s1" data-i="3" cx="400.0" cy="251.7" r="3"/><circle class="pt s2" data-i="3" cx="400.0" cy="177.2" r="3"/><circle class="pt s1" data-i="4" cx="514.7" cy="243.3" r="3"/><circle class="pt s2" data-i="4" cx="514.7" cy="172.7" r="3"/><circle class="pt s1" data-i="5" cx="629.3" cy="222.1" r="3"/><circle class="pt s2" data-i="5" cx="629.3" cy="16.0" r="3"/><circle class="pt s1" data-i="6" cx="744.0" cy="260.6" r="3"/><circle class="pt s2" data-i="6" cx="744.0" cy="72.8" r="3"/>
   <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
   <text class="tick" x="56" y="292">2026-08-20</text>
   <text class="tick" x="744" y="292" text-anchor="end">2026-08-28</text>
@@ -63,7 +63,7 @@
 </figure>
 <script>
 (function () {
-  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":109.49999999999999,"spy":561.2231517662769}];
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055}];
   var svg = document.getElementById("pnl-chart");
   var cap = document.getElementById("hover-capture");
   var tip = document.getElementById("tooltip");
@@ -94,7 +94,7 @@
 <td>$50</td><td>$3,400</td>
 <td>15.0%</td>
 <td>open</td>
-<td>$1</td></tr>
+<td>$-3</td></tr>
 <tr>
 <td>2026-08-26</td><td>SLV</td><td class="mono">SLV260930P00058000</td>
 <td>0.29</td><td>35</td>
@@ -122,7 +122,7 @@
 <td>$39</td><td>$4,200</td>
 <td>10.4%</td>
 <td>open</td>
-<td>$6</td></tr>
+<td>$-12</td></tr>
 <tr>
 <td>2026-08-25</td><td>XLE</td><td class="mono">XLE260925P00060000</td>
 <td>0.27</td><td>31</td>
@@ -136,7 +136,7 @@
 <td>$101</td><td>$4,200</td>
 <td>28.0%</td>
 <td>open</td>
-<td>$28</td></tr>
+<td>$3</td></tr>
 <tr>
 <td>2026-08-25</td><td>SLV</td><td class="mono">SLV260925P00058500</td>
 <td>0.28</td><td>31</td>
@@ -170,27 +170,30 @@
 <td>0.28</td><td>43</td>
 <td>$56</td><td>$5,550</td>
 <td>8.3%</td>
-<td>open</td>
-<td>$26</td></tr>
+<td>closed (profit-target-50pct)</td>
+<td>$28</td></tr>
 <tr>
 <td>2026-08-20</td><td>XLE</td><td class="mono">XLE260930P00060000</td>
 <td>0.22</td><td>41</td>
 <td>$76</td><td>$6,000</td>
 <td>10.7%</td>
 <td>open</td>
-<td>$-16</td></tr>
+<td>$0</td></tr>
 <tr>
 <td>2026-08-20</td><td>SLV</td><td class="mono">SLV260925P00057500</td>
 <td>0.28</td><td>36</td>
 <td>$161</td><td>$5,750</td>
 <td>27.7%</td>
 <td>open</td>
-<td>$65</td></tr></tbody>
+<td>$9</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td>2026-08-28</td><td>771.18</td>
+<tbody><tr><td>2026-08-28</td><td>769.28</td>
+<td>$28</td><td>$-3</td>
+<td>5</td><td>1</td></tr>
+<tr><td>2026-08-28</td><td>771.18</td>
 <td>$0</td><td>$109</td>
 <td>6</td><td>0</td></tr>
 <tr><td>2026-08-27</td><td>771.18</td>

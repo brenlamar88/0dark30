@@ -62,8 +62,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.605,
-    "currentMid": 0.9550000000000001,
-    "shadowPnl": 64.99999999999999,
+    "currentMid": 1.5150000000000001,
+    "shadowPnl": 8.999999999999986,
     "closedReason": null
   },
   {
@@ -129,8 +129,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.755,
-    "currentMid": 0.915,
-    "shadowPnl": -16.000000000000004,
+    "currentMid": 0.755,
+    "shadowPnl": 0,
     "closedReason": null
   },
   {
@@ -194,10 +194,10 @@
       "iv-rank low confidence (0/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 0.56,
-    "currentMid": 0.30000000000000004,
-    "shadowPnl": 26,
-    "closedReason": null
+    "currentMid": 0.265,
+    "shadowPnl": 28.000000000000004,
+    "closedReason": "profit-target-50pct"
   }
 ]
