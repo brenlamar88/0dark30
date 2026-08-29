@@ -1,0 +1,2 @@
+{"ts":"2026-08-29T00:52:01.727Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-08-28"}}
+{"ts":"2026-08-29T00:52:02.055Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":769.28,"realizedTotal":28.000000000000004,"unrealized":-3.000000000000015,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}
