@@ -31,15 +31,15 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-29 03:11 UTC.</p>
+<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-08-31 21:44 UTC.</p>
 
 <p><a href="briefs/2026-08-26.html">Latest morning brief (2026-08-26) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
-<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$25</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$437</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$115</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$279</div><div class="tile-note">the null hypothesis</div></div>
 <div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">5 / 1</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">18</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">18/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">19</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">19/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 
@@ -47,12 +47,12 @@
 <svg viewBox="0 0 760 300" role="img" id="pnl-chart">
   <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$0</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$561</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$281</text>
   <line class="zero" x1="56" x2="744" y1="272.0" y2="272.0"/>
-  <path class="line s1" d="M56.0,272.0 L170.7,248.3 L285.3,247.4 L400.0,251.7 L514.7,243.3 L629.3,222.1 L744.0,260.6"/>
-  <path class="line s2" d="M56.0,272.0 L170.7,181.7 L285.3,246.9 L400.0,177.2 L514.7,172.7 L629.3,16.0 L744.0,72.8"/>
-  <circle class="pt s1" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s1" data-i="1" cx="170.7" cy="248.3" r="3"/><circle class="pt s2" data-i="1" cx="170.7" cy="181.7" r="3"/><circle class="pt s1" data-i="2" cx="285.3" cy="247.4" r="3"/><circle class="pt s2" data-i="2" cx="285.3" cy="246.9" r="3"/><circle class="pt s1" data-i="3" cx="400.0" cy="251.7" r="3"/><circle class="pt s2" data-i="3" cx="400.0" cy="177.2" r="3"/><circle class="pt s1" data-i="4" cx="514.7" cy="243.3" r="3"/><circle class="pt s2" data-i="4" cx="514.7" cy="172.7" r="3"/><circle class="pt s1" data-i="5" cx="629.3" cy="222.1" r="3"/><circle class="pt s2" data-i="5" cx="629.3" cy="16.0" r="3"/><circle class="pt s1" data-i="6" cx="744.0" cy="260.6" r="3"/><circle class="pt s2" data-i="6" cx="744.0" cy="72.8" r="3"/>
+  <path class="line s1" d="M56.0,272.0 L154.3,248.3 L252.6,247.4 L350.9,251.7 L449.1,243.3 L547.4,222.1 L645.7,260.6 L744.0,219.5"/>
+  <path class="line s2" d="M56.0,272.0 L154.3,181.7 L252.6,246.9 L350.9,177.2 L449.1,172.7 L547.4,16.0 L645.7,72.8 L744.0,144.9"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="272.0" r="3"/><circle class="pt s1" data-i="1" cx="154.3" cy="248.3" r="3"/><circle class="pt s2" data-i="1" cx="154.3" cy="181.7" r="3"/><circle class="pt s1" data-i="2" cx="252.6" cy="247.4" r="3"/><circle class="pt s2" data-i="2" cx="252.6" cy="246.9" r="3"/><circle class="pt s1" data-i="3" cx="350.9" cy="251.7" r="3"/><circle class="pt s2" data-i="3" cx="350.9" cy="177.2" r="3"/><circle class="pt s1" data-i="4" cx="449.1" cy="243.3" r="3"/><circle class="pt s2" data-i="4" cx="449.1" cy="172.7" r="3"/><circle class="pt s1" data-i="5" cx="547.4" cy="222.1" r="3"/><circle class="pt s2" data-i="5" cx="547.4" cy="16.0" r="3"/><circle class="pt s1" data-i="6" cx="645.7" cy="260.6" r="3"/><circle class="pt s2" data-i="6" cx="645.7" cy="72.8" r="3"/><circle class="pt s1" data-i="7" cx="744.0" cy="219.5" r="3"/><circle class="pt s2" data-i="7" cx="744.0" cy="144.9" r="3"/>
   <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
   <text class="tick" x="56" y="292">2026-08-20</text>
-  <text class="tick" x="744" y="292" text-anchor="end">2026-08-28</text>
+  <text class="tick" x="744" y="292" text-anchor="end">2026-08-31</text>
   <rect id="hover-capture" x="56" y="16" width="688" height="256" fill="transparent"/>
 </svg>
 <div id="tooltip" class="tooltip" hidden></div>
@@ -63,7 +63,7 @@
 </figure>
 <script>
 (function () {
-  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055}];
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658}];
   var svg = document.getElementById("pnl-chart");
   var cap = document.getElementById("hover-capture");
   var tip = document.getElementById("tooltip");
@@ -94,7 +94,7 @@
 <td>$50</td><td>$3,400</td>
 <td>15.0%</td>
 <td>open</td>
-<td>$-3</td></tr>
+<td>$14</td></tr>
 <tr>
 <td>2026-08-26</td><td>SLV</td><td class="mono">SLV260930P00058000</td>
 <td>0.29</td><td>35</td>
@@ -122,7 +122,7 @@
 <td>$39</td><td>$4,200</td>
 <td>10.4%</td>
 <td>open</td>
-<td>$-12</td></tr>
+<td>$-23</td></tr>
 <tr>
 <td>2026-08-25</td><td>XLE</td><td class="mono">XLE260925P00060000</td>
 <td>0.27</td><td>31</td>
@@ -136,7 +136,7 @@
 <td>$101</td><td>$4,200</td>
 <td>28.0%</td>
 <td>open</td>
-<td>$3</td></tr>
+<td>$39</td></tr>
 <tr>
 <td>2026-08-25</td><td>SLV</td><td class="mono">SLV260925P00058500</td>
 <td>0.28</td><td>31</td>
@@ -178,19 +178,22 @@
 <td>$76</td><td>$6,000</td>
 <td>10.7%</td>
 <td>open</td>
-<td>$0</td></tr>
+<td>$31</td></tr>
 <tr>
 <td>2026-08-20</td><td>SLV</td><td class="mono">SLV260925P00057500</td>
 <td>0.28</td><td>36</td>
 <td>$161</td><td>$5,750</td>
 <td>27.7%</td>
 <td>open</td>
-<td>$9</td></tr></tbody>
+<td>$26</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td>2026-08-28</td><td>769.28</td>
+<tbody><tr><td>2026-08-31</td><td>766.87</td>
+<td>$28</td><td>$87</td>
+<td>5</td><td>1</td></tr>
+<tr><td>2026-08-28</td><td>769.28</td>
 <td>$28</td><td>$-3</td>
 <td>5</td><td>1</td></tr>
 <tr><td>2026-08-28</td><td>769.28</td>
