@@ -197,10 +197,10 @@
       "iv-rank low confidence (4/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 0.5,
-    "currentMid": 0.29000000000000004,
-    "shadowPnl": 20.999999999999996,
-    "closedReason": null
+    "currentMid": 0.175,
+    "shadowPnl": 25,
+    "closedReason": "profit-target-50pct"
   }
 ]
