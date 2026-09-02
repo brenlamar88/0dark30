@@ -24,3 +24,4 @@
 {"date":"2026-09-01","spy_close":761.63,"shadow_realized_total":65.75,"shadow_unrealized":-39.5,"shadow_open_count":4,"shadow_closed_count":2,"realized_today":0,"rule_version":"wheel-v1"}
 {"date":"2026-09-02","spy_close":764.94,"shadow_realized_total":90.75,"shadow_unrealized":-6.500000000000018,"shadow_open_count":3,"shadow_closed_count":3,"realized_today":25,"rule_version":"wheel-v1"}
 {"date":"2026-09-02","spy_close":765.13,"shadow_realized_total":90.75,"shadow_unrealized":9.499999999999991,"shadow_open_count":3,"shadow_closed_count":3,"realized_today":0,"rule_version":"wheel-v1"}
+{"date":"2026-09-02","spy_close":765.13,"shadow_realized_total":90.75,"shadow_unrealized":9.499999999999991,"shadow_open_count":3,"shadow_closed_count":3,"realized_today":0,"rule_version":"wheel-v1"}
