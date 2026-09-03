@@ -31,28 +31,28 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-09-02 23:20 UTC.</p>
+<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-09-03 16:34 UTC.</p>
 
 <p><a href="briefs/2026-08-26.html">Latest morning brief (2026-08-26) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
-<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$100</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$165</div><div class="tile-note">the null hypothesis</div></div>
-<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">3 / 3</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">27</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">27/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$195</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$653</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">2 / 4</div><div class="tile-note">shadow positions</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">28</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">28/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 
 <figure class="chart" aria-label="Cumulative shadow book profit and loss versus SPY buy-and-hold on the same pool">
 <svg viewBox="0 0 760 300" role="img" id="pnl-chart">
-  <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$-65</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$561</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$248</text>
-  <line class="zero" x1="56" x2="744" y1="245.5" y2="245.5"/>
-  <path class="line s1" d="M56.0,245.5 L132.4,224.2 L208.9,223.4 L285.3,227.3 L361.8,219.7 L438.2,200.7 L514.7,235.2 L591.1,198.4 L667.6,234.7 L744.0,204.5"/>
-  <path class="line s2" d="M56.0,245.5 L132.4,164.5 L208.9,222.9 L285.3,160.5 L361.8,156.5 L438.2,16.0 L514.7,66.9 L591.1,131.5 L667.6,272.0 L744.0,178.2"/>
-  <circle class="pt s1" data-i="0" cx="56.0" cy="245.5" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="245.5" r="3"/><circle class="pt s1" data-i="1" cx="132.4" cy="224.2" r="3"/><circle class="pt s2" data-i="1" cx="132.4" cy="164.5" r="3"/><circle class="pt s1" data-i="2" cx="208.9" cy="223.4" r="3"/><circle class="pt s2" data-i="2" cx="208.9" cy="222.9" r="3"/><circle class="pt s1" data-i="3" cx="285.3" cy="227.3" r="3"/><circle class="pt s2" data-i="3" cx="285.3" cy="160.5" r="3"/><circle class="pt s1" data-i="4" cx="361.8" cy="219.7" r="3"/><circle class="pt s2" data-i="4" cx="361.8" cy="156.5" r="3"/><circle class="pt s1" data-i="5" cx="438.2" cy="200.7" r="3"/><circle class="pt s2" data-i="5" cx="438.2" cy="16.0" r="3"/><circle class="pt s1" data-i="6" cx="514.7" cy="235.2" r="3"/><circle class="pt s2" data-i="6" cx="514.7" cy="66.9" r="3"/><circle class="pt s1" data-i="7" cx="591.1" cy="198.4" r="3"/><circle class="pt s2" data-i="7" cx="591.1" cy="131.5" r="3"/><circle class="pt s1" data-i="8" cx="667.6" cy="234.7" r="3"/><circle class="pt s2" data-i="8" cx="667.6" cy="272.0" r="3"/><circle class="pt s1" data-i="9" cx="744.0" cy="204.5" r="3"/><circle class="pt s2" data-i="9" cx="744.0" cy="178.2" r="3"/>
+  <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$-65</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$653</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$294</text>
+  <line class="zero" x1="56" x2="744" y1="248.9" y2="248.9"/>
+  <path class="line s1" d="M56.0,248.9 L124.8,230.3 L193.6,229.6 L262.4,233.0 L331.2,226.4 L400.0,209.8 L468.8,239.9 L537.6,207.8 L606.4,239.5 L675.2,213.1 L744.0,179.2"/>
+  <path class="line s2" d="M56.0,248.9 L124.8,178.3 L193.6,229.2 L262.4,174.7 L331.2,171.2 L400.0,48.7 L468.8,93.2 L537.6,149.5 L606.4,272.0 L675.2,190.2 L744.0,16.0"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="248.9" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="248.9" r="3"/><circle class="pt s1" data-i="1" cx="124.8" cy="230.3" r="3"/><circle class="pt s2" data-i="1" cx="124.8" cy="178.3" r="3"/><circle class="pt s1" data-i="2" cx="193.6" cy="229.6" r="3"/><circle class="pt s2" data-i="2" cx="193.6" cy="229.2" r="3"/><circle class="pt s1" data-i="3" cx="262.4" cy="233.0" r="3"/><circle class="pt s2" data-i="3" cx="262.4" cy="174.7" r="3"/><circle class="pt s1" data-i="4" cx="331.2" cy="226.4" r="3"/><circle class="pt s2" data-i="4" cx="331.2" cy="171.2" r="3"/><circle class="pt s1" data-i="5" cx="400.0" cy="209.8" r="3"/><circle class="pt s2" data-i="5" cx="400.0" cy="48.7" r="3"/><circle class="pt s1" data-i="6" cx="468.8" cy="239.9" r="3"/><circle class="pt s2" data-i="6" cx="468.8" cy="93.2" r="3"/><circle class="pt s1" data-i="7" cx="537.6" cy="207.8" r="3"/><circle class="pt s2" data-i="7" cx="537.6" cy="149.5" r="3"/><circle class="pt s1" data-i="8" cx="606.4" cy="239.5" r="3"/><circle class="pt s2" data-i="8" cx="606.4" cy="272.0" r="3"/><circle class="pt s1" data-i="9" cx="675.2" cy="213.1" r="3"/><circle class="pt s2" data-i="9" cx="675.2" cy="190.2" r="3"/><circle class="pt s1" data-i="10" cx="744.0" cy="179.2" r="3"/><circle class="pt s2" data-i="10" cx="744.0" cy="16.0" r="3"/>
   <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
   <text class="tick" x="56" y="292">2026-08-20</text>
-  <text class="tick" x="744" y="292" text-anchor="end">2026-09-02</text>
+  <text class="tick" x="744" y="292" text-anchor="end">2026-09-03</text>
   <rect id="hover-capture" x="56" y="16" width="688" height="256" fill="transparent"/>
 </svg>
 <div id="tooltip" class="tooltip" hidden></div>
@@ -63,7 +63,7 @@
 </figure>
 <script>
 (function () {
-  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225}];
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":195.25,"spy":653.0119849990856}];
   var svg = document.getElementById("pnl-chart");
   var cap = document.getElementById("hover-capture");
   var tip = document.getElementById("tooltip");
@@ -122,7 +122,7 @@
 <td>$39</td><td>$4,200</td>
 <td>10.4%</td>
 <td>open</td>
-<td>$-9</td></tr>
+<td>$7</td></tr>
 <tr>
 <td>2026-08-25</td><td>XLE</td><td class="mono">XLE260925P00060000</td>
 <td>0.27</td><td>31</td>
@@ -135,8 +135,8 @@
 <td>0.27</td><td>31</td>
 <td>$101</td><td>$4,200</td>
 <td>28.0%</td>
-<td>open</td>
-<td>$24</td></tr>
+<td>closed (profit-target-50pct)</td>
+<td>$51</td></tr>
 <tr>
 <td>2026-08-25</td><td>SLV</td><td class="mono">SLV260925P00058500</td>
 <td>0.28</td><td>31</td>
@@ -185,12 +185,15 @@
 <td>$161</td><td>$5,750</td>
 <td>27.7%</td>
 <td>open</td>
-<td>$-6</td></tr></tbody>
+<td>$47</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td>2026-09-02</td><td>765.13</td>
+<tbody><tr><td>2026-09-03</td><td>772.58</td>
+<td>$141</td><td>$54</td>
+<td>2</td><td>4</td></tr>
+<tr><td>2026-09-02</td><td>765.13</td>
 <td>$91</td><td>$9</td>
 <td>3</td><td>3</td></tr>
 <tr><td>2026-09-02</td><td>765.13</td>
@@ -246,9 +249,6 @@
 <td>6</td><td>0</td></tr>
 <tr><td>2026-08-27</td><td>771.18</td>
 <td>$0</td><td>$109</td>
-<td>6</td><td>0</td></tr>
-<tr><td>2026-08-26</td><td>765.94</td>
-<td>$0</td><td>$63</td>
 <td>6</td><td>0</td></tr></tbody>
 </table></div>
 <p class="muted">Kill criteria and gates live in PLAN.md. Numbers are pre-cost and pre-tax; nothing here proves anything until months accumulate.</p>
