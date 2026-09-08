@@ -31,15 +31,15 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-09-07 23:31 UTC.</p>
+<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $50,000 pool, rule version <span class="mono">wheel-v1</span>, no orders anywhere. Not financial advice. Generated 2026-09-08 16:45 UTC.</p>
 
 <p><a href="briefs/2026-08-26.html">Latest morning brief (2026-08-26) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
 <div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$177</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$496</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$287</div><div class="tile-note">the null hypothesis</div></div>
 <div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">0 / 6</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">35</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">35/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">36</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">36/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 
@@ -47,12 +47,12 @@
 <svg viewBox="0 0 760 300" role="img" id="pnl-chart">
   <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$-65</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$688</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$312</text>
   <line class="zero" x1="56" x2="744" y1="249.9" y2="249.9"/>
-  <path class="line s1" d="M56.0,249.9 L113.3,232.3 L170.7,231.6 L228.0,234.8 L285.3,228.5 L342.7,212.7 L400.0,241.4 L457.3,210.8 L514.7,241.0 L572.0,215.9 L629.3,184.9 L686.7,189.7 L744.0,189.7"/>
-  <path class="line s2" d="M56.0,249.9 L113.3,182.6 L170.7,231.2 L228.0,179.3 L285.3,175.9 L342.7,59.1 L400.0,101.5 L457.3,155.2 L514.7,272.0 L572.0,194.0 L629.3,16.0 L686.7,81.4 L744.0,81.4"/>
-  <circle class="pt s1" data-i="0" cx="56.0" cy="249.9" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="249.9" r="3"/><circle class="pt s1" data-i="1" cx="113.3" cy="232.3" r="3"/><circle class="pt s2" data-i="1" cx="113.3" cy="182.6" r="3"/><circle class="pt s1" data-i="2" cx="170.7" cy="231.6" r="3"/><circle class="pt s2" data-i="2" cx="170.7" cy="231.2" r="3"/><circle class="pt s1" data-i="3" cx="228.0" cy="234.8" r="3"/><circle class="pt s2" data-i="3" cx="228.0" cy="179.3" r="3"/><circle class="pt s1" data-i="4" cx="285.3" cy="228.5" r="3"/><circle class="pt s2" data-i="4" cx="285.3" cy="175.9" r="3"/><circle class="pt s1" data-i="5" cx="342.7" cy="212.7" r="3"/><circle class="pt s2" data-i="5" cx="342.7" cy="59.1" r="3"/><circle class="pt s1" data-i="6" cx="400.0" cy="241.4" r="3"/><circle class="pt s2" data-i="6" cx="400.0" cy="101.5" r="3"/><circle class="pt s1" data-i="7" cx="457.3" cy="210.8" r="3"/><circle class="pt s2" data-i="7" cx="457.3" cy="155.2" r="3"/><circle class="pt s1" data-i="8" cx="514.7" cy="241.0" r="3"/><circle class="pt s2" data-i="8" cx="514.7" cy="272.0" r="3"/><circle class="pt s1" data-i="9" cx="572.0" cy="215.9" r="3"/><circle class="pt s2" data-i="9" cx="572.0" cy="194.0" r="3"/><circle class="pt s1" data-i="10" cx="629.3" cy="184.9" r="3"/><circle class="pt s2" data-i="10" cx="629.3" cy="16.0" r="3"/><circle class="pt s1" data-i="11" cx="686.7" cy="189.7" r="3"/><circle class="pt s2" data-i="11" cx="686.7" cy="81.4" r="3"/><circle class="pt s1" data-i="12" cx="744.0" cy="189.7" r="3"/><circle class="pt s2" data-i="12" cx="744.0" cy="81.4" r="3"/>
+  <path class="line s1" d="M56.0,249.9 L108.9,232.3 L161.8,231.6 L214.8,234.8 L267.7,228.5 L320.6,212.7 L373.5,241.4 L426.5,210.8 L479.4,241.0 L532.3,215.9 L585.2,184.9 L638.2,189.7 L691.1,189.7 L744.0,189.7"/>
+  <path class="line s2" d="M56.0,249.9 L108.9,182.6 L161.8,231.2 L214.8,179.3 L267.7,175.9 L320.6,59.1 L373.5,101.5 L426.5,155.2 L479.4,272.0 L532.3,194.0 L585.2,16.0 L638.2,81.4 L691.1,81.4 L744.0,152.2"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="249.9" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="249.9" r="3"/><circle class="pt s1" data-i="1" cx="108.9" cy="232.3" r="3"/><circle class="pt s2" data-i="1" cx="108.9" cy="182.6" r="3"/><circle class="pt s1" data-i="2" cx="161.8" cy="231.6" r="3"/><circle class="pt s2" data-i="2" cx="161.8" cy="231.2" r="3"/><circle class="pt s1" data-i="3" cx="214.8" cy="234.8" r="3"/><circle class="pt s2" data-i="3" cx="214.8" cy="179.3" r="3"/><circle class="pt s1" data-i="4" cx="267.7" cy="228.5" r="3"/><circle class="pt s2" data-i="4" cx="267.7" cy="175.9" r="3"/><circle class="pt s1" data-i="5" cx="320.6" cy="212.7" r="3"/><circle class="pt s2" data-i="5" cx="320.6" cy="59.1" r="3"/><circle class="pt s1" data-i="6" cx="373.5" cy="241.4" r="3"/><circle class="pt s2" data-i="6" cx="373.5" cy="101.5" r="3"/><circle class="pt s1" data-i="7" cx="426.5" cy="210.8" r="3"/><circle class="pt s2" data-i="7" cx="426.5" cy="155.2" r="3"/><circle class="pt s1" data-i="8" cx="479.4" cy="241.0" r="3"/><circle class="pt s2" data-i="8" cx="479.4" cy="272.0" r="3"/><circle class="pt s1" data-i="9" cx="532.3" cy="215.9" r="3"/><circle class="pt s2" data-i="9" cx="532.3" cy="194.0" r="3"/><circle class="pt s1" data-i="10" cx="585.2" cy="184.9" r="3"/><circle class="pt s2" data-i="10" cx="585.2" cy="16.0" r="3"/><circle class="pt s1" data-i="11" cx="638.2" cy="189.7" r="3"/><circle class="pt s2" data-i="11" cx="638.2" cy="81.4" r="3"/><circle class="pt s1" data-i="12" cx="691.1" cy="189.7" r="3"/><circle class="pt s2" data-i="12" cx="691.1" cy="81.4" r="3"/><circle class="pt s1" data-i="13" cx="744.0" cy="189.7" r="3"/><circle class="pt s2" data-i="13" cx="744.0" cy="152.2" r="3"/>
   <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
   <text class="tick" x="56" y="292">2026-08-20</text>
-  <text class="tick" x="744" y="292" text-anchor="end">2026-09-07</text>
+  <text class="tick" x="744" y="292" text-anchor="end">2026-09-08</text>
   <rect id="hover-capture" x="56" y="16" width="688" height="256" fill="transparent"/>
 </svg>
 <div id="tooltip" class="tooltip" hidden></div>
@@ -63,7 +63,7 @@
 </figure>
 <script>
 (function () {
-  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":191.25,"spy":688.0884319844794},{"date":"2026-09-04","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-07","shadow":177.25,"spy":495.6596994571294}];
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":191.25,"spy":688.0884319844794},{"date":"2026-09-04","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-07","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-08","shadow":177.25,"spy":287.49573837559825}];
   var svg = document.getElementById("pnl-chart");
   var cap = document.getElementById("hover-capture");
   var tip = document.getElementById("tooltip");
@@ -190,7 +190,10 @@
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td>2026-09-07</td><td>770.18</td>
+<tbody><tr><td>2026-09-08</td><td>767.005</td>
+<td>$177</td><td>$0</td>
+<td>0</td><td>6</td></tr>
+<tr><td>2026-09-07</td><td>770.18</td>
 <td>$177</td><td>$0</td>
 <td>0</td><td>6</td></tr>
 <tr><td>2026-09-07</td><td>770.18</td>
@@ -240,9 +243,6 @@
 <td>5</td><td>1</td></tr>
 <tr><td>2026-08-31</td><td>766.87</td>
 <td>$28</td><td>$87</td>
-<td>5</td><td>1</td></tr>
-<tr><td>2026-08-28</td><td>769.28</td>
-<td>$28</td><td>$-3</td>
 <td>5</td><td>1</td></tr>
 <tr><td>2026-08-28</td><td>769.28</td>
 <td>$28</td><td>$-3</td>
