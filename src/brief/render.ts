@@ -47,7 +47,7 @@ function proposalCard(p: Proposal): string {
       .join("")}
     ${p.llm?.veto ? `<p class="fail">ANALYST VETO - logged; mechanical proposal stands in the journal either way</p>` : ""}
     ${p.screenNotes.map((n) => `<p class="note">${esc(n)}</p>`).join("")}
-    <footer>Shadow mode: no order exists. Proposal TTL ${p.ttlHours}h. Management plan if this were live: GTC buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+    <footer>Approval id: <strong class="mono">${p.id.slice(0, 8)}</strong> · TTL ${p.ttlHours}h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
   </article>`;
 }
 
@@ -61,6 +61,7 @@ export function renderBrief(
     openShadowCount: number;
     llmDegraded: boolean;
     screenedOut?: { symbol: string; reason: string }[];
+    mode?: "shadow" | "paper";
   },
 ): string {
   const proposed = proposals.filter((p) => p.verdict === "proposed");
@@ -87,7 +88,11 @@ export function renderBrief(
   .banner { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: .8rem 1rem; }
 </style></head><body>
 <h1>0dark30 morning brief - ${date}</h1>
-<p class="banner"><strong>SHADOW MODE.</strong> Nothing here is an order, a recommendation, or financial advice; these are journaled outputs of mechanical rule version <span class="mono">${esc(context.ruleVersion)}</span> being evaluated against its own scoreboard. Simulated pool: $50,000.</p>
+${
+  context.mode === "paper"
+    ? `<p class="banner"><strong>PAPER MODE (Phase 2).</strong> Proposals below are staged to the Alpaca <em>paper</em> account only after your approval - no real money anywhere. Approve/reject by short id before the TTL: commit <span class="mono">approvals/${date}.json</span> (<span class="mono">{"approve": ["ab12cd34"], "reject": []}</span>) or reply to the Telegram bot if configured. Unapproved proposals expire and are journaled. Rule version <span class="mono">${esc(context.ruleVersion)}</span>; not financial advice.</p>`
+    : `<p class="banner"><strong>SHADOW MODE.</strong> Nothing here is an order, a recommendation, or financial advice; these are journaled outputs of mechanical rule version <span class="mono">${esc(context.ruleVersion)}</span> being evaluated against its own scoreboard. Simulated pool: $50,000.</p>`
+}
 ${context.marketNote ? `<p>${esc(context.marketNote)}</p>` : ""}
 ${context.llmDegraded ? `<p class="note">LLM analyst layer unavailable this run - mechanical output only (by design, the brief never depends on it).</p>` : ""}
 <p class="note">SPY 20d realized vol: ${context.spyRealizedVol === null ? "unavailable" : (context.spyRealizedVol * 100).toFixed(1) + "%"} - open shadow positions: ${context.openShadowCount}</p>

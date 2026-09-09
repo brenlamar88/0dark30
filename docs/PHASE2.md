@@ -9,8 +9,10 @@ call; the flip is one repository variable.
 
 ## Turning Phase 2 on
 
-1. Repo → Settings → Secrets and variables → Actions → **Variables** tab →
-   New repository variable: `EXECUTION_MODE` = `paper`.
+1. Set `"executionMode": "paper"` in `config/mode.json` and commit with a
+   reason — the phase flip is part of the audited record. (An `EXECUTION_MODE`
+   env var / repo Actions variable overrides the file in either direction.)
+   **Flipped to paper on 2026-09-09.**
 2. Optional but recommended — Telegram approvals:
    - Message @BotFather on Telegram → `/newbot` → copy the token.
    - Message your new bot once (anything), then open

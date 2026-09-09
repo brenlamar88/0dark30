@@ -1,0 +1,4 @@
+{
+  "executionMode": "paper",
+  "comment": "Phase gate switch (PLAN.md Part 3). shadow = Phase 1 proposals only; paper = Phase 2, approved orders flow to the Alpaca paper account. Changing this is a phase decision - commit it with a reason. Flipped to paper 2026-09-09 at the owner's direction, ~3 weeks into the shadow record (ahead of the 8-week gate; paper is riskless and the shadow book continues in parallel as the all-proposals counterfactual)."
+}

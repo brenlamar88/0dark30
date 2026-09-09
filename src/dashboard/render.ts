@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { repoRoot } from "../config.js";
+import { executionMode, repoRoot } from "../config.js";
 import type { Params, Proposal } from "../types.js";
 import type { Journal } from "../journal/journal.js";
 import { shortName } from "../risk/explain.js";
@@ -208,7 +208,11 @@ export function renderDashboard(journal: Journal, params: Params): string {
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 1, <strong>shadow mode</strong>: simulated $${pool.toLocaleString()} pool, rule version <span class="mono">${esc(params.ruleVersion)}</span>, no orders anywhere. Not financial advice. Generated ${generatedAt}.</p>
+<p class="banner">${
+    executionMode() === "paper"
+      ? `Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $${pool.toLocaleString()} pool, rule version <span class="mono">${esc(params.ruleVersion)}</span>. No real money anywhere. Not financial advice.`
+      : `Phase 1, <strong>shadow mode</strong>: simulated $${pool.toLocaleString()} pool, rule version <span class="mono">${esc(params.ruleVersion)}</span>, no orders anywhere. Not financial advice.`
+  } Generated ${generatedAt}.</p>
 ${frozen ? `<p class="banner freeze">TRADING FROZEN: ${esc(String(frozen.reason ?? "unexplained divergence"))} (${esc(String(frozen.at ?? ""))}) — clear data/state/freeze.json with a journaled reason to resume.</p>` : ""}
 <p>${dates.length ? `<a href="briefs/${dates[dates.length - 1]}.html">Latest morning brief (${dates[dates.length - 1]}) →</a>` : ""}${existsSync(path.join(repoRoot, "docs", "backtest.html")) ? `${dates.length ? " · " : ""}<a href="backtest.html">Model-based backtest study →</a>` : ""}</p>
 <div class="tiles">

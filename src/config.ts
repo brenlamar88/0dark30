@@ -44,11 +44,19 @@ export const env = {
 /**
  * Phase gate flag (PLAN.md Part 3). "shadow" = Phase 1, proposals only.
  * "paper" = Phase 2, orders flow to the Alpaca paper account after human
- * approval. Set as a GitHub Actions repository *variable* EXECUTION_MODE so
- * the flip is visible in the repo settings, not buried in a secret.
+ * approval. Primary switch is config/mode.json - a phase flip is a commit
+ * with a reason, part of the audited record. The EXECUTION_MODE env var
+ * remains as an override (either direction) for CI or local experiments.
  */
 export function executionMode(): "shadow" | "paper" {
-  return process.env.EXECUTION_MODE === "paper" ? "paper" : "shadow";
+  if (process.env.EXECUTION_MODE === "paper") return "paper";
+  if (process.env.EXECUTION_MODE === "shadow") return "shadow";
+  try {
+    const raw = readFileSync(path.join(repoRoot, "config", "mode.json"), "utf8");
+    return JSON.parse(raw).executionMode === "paper" ? "paper" : "shadow";
+  } catch {
+    return "shadow";
+  }
 }
 
 export function todayEt(): string {

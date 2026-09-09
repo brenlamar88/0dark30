@@ -165,6 +165,7 @@ export async function runPremarket(): Promise<void> {
     openShadowCount: openShadow.length,
     llmDegraded: llm === null,
     screenedOut,
+    mode: executionMode(),
   });
   mkdirSync(briefsDir, { recursive: true });
   const briefPath = path.join(briefsDir, `${today}.html`);
