@@ -1,1 +1,1 @@
-premarket
+midday
