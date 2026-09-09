@@ -7,12 +7,12 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 1.74,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "5cdc366b-3bf7-4a37-8311-8ef9eed82079",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-09-09T19:59:58.500Z",
-    "updatedAt": "2026-09-09T19:59:58.500Z"
+    "updatedAt": "2026-09-09T21:51:42.467Z"
   },
   {
     "id": "5732347a-4120-44a8-a11e-7e3e4f74ec98",
@@ -22,12 +22,12 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 0.93,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "a703079d-5b89-4cce-9aa9-aad2c0a1e118",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-09-09T19:59:58.756Z",
-    "updatedAt": "2026-09-09T19:59:58.756Z"
+    "updatedAt": "2026-09-09T21:51:42.467Z"
   },
   {
     "id": "f7da48dd-c5a4-4f59-9c5a-2c9a43916764",
@@ -37,12 +37,12 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 1,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "63ad615c-53c5-4a26-bc35-5893f1daf5cc",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-09-09T19:59:58.788Z",
-    "updatedAt": "2026-09-09T19:59:58.788Z"
+    "updatedAt": "2026-09-09T21:51:42.467Z"
   },
   {
     "id": "c3cacdb7-9ffc-44d2-84c0-5767abc5a554",
@@ -52,12 +52,12 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 0.48,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "2c1346aa-4d69-4024-8881-324018a6ac84",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-09-09T19:59:58.830Z",
-    "updatedAt": "2026-09-09T19:59:58.830Z"
+    "updatedAt": "2026-09-09T21:51:42.467Z"
   },
   {
     "id": "44d7dff2-e300-4ab1-9691-783ae31726cc",
@@ -67,11 +67,11 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 0.3,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "c84ba921-8ce0-4b9f-adae-bea8ede0d60d",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-09-09T19:59:58.855Z",
-    "updatedAt": "2026-09-09T19:59:58.855Z"
+    "updatedAt": "2026-09-09T21:51:42.467Z"
   }
 ]
