@@ -54,10 +54,13 @@ jobs:
             case "$c" in midday|postclose|backtest) ;; *) c=premarket ;; esac
             echo "cycle=$c" >> "$GITHUB_OUTPUT"
           else
-            case "$(date -u +%H)" in
-              12|13) echo "cycle=premarket" >> "$GITHUB_OUTPUT" ;;
-              14|15|17|18|19|20) echo "cycle=midday" >> "$GITHUB_OUTPUT" ;;
-              *) echo "cycle=postclose" >> "$GITHUB_OUTPUT" ;;
+            # Route by WHICH cron fired, not the wall clock - GitHub delays
+            # schedules by hours, which silently misrouted every cycle for two
+            # weeks when this used date-based inference.
+            case "${{ github.event.schedule }}" in
+              "30 12 * * 1-5") echo "cycle=premarket" >> "$GITHUB_OUTPUT" ;;
+              "15 21 * * 1-5") echo "cycle=postclose" >> "$GITHUB_OUTPUT" ;;
+              *) echo "cycle=midday" >> "$GITHUB_OUTPUT" ;;
             esac
           fi
       - name: Check secrets
