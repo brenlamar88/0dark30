@@ -38,3 +38,4 @@
 {"date":"2026-09-08","spy_close":766.06,"shadow_realized_total":177.25,"shadow_unrealized":0,"shadow_open_count":0,"shadow_closed_count":6,"realized_today":0,"rule_version":"wheel-v1"}
 {"date":"2026-09-09","spy_close":762.395,"shadow_realized_total":177.25,"shadow_unrealized":0,"shadow_open_count":0,"shadow_closed_count":6,"realized_today":0,"rule_version":"wheel-v1"}
 {"date":"2026-09-09","spy_close":762.425,"shadow_realized_total":177.25,"shadow_unrealized":-35.99999999999995,"shadow_open_count":5,"shadow_closed_count":6,"realized_today":0,"rule_version":"wheel-v1","paper_premium_cashflow":0,"paper_open_positions":0,"paper_filled_orders":0}
+{"date":"2026-09-10","spy_close":757.87,"shadow_realized_total":177.25,"shadow_unrealized":-175.99999999999997,"shadow_open_count":6,"shadow_closed_count":6,"realized_today":0,"rule_version":"wheel-v1","paper_premium_cashflow":0,"paper_open_positions":0,"paper_filled_orders":0}
