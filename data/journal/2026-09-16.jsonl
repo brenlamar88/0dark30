@@ -27,3 +27,5 @@
 {"ts":"2026-09-16T22:15:57.659Z","type":"cycle.midday.start","ruleVersion":"wheel-v1","payload":{"today":"2026-09-16","mode":"paper"}}
 {"ts":"2026-09-16T22:15:57.820Z","type":"approval.expired","ruleVersion":"wheel-v1","payload":{"proposalId":"49bd6662-8c86-4419-a119-353956e1d839","date":"2026-09-15"}}
 {"ts":"2026-09-16T22:15:57.935Z","type":"cycle.midday.done","ruleVersion":"wheel-v1","payload":{"frozen":false,"positions":0,"approvals":{"approved":0,"rejected":0}}}
+{"ts":"2026-09-16T23:39:29.644Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-09-16"}}
+{"ts":"2026-09-16T23:39:30.840Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":754.05,"realizedTotal":177.25,"unrealized":-222.5,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}

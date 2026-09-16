@@ -31,28 +31,28 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-16 17:09 UTC.</p>
+<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-16 23:39 UTC.</p>
 
 <p><a href="briefs/2026-09-16.html">Latest morning brief (2026-09-16) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
-<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$44</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$-341</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$-45</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$-562</div><div class="tile-note">the null hypothesis</div></div>
 <div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">9 / 6</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">44</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">44/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">45</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">45/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 
 <figure class="chart" aria-label="Cumulative shadow book profit and loss versus SPY buy-and-hold on the same pool">
 <svg viewBox="0 0 760 300" role="img" id="pnl-chart">
-  <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$-341</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$688</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$174</text>
-  <line class="zero" x1="56" x2="744" y1="187.2" y2="187.2"/>
-  <path class="line s1" d="M56.0,187.2 L94.2,174.2 L132.4,173.7 L170.7,176.1 L208.9,171.5 L247.1,159.9 L285.3,181.0 L323.6,158.6 L361.8,180.7 L400.0,162.2 L438.2,139.6 L476.4,143.1 L514.7,143.1 L552.9,143.1 L591.1,152.0 L629.3,186.9 L667.6,163.1 L705.8,173.4 L744.0,176.2"/>
-  <path class="line s2" d="M56.0,187.2 L94.2,137.9 L132.4,173.5 L170.7,135.5 L208.9,133.0 L247.1,47.6 L285.3,78.6 L323.6,117.9 L361.8,203.3 L400.0,146.2 L438.2,16.0 L476.4,63.9 L514.7,63.9 L552.9,131.1 L591.1,190.4 L629.3,264.7 L667.6,162.4 L705.8,217.6 L744.0,272.0"/>
-  <circle class="pt s1" data-i="0" cx="56.0" cy="187.2" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="187.2" r="3"/><circle class="pt s1" data-i="1" cx="94.2" cy="174.2" r="3"/><circle class="pt s2" data-i="1" cx="94.2" cy="137.9" r="3"/><circle class="pt s1" data-i="2" cx="132.4" cy="173.7" r="3"/><circle class="pt s2" data-i="2" cx="132.4" cy="173.5" r="3"/><circle class="pt s1" data-i="3" cx="170.7" cy="176.1" r="3"/><circle class="pt s2" data-i="3" cx="170.7" cy="135.5" r="3"/><circle class="pt s1" data-i="4" cx="208.9" cy="171.5" r="3"/><circle class="pt s2" data-i="4" cx="208.9" cy="133.0" r="3"/><circle class="pt s1" data-i="5" cx="247.1" cy="159.9" r="3"/><circle class="pt s2" data-i="5" cx="247.1" cy="47.6" r="3"/><circle class="pt s1" data-i="6" cx="285.3" cy="181.0" r="3"/><circle class="pt s2" data-i="6" cx="285.3" cy="78.6" r="3"/><circle class="pt s1" data-i="7" cx="323.6" cy="158.6" r="3"/><circle class="pt s2" data-i="7" cx="323.6" cy="117.9" r="3"/><circle class="pt s1" data-i="8" cx="361.8" cy="180.7" r="3"/><circle class="pt s2" data-i="8" cx="361.8" cy="203.3" r="3"/><circle class="pt s1" data-i="9" cx="400.0" cy="162.2" r="3"/><circle class="pt s2" data-i="9" cx="400.0" cy="146.2" r="3"/><circle class="pt s1" data-i="10" cx="438.2" cy="139.6" r="3"/><circle class="pt s2" data-i="10" cx="438.2" cy="16.0" r="3"/><circle class="pt s1" data-i="11" cx="476.4" cy="143.1" r="3"/><circle class="pt s2" data-i="11" cx="476.4" cy="63.9" r="3"/><circle class="pt s1" data-i="12" cx="514.7" cy="143.1" r="3"/><circle class="pt s2" data-i="12" cx="514.7" cy="63.9" r="3"/><circle class="pt s1" data-i="13" cx="552.9" cy="143.1" r="3"/><circle class="pt s2" data-i="13" cx="552.9" cy="131.1" r="3"/><circle class="pt s1" data-i="14" cx="591.1" cy="152.0" r="3"/><circle class="pt s2" data-i="14" cx="591.1" cy="190.4" r="3"/><circle class="pt s1" data-i="15" cx="629.3" cy="186.9" r="3"/><circle class="pt s2" data-i="15" cx="629.3" cy="264.7" r="3"/><circle class="pt s1" data-i="16" cx="667.6" cy="163.1" r="3"/><circle class="pt s2" data-i="16" cx="667.6" cy="162.4" r="3"/><circle class="pt s1" data-i="17" cx="705.8" cy="173.4" r="3"/><circle class="pt s2" data-i="17" cx="705.8" cy="217.6" r="3"/><circle class="pt s1" data-i="18" cx="744.0" cy="176.2" r="3"/><circle class="pt s2" data-i="18" cx="744.0" cy="272.0" r="3"/>
+  <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$-562</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$688</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$63</text>
+  <line class="zero" x1="56" x2="744" y1="156.9" y2="156.9"/>
+  <path class="line s1" d="M56.0,156.9 L92.2,146.3 L128.4,145.9 L164.6,147.8 L200.8,144.0 L237.1,134.5 L273.3,151.8 L309.5,133.4 L345.7,151.5 L381.9,136.4 L418.1,117.8 L454.3,120.6 L490.5,120.6 L526.7,120.6 L562.9,128.0 L599.2,156.7 L635.4,137.1 L671.6,145.6 L707.8,147.9 L744.0,166.2"/>
+  <path class="line s2" d="M56.0,156.9 L92.2,116.4 L128.4,145.6 L164.6,114.4 L200.8,112.3 L237.1,42.0 L273.3,67.5 L309.5,99.9 L345.7,170.2 L381.9,123.2 L418.1,16.0 L454.3,55.4 L490.5,55.4 L526.7,110.7 L562.9,159.5 L599.2,220.7 L635.4,136.5 L671.6,182.0 L707.8,226.7 L744.0,272.0"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="156.9" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="156.9" r="3"/><circle class="pt s1" data-i="1" cx="92.2" cy="146.3" r="3"/><circle class="pt s2" data-i="1" cx="92.2" cy="116.4" r="3"/><circle class="pt s1" data-i="2" cx="128.4" cy="145.9" r="3"/><circle class="pt s2" data-i="2" cx="128.4" cy="145.6" r="3"/><circle class="pt s1" data-i="3" cx="164.6" cy="147.8" r="3"/><circle class="pt s2" data-i="3" cx="164.6" cy="114.4" r="3"/><circle class="pt s1" data-i="4" cx="200.8" cy="144.0" r="3"/><circle class="pt s2" data-i="4" cx="200.8" cy="112.3" r="3"/><circle class="pt s1" data-i="5" cx="237.1" cy="134.5" r="3"/><circle class="pt s2" data-i="5" cx="237.1" cy="42.0" r="3"/><circle class="pt s1" data-i="6" cx="273.3" cy="151.8" r="3"/><circle class="pt s2" data-i="6" cx="273.3" cy="67.5" r="3"/><circle class="pt s1" data-i="7" cx="309.5" cy="133.4" r="3"/><circle class="pt s2" data-i="7" cx="309.5" cy="99.9" r="3"/><circle class="pt s1" data-i="8" cx="345.7" cy="151.5" r="3"/><circle class="pt s2" data-i="8" cx="345.7" cy="170.2" r="3"/><circle class="pt s1" data-i="9" cx="381.9" cy="136.4" r="3"/><circle class="pt s2" data-i="9" cx="381.9" cy="123.2" r="3"/><circle class="pt s1" data-i="10" cx="418.1" cy="117.8" r="3"/><circle class="pt s2" data-i="10" cx="418.1" cy="16.0" r="3"/><circle class="pt s1" data-i="11" cx="454.3" cy="120.6" r="3"/><circle class="pt s2" data-i="11" cx="454.3" cy="55.4" r="3"/><circle class="pt s1" data-i="12" cx="490.5" cy="120.6" r="3"/><circle class="pt s2" data-i="12" cx="490.5" cy="55.4" r="3"/><circle class="pt s1" data-i="13" cx="526.7" cy="120.6" r="3"/><circle class="pt s2" data-i="13" cx="526.7" cy="110.7" r="3"/><circle class="pt s1" data-i="14" cx="562.9" cy="128.0" r="3"/><circle class="pt s2" data-i="14" cx="562.9" cy="159.5" r="3"/><circle class="pt s1" data-i="15" cx="599.2" cy="156.7" r="3"/><circle class="pt s2" data-i="15" cx="599.2" cy="220.7" r="3"/><circle class="pt s1" data-i="16" cx="635.4" cy="137.1" r="3"/><circle class="pt s2" data-i="16" cx="635.4" cy="136.5" r="3"/><circle class="pt s1" data-i="17" cx="671.6" cy="145.6" r="3"/><circle class="pt s2" data-i="17" cx="671.6" cy="182.0" r="3"/><circle class="pt s1" data-i="18" cx="707.8" cy="147.9" r="3"/><circle class="pt s2" data-i="18" cx="707.8" cy="226.7" r="3"/><circle class="pt s1" data-i="19" cx="744.0" cy="166.2" r="3"/><circle class="pt s2" data-i="19" cx="744.0" cy="272.0" r="3"/>
   <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
   <text class="tick" x="56" y="292">2026-08-20</text>
-  <text class="tick" x="744" y="292" text-anchor="end">2026-09-15</text>
+  <text class="tick" x="744" y="292" text-anchor="end">2026-09-16</text>
   <rect id="hover-capture" x="56" y="16" width="688" height="256" fill="transparent"/>
 </svg>
 <div id="tooltip" class="tooltip" hidden></div>
@@ -63,7 +63,7 @@
 </figure>
 <script>
 (function () {
-  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":191.25,"spy":688.0884319844794},{"date":"2026-09-04","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-07","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-08","shadow":177.25,"spy":225.53827594344878},{"date":"2026-09-09","shadow":141.25000000000006,"spy":-12.784873200288871},{"date":"2026-09-10","shadow":1.2500000000000284,"spy":-311.4263984684396},{"date":"2026-09-11","shadow":96.75,"spy":99.65644750989932},{"date":"2026-09-14","shadow":55.25,"spy":-122.27583855655699},{"date":"2026-09-15","shadow":44.25000000000003,"spy":-340.92995200755706}];
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":191.25,"spy":688.0884319844794},{"date":"2026-09-04","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-07","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-08","shadow":177.25,"spy":225.53827594344878},{"date":"2026-09-09","shadow":141.25000000000006,"spy":-12.784873200288871},{"date":"2026-09-10","shadow":1.2500000000000284,"spy":-311.4263984684396},{"date":"2026-09-11","shadow":96.75,"spy":99.65644750989932},{"date":"2026-09-14","shadow":55.25,"spy":-122.27583855655699},{"date":"2026-09-15","shadow":44.25000000000003,"spy":-340.92995200755706},{"date":"2026-09-16","shadow":-45.25,"spy":-561.8787862893715}];
   var svg = document.getElementById("pnl-chart");
   var cap = document.getElementById("hover-capture");
   var tip = document.getElementById("tooltip");
@@ -94,14 +94,14 @@
 <td>$28</td><td>$2,300</td>
 <td>14.3%</td>
 <td>open</td>
-<td>—</td></tr>
+<td>$-2</td></tr>
 <tr>
 <td>2026-09-16</td><td>URA</td><td class="mono">URA261030P00038000</td>
 <td>0.24</td><td>44</td>
 <td>$95</td><td>$3,800</td>
 <td>20.1%</td>
 <td>open</td>
-<td>—</td></tr>
+<td>$-9</td></tr>
 <tr>
 <td>2026-09-16</td><td>IBIT</td><td class="mono">IBIT261023P00040500</td>
 <td>0.29</td><td>37</td>
@@ -129,7 +129,7 @@
 <td>$43</td><td>$4,000</td>
 <td>8.3%</td>
 <td>open</td>
-<td>$-3</td></tr>
+<td>$-4</td></tr>
 <tr>
 <td>2026-09-15</td><td>XLF</td><td class="mono">XLF261030P00055000</td>
 <td>0.29</td><td>45</td>
@@ -192,7 +192,7 @@
 <td>$51</td><td>$5,500</td>
 <td>9.2%</td>
 <td>open</td>
-<td>$4</td></tr>
+<td>$-24</td></tr>
 <tr>
 <td>2026-09-10</td><td>EWZ</td><td class="mono">EWZ261016P00036000</td>
 <td>0.26</td><td>36</td>
@@ -220,35 +220,35 @@
 <td>$35</td><td>$3,350</td>
 <td>12.3%</td>
 <td>open</td>
-<td>$1</td></tr>
+<td>$-21</td></tr>
 <tr>
 <td>2026-09-09</td><td>JETS</td><td class="mono">JETS261016P00026000</td>
 <td>0.22</td><td>37</td>
 <td>$40</td><td>$2,600</td>
 <td>14.8%</td>
 <td>open</td>
-<td>$7</td></tr>
+<td>$-2</td></tr>
 <tr>
 <td>2026-09-09</td><td>IBIT</td><td class="mono">IBIT261009P00042000</td>
 <td>0.27</td><td>30</td>
 <td>$88</td><td>$4,200</td>
 <td>25.2%</td>
 <td>open</td>
-<td>$-32</td></tr>
+<td>$-20</td></tr>
 <tr>
 <td>2026-09-09</td><td>EWZ</td><td class="mono">EWZ261009P00036000</td>
 <td>0.29</td><td>30</td>
 <td>$88</td><td>$3,600</td>
 <td>28.7%</td>
 <td>open</td>
-<td>$7</td></tr>
+<td>$-8</td></tr>
 <tr>
 <td>2026-09-09</td><td>SLV</td><td class="mono">SLV261009P00058000</td>
 <td>0.29</td><td>30</td>
 <td>$152</td><td>$5,800</td>
 <td>31.5%</td>
 <td>open</td>
-<td>$-116</td></tr>
+<td>$-133</td></tr>
 <tr>
 <td>2026-08-26</td><td>EWZ</td><td class="mono">EWZ260930P00034000</td>
 <td>0.25</td><td>35</td>
@@ -302,7 +302,10 @@
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td>2026-09-15</td><td>757.42</td>
+<tbody><tr><td>2026-09-16</td><td>754.05</td>
+<td>$177</td><td>$-223</td>
+<td>9</td><td>6</td></tr>
+<tr><td>2026-09-15</td><td>757.42</td>
 <td>$177</td><td>$-133</td>
 <td>7</td><td>6</td></tr>
 <tr><td>2026-09-14</td><td>760.755</td>
@@ -358,9 +361,6 @@
 <td>3</td><td>3</td></tr>
 <tr><td>2026-09-02</td><td>765.13</td>
 <td>$91</td><td>$9</td>
-<td>3</td><td>3</td></tr>
-<tr><td>2026-09-02</td><td>764.94</td>
-<td>$91</td><td>$-7</td>
 <td>3</td><td>3</td></tr></tbody>
 </table></div>
 <p class="muted">Kill criteria and gates live in PLAN.md. Numbers are pre-cost and pre-tax; nothing here proves anything until months accumulate.</p>
