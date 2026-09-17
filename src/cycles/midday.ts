@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { daysBetween, executionMode, loadParams, todayEt } from "../config.js";
-import { optionMids } from "../data/alpaca.js";
+import { optionQuotes } from "../data/alpaca.js";
 import { alpacaPaper } from "../broker/alpacaPaper.js";
 import type { BrokerAdapter } from "../broker/types.js";
 import { Journal } from "../journal/journal.js";
@@ -97,7 +97,7 @@ export async function runMidday(): Promise<void> {
         await journal.event("approval.blocked-frozen", { proposalId: p.id });
         continue;
       }
-      await stageEntry(broker, journal, p, orders);
+      await stageEntry(broker, journal, p, orders, params.execution?.limitSpreadFraction ?? 0.25);
     }
   }
 
@@ -107,9 +107,12 @@ export async function runMidday(): Promise<void> {
   orders = loadOrders();
   const openOrders = await broker.getOpenOrders();
   const shortPuts = positions.filter((p) => p.assetClass === "option" && p.qty < 0);
-  const mids = shortPuts.length
-    ? await optionMids(shortPuts.map((p) => p.symbol)).catch(() => ({}) as Record<string, number>)
+  const quotes = shortPuts.length
+    ? await optionQuotes(shortPuts.map((p) => p.symbol)).catch(
+        () => ({}) as Record<string, { bid: number; ask: number; mid: number }>,
+      )
     : {};
+  const f = params.execution?.limitSpreadFraction ?? 0.25;
   for (const pos of shortPuts) {
     const hasClose = openOrders.some((o) => o.symbol === pos.symbol && o.side === "buy");
     if (hasClose) continue;
@@ -117,8 +120,11 @@ export async function runMidday(): Promise<void> {
     const dte = expiry ? daysBetween(today, expiry) : null;
     const entry = pos.avgEntryPrice;
     const manage = dte !== null && dte <= params.csp.manageAtDte;
+    const q = quotes[pos.symbol];
+    // Marketable close crosses toward the sellers (mid + f*spread); the
+    // resting profit-target close stays a patient limit at the target.
     const target = manage
-      ? (mids[pos.symbol] ?? entry) // marketable: close at current mid
+      ? round2(q ? Math.min(q.ask, q.mid + f * (q.ask - q.bid)) : entry)
       : round2(entry * params.csp.profitTargetFraction);
     const record: OrderRecord = {
       id: randomUUID(),
@@ -167,25 +173,30 @@ async function stageEntry(
   journal: Journal,
   p: Proposal,
   orders: OrderRecord[],
+  limitSpreadFraction: number,
 ): Promise<void> {
   const now = new Date().toISOString();
   // Re-quote before staging: an approval is for the premium the human saw.
   // If the premium has decayed more than 30% since the proposal, do not chase.
-  let currentMid = p.mid;
+  let q = { bid: p.bid, ask: p.ask, mid: p.mid };
   try {
-    const mids = await optionMids([p.occSymbol]);
-    if (mids[p.occSymbol] !== undefined) currentMid = mids[p.occSymbol]!;
+    const quotes = await optionQuotes([p.occSymbol]);
+    if (quotes[p.occSymbol]) q = quotes[p.occSymbol]!;
   } catch {
-    /* quote unavailable: fall back to proposal mid as the limit (conservative for a sell) */
+    /* quote unavailable: fall back to the proposal quote (conservative for a sell) */
   }
-  if (currentMid < p.mid * 0.7) {
+  if (q.mid < p.mid * 0.7) {
     await journal.event("approval.skipped-premium-decayed", {
       proposalId: p.id,
       proposalMid: p.mid,
-      currentMid,
+      currentMid: q.mid,
     });
     return;
   }
+  // Sell entries cross toward the buyers: mid - f*spread, never below bid+0.01.
+  // The first five paper orders sat at exact mid for an hour and expired
+  // unfilled - passivity has a cost too.
+  const entryLimit = round2(Math.max(q.bid + 0.01, q.mid - limitSpreadFraction * (q.ask - q.bid)));
   const record: OrderRecord = {
     id: randomUUID(),
     proposalId: p.id,
@@ -193,7 +204,7 @@ async function stageEntry(
     occSymbol: p.occSymbol,
     side: "sell",
     qty: 1,
-    limitPrice: round2(currentMid),
+    limitPrice: entryLimit,
     status: "staged",
     brokerOrderId: null,
     filledQty: 0,

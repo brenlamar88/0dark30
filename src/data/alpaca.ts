@@ -103,6 +103,29 @@ export async function putChain(
   return quotes;
 }
 
+/** Current bid/ask/mid for specific contracts (staging and marketable closes need the spread). */
+export async function optionQuotes(
+  occSymbols: string[],
+): Promise<Record<string, { bid: number; ask: number; mid: number }>> {
+  const out: Record<string, { bid: number; ask: number; mid: number }> = {};
+  const byUnderlying = new Map<string, string[]>();
+  for (const occ of occSymbols) {
+    const parsed = parseOccSymbol(occ);
+    if (!parsed) continue;
+    const list = byUnderlying.get(parsed.underlying) ?? [];
+    list.push(occ);
+    byUnderlying.set(parsed.underlying, list);
+  }
+  for (const [underlying, occs] of byUnderlying) {
+    const expiries = occs.map((o) => parseOccSymbol(o)!.expiry).sort();
+    const chain = await putChain(underlying, expiries[0]!, expiries[expiries.length - 1]!);
+    for (const q of chain) {
+      if (occs.includes(q.occSymbol)) out[q.occSymbol] = { bid: q.bid, ask: q.ask, mid: q.mid };
+    }
+  }
+  return out;
+}
+
 /** Current snapshots for specific contracts (used by postclose to mark shadow proposals). */
 export async function optionMids(occSymbols: string[]): Promise<Record<string, number>> {
   const out: Record<string, number> = {};

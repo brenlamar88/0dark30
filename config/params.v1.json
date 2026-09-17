@@ -31,5 +31,9 @@
     },
     "proposalTtlHours": 6
   },
-  "maxProposalsPerDay": 5
+  "maxProposalsPerDay": 5,
+  "execution": {
+    "limitSpreadFraction": 0.25,
+    "comment": "Paper-phase execution mechanics (2026-09-17, after all 5 first orders expired unfilled at mid): entries price at mid - fraction*spread (never below bid+0.01), marketable 21-DTE closes at mid + fraction*spread. Signal rules unchanged - wheel-v1 attribution is unaffected."
+  }
 }

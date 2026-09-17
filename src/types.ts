@@ -32,6 +32,7 @@ export interface Params {
     proposalTtlHours: number;
   };
   maxProposalsPerDay: number;
+  execution?: { limitSpreadFraction: number; comment?: string };
 }
 
 export interface OptionQuote {
