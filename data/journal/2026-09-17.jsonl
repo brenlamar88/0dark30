@@ -59,3 +59,5 @@
 {"ts":"2026-09-17T22:22:12.948Z","type":"approval.expired","ruleVersion":"wheel-v1","payload":{"proposalId":"134f2040-7c01-4daa-99ef-8c741e20344b","date":"2026-09-16"}}
 {"ts":"2026-09-17T22:22:12.949Z","type":"approval.expired","ruleVersion":"wheel-v1","payload":{"proposalId":"8121c3cb-40fa-4d84-a48e-d0797e98387a","date":"2026-09-16"}}
 {"ts":"2026-09-17T22:22:13.030Z","type":"cycle.midday.done","ruleVersion":"wheel-v1","payload":{"frozen":false,"positions":0,"approvals":{"approved":0,"rejected":0}}}
+{"ts":"2026-09-17T23:33:52.470Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-09-17"}}
+{"ts":"2026-09-17T23:33:53.526Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":762.64,"realizedTotal":177.25,"unrealized":25.499999999999993,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}
