@@ -1,91 +1,23 @@
 [
   {
-    "id": "6f7e5e76-122f-43d0-86c5-969e895e6048",
+    "id": "e3669202-69e0-4c12-a851-5e43102bdb44",
     "date": "2026-09-17",
-    "createdAt": "2026-09-17T16:24:41.570Z",
-    "ruleVersion": "wheel-v1",
-    "strategy": "csp",
-    "underlying": "SLV",
-    "sector": "silver",
-    "occSymbol": "SLV261023P00056000",
-    "expiry": "2026-10-23",
-    "strike": 56,
-    "dte": 36,
-    "delta": -0.2836,
-    "bid": 1.38,
-    "ask": 1.39,
-    "mid": 1.3849999999999998,
-    "collateral": 5600,
-    "premiumAtMid": 138.49999999999997,
-    "rocAnnualizedAtBid": 0.2498511904761905,
-    "ivRank": {
-      "rank": 10,
-      "observations": 10,
-      "confident": false
-    },
-    "checks": [
-      {
-        "name": "reconciler-green",
-        "pass": true,
-        "detail": "no unexplained broker divergence"
-      },
-      {
-        "name": "drawdown-halt",
-        "pass": true,
-        "detail": "drawdown 0.0% of HWM (halt at 25%)"
-      },
-      {
-        "name": "vol-regime-freeze",
-        "pass": true,
-        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
-      },
-      {
-        "name": "per-name-cap",
-        "pass": false,
-        "detail": "post-trade SLV exposure $11400 vs cap $6000"
-      },
-      {
-        "name": "sector-cap",
-        "pass": true,
-        "detail": "post-trade silver exposure $11400 vs cap $12500"
-      },
-      {
-        "name": "cash-buffer",
-        "pass": true,
-        "detail": "post-trade cash $9250 vs buffer $5000"
-      }
-    ],
-    "verdict": "blocked",
-    "ttlHours": 6,
-    "screenNotes": [
-      "iv-rank low confidence (10/60 observations) - threshold not yet enforced"
-    ],
-    "llm": null,
-    "shadowStatus": "blocked",
-    "entryMid": 1.3849999999999998,
-    "currentMid": 1.3849999999999998,
-    "shadowPnl": null,
-    "closedReason": null
-  },
-  {
-    "id": "f9f2036e-45db-4449-965c-bc5faf77eca0",
-    "date": "2026-09-17",
-    "createdAt": "2026-09-17T16:24:41.570Z",
+    "createdAt": "2026-09-17T17:10:07.878Z",
     "ruleVersion": "wheel-v1",
     "strategy": "csp",
     "underlying": "EWZ",
     "sector": "brazil",
-    "occSymbol": "EWZ261023P00035000",
-    "expiry": "2026-10-23",
+    "occSymbol": "EWZ261030P00035000",
+    "expiry": "2026-10-30",
     "strike": 35,
-    "dte": 36,
-    "delta": -0.25,
-    "bid": 0.77,
-    "ask": 0.8,
-    "mid": 0.785,
+    "dte": 43,
+    "delta": -0.2928,
+    "bid": 1.3,
+    "ask": 1.38,
+    "mid": 1.3399999999999999,
     "collateral": 3500,
-    "premiumAtMid": 78.5,
-    "rocAnnualizedAtBid": 0.22305555555555556,
+    "premiumAtMid": 134,
+    "rocAnnualizedAtBid": 0.3152823920265781,
     "ivRank": {
       "rank": 100,
       "observations": 10,
@@ -130,15 +62,83 @@
     ],
     "llm": null,
     "shadowStatus": "blocked",
-    "entryMid": 0.785,
-    "currentMid": 0.785,
+    "entryMid": 1.3399999999999999,
+    "currentMid": 1.3399999999999999,
     "shadowPnl": null,
     "closedReason": null
   },
   {
-    "id": "3128b9d1-4da2-410f-8a20-b7f84f06a35e",
+    "id": "5253b3c2-526d-4711-91f1-16c4b60b72d3",
     "date": "2026-09-17",
-    "createdAt": "2026-09-17T16:24:41.570Z",
+    "createdAt": "2026-09-17T17:10:07.878Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "underlying": "SLV",
+    "sector": "silver",
+    "occSymbol": "SLV261030P00056000",
+    "expiry": "2026-10-30",
+    "strike": 56,
+    "dte": 43,
+    "delta": -0.298,
+    "bid": 1.65,
+    "ask": 1.7,
+    "mid": 1.6749999999999998,
+    "collateral": 5600,
+    "premiumAtMid": 167.49999999999997,
+    "rocAnnualizedAtBid": 0.2501038205980067,
+    "ivRank": {
+      "rank": 0,
+      "observations": 10,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade SLV exposure $11400 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade silver exposure $11400 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $9250 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 6,
+    "screenNotes": [
+      "iv-rank low confidence (10/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 1.6749999999999998,
+    "currentMid": 1.6749999999999998,
+    "shadowPnl": null,
+    "closedReason": null
+  },
+  {
+    "id": "643f9288-251f-4f9f-af2a-4f909e1fae13",
+    "date": "2026-09-17",
+    "createdAt": "2026-09-17T17:10:07.878Z",
     "ruleVersion": "wheel-v1",
     "strategy": "csp",
     "underlying": "IBIT",
@@ -147,13 +147,13 @@
     "expiry": "2026-10-30",
     "strike": 41,
     "dte": 43,
-    "delta": -0.2886,
-    "bid": 1.05,
-    "ask": 1.07,
-    "mid": 1.06,
+    "delta": -0.2832,
+    "bid": 0.99,
+    "ask": 1.05,
+    "mid": 1.02,
     "collateral": 4100,
-    "premiumAtMid": 106,
-    "rocAnnualizedAtBid": 0.21738513896766876,
+    "premiumAtMid": 102,
+    "rocAnnualizedAtBid": 0.20496313102665914,
     "ivRank": {
       "rank": 0,
       "observations": 7,
@@ -198,30 +198,30 @@
     ],
     "llm": null,
     "shadowStatus": "blocked",
-    "entryMid": 1.06,
-    "currentMid": 1.06,
+    "entryMid": 1.02,
+    "currentMid": 1.02,
     "shadowPnl": null,
     "closedReason": null
   },
   {
-    "id": "8a5f3fad-a99d-4334-8b96-9eb8ad0c9f24",
+    "id": "46777954-e260-4368-a9ff-3d20aacd0b41",
     "date": "2026-09-17",
-    "createdAt": "2026-09-17T16:24:41.570Z",
+    "createdAt": "2026-09-17T17:10:07.878Z",
     "ruleVersion": "wheel-v1",
     "strategy": "csp",
     "underlying": "KWEB",
     "sector": "china-internet",
-    "occSymbol": "KWEB261023P00023000",
-    "expiry": "2026-10-23",
+    "occSymbol": "KWEB261030P00023000",
+    "expiry": "2026-10-30",
     "strike": 23,
-    "dte": 36,
-    "delta": -0.236,
-    "bid": 0.32,
-    "ask": 0.35,
-    "mid": 0.33499999999999996,
+    "dte": 43,
+    "delta": -0.245,
+    "bid": 0.37,
+    "ask": 0.4,
+    "mid": 0.385,
     "collateral": 2300,
-    "premiumAtMid": 33.5,
-    "rocAnnualizedAtBid": 0.14106280193236717,
+    "premiumAtMid": 38.5,
+    "rocAnnualizedAtBid": 0.13655207280080892,
     "ivRank": {
       "rank": 70,
       "observations": 10,
@@ -266,76 +266,8 @@
     ],
     "llm": null,
     "shadowStatus": "open",
-    "entryMid": 0.33499999999999996,
-    "currentMid": 0.33499999999999996,
-    "shadowPnl": null,
-    "closedReason": null
-  },
-  {
-    "id": "0d9c8e67-4320-47f3-a2d7-09cb0009028f",
-    "date": "2026-09-17",
-    "createdAt": "2026-09-17T16:24:41.570Z",
-    "ruleVersion": "wheel-v1",
-    "strategy": "csp",
-    "underlying": "XLF",
-    "sector": "financials",
-    "occSymbol": "XLF261023P00054500",
-    "expiry": "2026-10-23",
-    "strike": 54.5,
-    "dte": 36,
-    "delta": -0.2832,
-    "bid": 0.56,
-    "ask": 0.61,
-    "mid": 0.585,
-    "collateral": 5450,
-    "premiumAtMid": 58.5,
-    "rocAnnualizedAtBid": 0.10417940876656474,
-    "ivRank": {
-      "rank": 100,
-      "observations": 10,
-      "confident": false
-    },
-    "checks": [
-      {
-        "name": "reconciler-green",
-        "pass": true,
-        "detail": "no unexplained broker divergence"
-      },
-      {
-        "name": "drawdown-halt",
-        "pass": true,
-        "detail": "drawdown 0.0% of HWM (halt at 25%)"
-      },
-      {
-        "name": "vol-regime-freeze",
-        "pass": true,
-        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
-      },
-      {
-        "name": "per-name-cap",
-        "pass": false,
-        "detail": "post-trade XLF exposure $10950 vs cap $6000"
-      },
-      {
-        "name": "sector-cap",
-        "pass": true,
-        "detail": "post-trade financials exposure $10950 vs cap $12500"
-      },
-      {
-        "name": "cash-buffer",
-        "pass": true,
-        "detail": "post-trade cash $7100 vs buffer $5000"
-      }
-    ],
-    "verdict": "blocked",
-    "ttlHours": 6,
-    "screenNotes": [
-      "iv-rank low confidence (10/60 observations) - threshold not yet enforced"
-    ],
-    "llm": null,
-    "shadowStatus": "blocked",
-    "entryMid": 0.585,
-    "currentMid": 0.585,
+    "entryMid": 0.385,
+    "currentMid": 0.385,
     "shadowPnl": null,
     "closedReason": null
   }
