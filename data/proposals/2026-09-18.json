@@ -1,0 +1,342 @@
+[
+  {
+    "id": "57aa09ee-5c9d-4031-84ab-51fec0c4a1fb",
+    "date": "2026-09-18",
+    "createdAt": "2026-09-18T16:34:44.575Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "underlying": "EWZ",
+    "sector": "brazil",
+    "occSymbol": "EWZ261030P00034500",
+    "expiry": "2026-10-30",
+    "strike": 34.5,
+    "dte": 42,
+    "delta": -0.2789,
+    "bid": 1.22,
+    "ask": 1.24,
+    "mid": 1.23,
+    "collateral": 3450,
+    "premiumAtMid": 123,
+    "rocAnnualizedAtBid": 0.3073153899240855,
+    "ivRank": {
+      "rank": 91,
+      "observations": 11,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.3% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade EWZ exposure $7050 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade brazil exposure $7050 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $9100 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 6,
+    "screenNotes": [
+      "iv-rank low confidence (11/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 1.23,
+    "currentMid": 1.23,
+    "shadowPnl": null,
+    "closedReason": null
+  },
+  {
+    "id": "71e9fadc-7f70-4f60-a7d4-4918f2f9e65c",
+    "date": "2026-09-18",
+    "createdAt": "2026-09-18T16:34:44.575Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "underlying": "SLV",
+    "sector": "silver",
+    "occSymbol": "SLV261023P00057000",
+    "expiry": "2026-10-23",
+    "strike": 57,
+    "dte": 35,
+    "delta": -0.2898,
+    "bid": 1.37,
+    "ask": 1.43,
+    "mid": 1.4,
+    "collateral": 5700,
+    "premiumAtMid": 140,
+    "rocAnnualizedAtBid": 0.25065162907268174,
+    "ivRank": {
+      "rank": 0,
+      "observations": 11,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.3% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade SLV exposure $11500 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade silver exposure $11500 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $6850 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 6,
+    "screenNotes": [
+      "iv-rank low confidence (11/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 1.4,
+    "currentMid": 1.4,
+    "shadowPnl": null,
+    "closedReason": null
+  },
+  {
+    "id": "d864d174-9157-4bcb-bfe7-53427f113f2c",
+    "date": "2026-09-18",
+    "createdAt": "2026-09-18T16:34:44.575Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "underlying": "IBIT",
+    "sector": "bitcoin",
+    "occSymbol": "IBIT261023P00043500",
+    "expiry": "2026-10-23",
+    "strike": 43.5,
+    "dte": 35,
+    "delta": -0.2818,
+    "bid": 0.99,
+    "ask": 1.01,
+    "mid": 1,
+    "collateral": 4350,
+    "premiumAtMid": 100,
+    "rocAnnualizedAtBid": 0.23733990147783252,
+    "ivRank": {
+      "rank": 13,
+      "observations": 8,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.3% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade IBIT exposure $8550 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade bitcoin exposure $8550 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $8200 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 6,
+    "screenNotes": [
+      "iv-rank low confidence (8/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 1,
+    "currentMid": 1,
+    "shadowPnl": null,
+    "closedReason": null
+  },
+  {
+    "id": "167f0508-85ef-4923-ba39-f5e1d6c9b984",
+    "date": "2026-09-18",
+    "createdAt": "2026-09-18T16:34:44.575Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "underlying": "XLF",
+    "sector": "financials",
+    "occSymbol": "XLF261023P00054500",
+    "expiry": "2026-10-23",
+    "strike": 54.5,
+    "dte": 35,
+    "delta": -0.2909,
+    "bid": 0.53,
+    "ask": 0.58,
+    "mid": 0.5549999999999999,
+    "collateral": 5450,
+    "premiumAtMid": 55.49999999999999,
+    "rocAnnualizedAtBid": 0.10141546526867627,
+    "ivRank": {
+      "rank": 82,
+      "observations": 11,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.3% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade XLF exposure $10950 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade financials exposure $10950 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $7100 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 6,
+    "screenNotes": [
+      "iv-rank low confidence (11/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.5549999999999999,
+    "currentMid": 0.5549999999999999,
+    "shadowPnl": null,
+    "closedReason": null
+  },
+  {
+    "id": "18c97686-0a18-4670-89dd-e69c925c81fd",
+    "date": "2026-09-18",
+    "createdAt": "2026-09-18T16:34:44.575Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "underlying": "XLU",
+    "sector": "utilities",
+    "occSymbol": "XLU261030P00040000",
+    "expiry": "2026-10-30",
+    "strike": 40,
+    "dte": 42,
+    "delta": -0.2844,
+    "bid": 0.46,
+    "ask": 0.48,
+    "mid": 0.47,
+    "collateral": 4000,
+    "premiumAtMid": 47,
+    "rocAnnualizedAtBid": 0.09994047619047618,
+    "ivRank": {
+      "rank": 64,
+      "observations": 11,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.3% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade XLU exposure $8000 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade utilities exposure $8000 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $8550 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 6,
+    "screenNotes": [
+      "iv-rank low confidence (11/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.47,
+    "currentMid": 0.47,
+    "shadowPnl": null,
+    "closedReason": null
+  }
+]

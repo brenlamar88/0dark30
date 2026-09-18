@@ -31,9 +31,9 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-17 23:33 UTC.</p>
+<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-18 16:34 UTC.</p>
 
-<p><a href="briefs/2026-09-17.html">Latest morning brief (2026-09-17) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
+<p><a href="briefs/2026-09-18.html">Latest morning brief (2026-09-18) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
 <div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$203</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
 <div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$1</div><div class="tile-note">the null hypothesis</div></div>
@@ -89,6 +89,41 @@
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>Sym</th><th>Contract</th><th>Δ</th><th>DTE</th><th>Prem</th><th>Collat</th><th>RoC/yr</th><th>Status</th><th>P&amp;L</th></tr></thead>
 <tbody><tr>
+<td>2026-09-18</td><td>XLU</td><td class="mono">XLU261030P00040000</td>
+<td>0.28</td><td>42</td>
+<td>$47</td><td>$4,000</td>
+<td>10.0%</td>
+<td title="post-trade XLU exposure $8000 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-18</td><td>XLF</td><td class="mono">XLF261023P00054500</td>
+<td>0.29</td><td>35</td>
+<td>$55</td><td>$5,450</td>
+<td>10.1%</td>
+<td title="post-trade XLF exposure $10950 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-18</td><td>IBIT</td><td class="mono">IBIT261023P00043500</td>
+<td>0.28</td><td>35</td>
+<td>$100</td><td>$4,350</td>
+<td>23.7%</td>
+<td title="post-trade IBIT exposure $8550 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-18</td><td>SLV</td><td class="mono">SLV261023P00057000</td>
+<td>0.29</td><td>35</td>
+<td>$140</td><td>$5,700</td>
+<td>25.1%</td>
+<td title="post-trade SLV exposure $11500 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-18</td><td>EWZ</td><td class="mono">EWZ261030P00034500</td>
+<td>0.28</td><td>42</td>
+<td>$123</td><td>$3,450</td>
+<td>30.7%</td>
+<td title="post-trade EWZ exposure $7050 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
 <td>2026-09-17</td><td>KWEB</td><td class="mono">KWEB261030P00023000</td>
 <td>0.24</td><td>43</td>
 <td>$39</td><td>$2,300</td>
@@ -262,42 +297,7 @@
 <td>$88</td><td>$4,200</td>
 <td>25.2%</td>
 <td>open</td>
-<td>$7</td></tr>
-<tr>
-<td>2026-09-09</td><td>EWZ</td><td class="mono">EWZ261009P00036000</td>
-<td>0.29</td><td>30</td>
-<td>$88</td><td>$3,600</td>
-<td>28.7%</td>
-<td>open</td>
-<td>$-3</td></tr>
-<tr>
-<td>2026-09-09</td><td>SLV</td><td class="mono">SLV261009P00058000</td>
-<td>0.29</td><td>30</td>
-<td>$152</td><td>$5,800</td>
-<td>31.5%</td>
-<td>open</td>
-<td>$-15</td></tr>
-<tr>
-<td>2026-08-26</td><td>EWZ</td><td class="mono">EWZ260930P00034000</td>
-<td>0.25</td><td>35</td>
-<td>$50</td><td>$3,400</td>
-<td>15.0%</td>
-<td>closed (profit-target-50pct)</td>
-<td>$25</td></tr>
-<tr>
-<td>2026-08-26</td><td>SLV</td><td class="mono">SLV260930P00058000</td>
-<td>0.29</td><td>35</td>
-<td>$159</td><td>$5,800</td>
-<td>27.7%</td>
-<td title="post-trade SLV exposure $11550 vs cap $6000">blocked by the single-name cap</td>
-<td>—</td></tr>
-<tr>
-<td>2026-08-26</td><td>IBIT</td><td class="mono">IBIT260925P00042000</td>
-<td>0.30</td><td>30</td>
-<td>$107</td><td>$4,200</td>
-<td>29.5%</td>
-<td title="post-trade IBIT exposure $8400 vs cap $6000">blocked by the single-name cap</td>
-<td>—</td></tr></tbody>
+<td>$7</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
