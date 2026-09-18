@@ -61,11 +61,11 @@
       "iv-rank low confidence (5/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 1.5150000000000001,
-    "currentMid": 1.6600000000000001,
-    "shadowPnl": -14.500000000000002,
-    "closedReason": null
+    "currentMid": 1.17,
+    "shadowPnl": 34.50000000000002,
+    "closedReason": "managed-at-21dte"
   },
   {
     "id": "c1dc9390-7f38-4c78-9a5c-9145b8f7ba1b",
@@ -129,11 +129,11 @@
       "iv-rank low confidence (5/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 0.88,
-    "currentMid": 0.91,
-    "shadowPnl": -3.0000000000000027,
-    "closedReason": null
+    "currentMid": 0.9299999999999999,
+    "shadowPnl": -4.999999999999993,
+    "closedReason": "managed-at-21dte"
   },
   {
     "id": "893c8b80-3db0-4a03-88f1-bda63f6ce823",
@@ -197,11 +197,11 @@
       "iv-rank low confidence (2/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 0.88,
-    "currentMid": 0.81,
-    "shadowPnl": 6.999999999999995,
-    "closedReason": null
+    "currentMid": 0.365,
+    "shadowPnl": 44,
+    "closedReason": "profit-target-50pct"
   },
   {
     "id": "8bf28783-36f1-4ac1-af1e-5bbe05dad58b",
@@ -267,8 +267,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.395,
-    "currentMid": 0.385,
-    "shadowPnl": 1.0000000000000009,
+    "currentMid": 0.355,
+    "shadowPnl": 4.0000000000000036,
     "closedReason": null
   },
   {
@@ -333,10 +333,10 @@
       "iv-rank low confidence (5/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 0.345,
-    "currentMid": 0.36,
-    "shadowPnl": -1.5000000000000013,
-    "closedReason": null
+    "currentMid": 0.33,
+    "shadowPnl": 1.4999999999999958,
+    "closedReason": "managed-at-21dte"
   }
 ]
