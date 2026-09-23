@@ -31,15 +31,15 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-23 17:17 UTC.</p>
+<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-23 23:43 UTC.</p>
 
 <p><a href="briefs/2026-09-23.html">Latest morning brief (2026-09-23) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
-<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$318</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
-<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$709</div><div class="tile-note">the null hypothesis</div></div>
+<div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$154</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
+<div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$348</div><div class="tile-note">the null hypothesis</div></div>
 <div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">6 / 14</div><div class="tile-note">shadow positions</div></div>
-<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">49</div><div class="tile-note">postclose rows recorded</div></div>
-<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">49/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
+<div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">50</div><div class="tile-note">postclose rows recorded</div></div>
+<div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">50/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 
@@ -47,12 +47,12 @@
 <svg viewBox="0 0 760 300" role="img" id="pnl-chart">
   <line class="grid" x1="56" x2="744" y1="272.0" y2="272.0"/><text class="tick" x="48" y="276.0" text-anchor="end">$-562</text><line class="grid" x1="56" x2="744" y1="16.0" y2="16.0"/><text class="tick" x="48" y="20.0" text-anchor="end">$715</text><line class="grid" x1="56" x2="744" y1="144.0" y2="144.0"/><text class="tick" x="48" y="148.0" text-anchor="end">$76</text>
   <line class="zero" x1="56" x2="744" y1="159.3" y2="159.3"/>
-  <path class="line s1" d="M56.0,159.3 L85.9,148.9 L115.8,148.5 L145.7,150.4 L175.7,146.7 L205.6,137.4 L235.5,154.3 L265.4,136.3 L295.3,154.1 L325.2,139.2 L355.1,121.0 L385.0,123.8 L415.0,123.8 L444.9,123.8 L474.8,131.0 L504.7,159.1 L534.6,139.9 L564.5,148.2 L594.4,150.4 L624.3,168.4 L654.3,118.7 L684.2,107.9 L714.1,95.1 L744.0,95.5"/>
-  <path class="line s2" d="M56.0,159.3 L85.9,119.6 L115.8,148.3 L145.7,117.6 L175.7,115.7 L205.6,46.8 L235.5,71.7 L265.4,103.4 L295.3,172.3 L325.2,126.3 L355.1,21.3 L385.0,59.9 L415.0,59.9 L444.9,114.1 L474.8,161.9 L504.7,221.8 L534.6,139.3 L564.5,183.8 L594.4,227.7 L624.3,272.0 L654.3,159.1 L684.2,172.5 L714.1,16.0 L744.0,17.1"/>
-  <circle class="pt s1" data-i="0" cx="56.0" cy="159.3" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="159.3" r="3"/><circle class="pt s1" data-i="1" cx="85.9" cy="148.9" r="3"/><circle class="pt s2" data-i="1" cx="85.9" cy="119.6" r="3"/><circle class="pt s1" data-i="2" cx="115.8" cy="148.5" r="3"/><circle class="pt s2" data-i="2" cx="115.8" cy="148.3" r="3"/><circle class="pt s1" data-i="3" cx="145.7" cy="150.4" r="3"/><circle class="pt s2" data-i="3" cx="145.7" cy="117.6" r="3"/><circle class="pt s1" data-i="4" cx="175.7" cy="146.7" r="3"/><circle class="pt s2" data-i="4" cx="175.7" cy="115.7" r="3"/><circle class="pt s1" data-i="5" cx="205.6" cy="137.4" r="3"/><circle class="pt s2" data-i="5" cx="205.6" cy="46.8" r="3"/><circle class="pt s1" data-i="6" cx="235.5" cy="154.3" r="3"/><circle class="pt s2" data-i="6" cx="235.5" cy="71.7" r="3"/><circle class="pt s1" data-i="7" cx="265.4" cy="136.3" r="3"/><circle class="pt s2" data-i="7" cx="265.4" cy="103.4" r="3"/><circle class="pt s1" data-i="8" cx="295.3" cy="154.1" r="3"/><circle class="pt s2" data-i="8" cx="295.3" cy="172.3" r="3"/><circle class="pt s1" data-i="9" cx="325.2" cy="139.2" r="3"/><circle class="pt s2" data-i="9" cx="325.2" cy="126.3" r="3"/><circle class="pt s1" data-i="10" cx="355.1" cy="121.0" r="3"/><circle class="pt s2" data-i="10" cx="355.1" cy="21.3" r="3"/><circle class="pt s1" data-i="11" cx="385.0" cy="123.8" r="3"/><circle class="pt s2" data-i="11" cx="385.0" cy="59.9" r="3"/><circle class="pt s1" data-i="12" cx="415.0" cy="123.8" r="3"/><circle class="pt s2" data-i="12" cx="415.0" cy="59.9" r="3"/><circle class="pt s1" data-i="13" cx="444.9" cy="123.8" r="3"/><circle class="pt s2" data-i="13" cx="444.9" cy="114.1" r="3"/><circle class="pt s1" data-i="14" cx="474.8" cy="131.0" r="3"/><circle class="pt s2" data-i="14" cx="474.8" cy="161.9" r="3"/><circle class="pt s1" data-i="15" cx="504.7" cy="159.1" r="3"/><circle class="pt s2" data-i="15" cx="504.7" cy="221.8" r="3"/><circle class="pt s1" data-i="16" cx="534.6" cy="139.9" r="3"/><circle class="pt s2" data-i="16" cx="534.6" cy="139.3" r="3"/><circle class="pt s1" data-i="17" cx="564.5" cy="148.2" r="3"/><circle class="pt s2" data-i="17" cx="564.5" cy="183.8" r="3"/><circle class="pt s1" data-i="18" cx="594.4" cy="150.4" r="3"/><circle class="pt s2" data-i="18" cx="594.4" cy="227.7" r="3"/><circle class="pt s1" data-i="19" cx="624.3" cy="168.4" r="3"/><circle class="pt s2" data-i="19" cx="624.3" cy="272.0" r="3"/><circle class="pt s1" data-i="20" cx="654.3" cy="118.7" r="3"/><circle class="pt s2" data-i="20" cx="654.3" cy="159.1" r="3"/><circle class="pt s1" data-i="21" cx="684.2" cy="107.9" r="3"/><circle class="pt s2" data-i="21" cx="684.2" cy="172.5" r="3"/><circle class="pt s1" data-i="22" cx="714.1" cy="95.1" r="3"/><circle class="pt s2" data-i="22" cx="714.1" cy="16.0" r="3"/><circle class="pt s1" data-i="23" cx="744.0" cy="95.5" r="3"/><circle class="pt s2" data-i="23" cx="744.0" cy="17.1" r="3"/>
+  <path class="line s1" d="M56.0,159.3 L84.7,148.9 L113.3,148.5 L142.0,150.4 L170.7,146.7 L199.3,137.4 L228.0,154.3 L256.7,136.3 L285.3,154.1 L314.0,139.2 L342.7,121.0 L371.3,123.8 L400.0,123.8 L428.7,123.8 L457.3,131.0 L486.0,159.1 L514.7,139.9 L543.3,148.2 L572.0,150.4 L600.7,168.4 L629.3,118.7 L658.0,107.9 L686.7,95.1 L715.3,95.5 L744.0,128.5"/>
+  <path class="line s2" d="M56.0,159.3 L84.7,119.6 L113.3,148.3 L142.0,117.6 L170.7,115.7 L199.3,46.8 L228.0,71.7 L256.7,103.4 L285.3,172.3 L314.0,126.3 L342.7,21.3 L371.3,59.9 L400.0,59.9 L428.7,114.1 L457.3,161.9 L486.0,221.8 L514.7,139.3 L543.3,183.8 L572.0,227.7 L600.7,272.0 L629.3,159.1 L658.0,172.5 L686.7,16.0 L715.3,17.1 L744.0,89.5"/>
+  <circle class="pt s1" data-i="0" cx="56.0" cy="159.3" r="3"/><circle class="pt s2" data-i="0" cx="56.0" cy="159.3" r="3"/><circle class="pt s1" data-i="1" cx="84.7" cy="148.9" r="3"/><circle class="pt s2" data-i="1" cx="84.7" cy="119.6" r="3"/><circle class="pt s1" data-i="2" cx="113.3" cy="148.5" r="3"/><circle class="pt s2" data-i="2" cx="113.3" cy="148.3" r="3"/><circle class="pt s1" data-i="3" cx="142.0" cy="150.4" r="3"/><circle class="pt s2" data-i="3" cx="142.0" cy="117.6" r="3"/><circle class="pt s1" data-i="4" cx="170.7" cy="146.7" r="3"/><circle class="pt s2" data-i="4" cx="170.7" cy="115.7" r="3"/><circle class="pt s1" data-i="5" cx="199.3" cy="137.4" r="3"/><circle class="pt s2" data-i="5" cx="199.3" cy="46.8" r="3"/><circle class="pt s1" data-i="6" cx="228.0" cy="154.3" r="3"/><circle class="pt s2" data-i="6" cx="228.0" cy="71.7" r="3"/><circle class="pt s1" data-i="7" cx="256.7" cy="136.3" r="3"/><circle class="pt s2" data-i="7" cx="256.7" cy="103.4" r="3"/><circle class="pt s1" data-i="8" cx="285.3" cy="154.1" r="3"/><circle class="pt s2" data-i="8" cx="285.3" cy="172.3" r="3"/><circle class="pt s1" data-i="9" cx="314.0" cy="139.2" r="3"/><circle class="pt s2" data-i="9" cx="314.0" cy="126.3" r="3"/><circle class="pt s1" data-i="10" cx="342.7" cy="121.0" r="3"/><circle class="pt s2" data-i="10" cx="342.7" cy="21.3" r="3"/><circle class="pt s1" data-i="11" cx="371.3" cy="123.8" r="3"/><circle class="pt s2" data-i="11" cx="371.3" cy="59.9" r="3"/><circle class="pt s1" data-i="12" cx="400.0" cy="123.8" r="3"/><circle class="pt s2" data-i="12" cx="400.0" cy="59.9" r="3"/><circle class="pt s1" data-i="13" cx="428.7" cy="123.8" r="3"/><circle class="pt s2" data-i="13" cx="428.7" cy="114.1" r="3"/><circle class="pt s1" data-i="14" cx="457.3" cy="131.0" r="3"/><circle class="pt s2" data-i="14" cx="457.3" cy="161.9" r="3"/><circle class="pt s1" data-i="15" cx="486.0" cy="159.1" r="3"/><circle class="pt s2" data-i="15" cx="486.0" cy="221.8" r="3"/><circle class="pt s1" data-i="16" cx="514.7" cy="139.9" r="3"/><circle class="pt s2" data-i="16" cx="514.7" cy="139.3" r="3"/><circle class="pt s1" data-i="17" cx="543.3" cy="148.2" r="3"/><circle class="pt s2" data-i="17" cx="543.3" cy="183.8" r="3"/><circle class="pt s1" data-i="18" cx="572.0" cy="150.4" r="3"/><circle class="pt s2" data-i="18" cx="572.0" cy="227.7" r="3"/><circle class="pt s1" data-i="19" cx="600.7" cy="168.4" r="3"/><circle class="pt s2" data-i="19" cx="600.7" cy="272.0" r="3"/><circle class="pt s1" data-i="20" cx="629.3" cy="118.7" r="3"/><circle class="pt s2" data-i="20" cx="629.3" cy="159.1" r="3"/><circle class="pt s1" data-i="21" cx="658.0" cy="107.9" r="3"/><circle class="pt s2" data-i="21" cx="658.0" cy="172.5" r="3"/><circle class="pt s1" data-i="22" cx="686.7" cy="95.1" r="3"/><circle class="pt s2" data-i="22" cx="686.7" cy="16.0" r="3"/><circle class="pt s1" data-i="23" cx="715.3" cy="95.5" r="3"/><circle class="pt s2" data-i="23" cx="715.3" cy="17.1" r="3"/><circle class="pt s1" data-i="24" cx="744.0" cy="128.5" r="3"/><circle class="pt s2" data-i="24" cx="744.0" cy="89.5" r="3"/>
   <line id="xhair" class="xhair" y1="16" y2="272" x1="0" x2="0" visibility="hidden"/>
   <text class="tick" x="56" y="292">2026-08-20</text>
-  <text class="tick" x="744" y="292" text-anchor="end">2026-09-22</text>
+  <text class="tick" x="744" y="292" text-anchor="end">2026-09-23</text>
   <rect id="hover-capture" x="56" y="16" width="688" height="256" fill="transparent"/>
 </svg>
 <div id="tooltip" class="tooltip" hidden></div>
@@ -63,7 +63,7 @@
 </figure>
 <script>
 (function () {
-  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":191.25,"spy":688.0884319844794},{"date":"2026-09-04","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-07","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-08","shadow":177.25,"spy":225.53827594344878},{"date":"2026-09-09","shadow":141.25000000000006,"spy":-12.784873200288871},{"date":"2026-09-10","shadow":1.2500000000000284,"spy":-311.4263984684396},{"date":"2026-09-11","shadow":96.75,"spy":99.65644750989932},{"date":"2026-09-14","shadow":55.25,"spy":-122.27583855655699},{"date":"2026-09-15","shadow":44.25000000000003,"spy":-340.92995200755706},{"date":"2026-09-16","shadow":-45.25,"spy":-561.8787862893715},{"date":"2026-09-17","shadow":202.75,"spy":1.3112690461780652},{"date":"2026-09-18","shadow":256.25,"spy":-65.56345230914751},{"date":"2026-09-21","shadow":320.25000000000006,"spy":714.6416301696768},{"date":"2026-09-22","shadow":318.25,"spy":709.3965539849534}];
+  var data = [{"date":"2026-08-20","shadow":0,"spy":0},{"date":"2026-08-21","shadow":52.00000000000001,"spy":198.00162597362058},{"date":"2026-08-24","shadow":54.000000000000014,"spy":55.07329993967858},{"date":"2026-08-25","shadow":44.5,"spy":207.83614381998382},{"date":"2026-08-26","shadow":63.000000000000014,"spy":217.67066166636928},{"date":"2026-08-27","shadow":109.49999999999999,"spy":561.2231517662769},{"date":"2026-08-28","shadow":24.99999999999999,"spy":436.6525923789055},{"date":"2026-08-31","shadow":115,"spy":278.6446723138658},{"date":"2026-09-01","shadow":26.25,"spy":-64.90781778605293},{"date":"2026-09-02","shadow":100.24999999999999,"spy":164.56426529595225},{"date":"2026-09-03","shadow":191.25,"spy":688.0884319844794},{"date":"2026-09-04","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-07","shadow":177.25,"spy":495.6596994571294},{"date":"2026-09-08","shadow":177.25,"spy":225.53827594344878},{"date":"2026-09-09","shadow":141.25000000000006,"spy":-12.784873200288871},{"date":"2026-09-10","shadow":1.2500000000000284,"spy":-311.4263984684396},{"date":"2026-09-11","shadow":96.75,"spy":99.65644750989932},{"date":"2026-09-14","shadow":55.25,"spy":-122.27583855655699},{"date":"2026-09-15","shadow":44.25000000000003,"spy":-340.92995200755706},{"date":"2026-09-16","shadow":-45.25,"spy":-561.8787862893715},{"date":"2026-09-17","shadow":202.75,"spy":1.3112690461780652},{"date":"2026-09-18","shadow":256.25,"spy":-65.56345230914751},{"date":"2026-09-21","shadow":320.25000000000006,"spy":714.6416301696768},{"date":"2026-09-22","shadow":318.25,"spy":709.3965539849534},{"date":"2026-09-23","shadow":153.75,"spy":348.1419317615586}];
   var svg = document.getElementById("pnl-chart");
   var cap = document.getElementById("hover-capture");
   var tip = document.getElementById("tooltip");
@@ -171,28 +171,28 @@
 <td>$93</td><td>$6,000</td>
 <td>14.4%</td>
 <td>open</td>
-<td>$-32</td></tr>
+<td>$-12</td></tr>
 <tr>
 <td>2026-09-21</td><td>SLV</td><td class="mono">SLV261030P00056500</td>
 <td>0.29</td><td>39</td>
 <td>$139</td><td>$5,650</td>
 <td>22.5%</td>
 <td>open</td>
-<td>$28</td></tr>
+<td>$-45</td></tr>
 <tr>
 <td>2026-09-21</td><td>IBIT</td><td class="mono">IBIT261023P00046000</td>
 <td>0.28</td><td>32</td>
 <td>$109</td><td>$4,600</td>
 <td>26.8%</td>
 <td>open</td>
-<td>$12</td></tr>
+<td>$-12</td></tr>
 <tr>
 <td>2026-09-21</td><td>EWZ</td><td class="mono">EWZ261030P00035000</td>
 <td>0.28</td><td>39</td>
 <td>$123</td><td>$3,500</td>
 <td>31.6%</td>
 <td>open</td>
-<td>$5</td></tr>
+<td>$-29</td></tr>
 <tr>
 <td>2026-09-18</td><td>XLU</td><td class="mono">XLU261030P00040000</td>
 <td>0.28</td><td>42</td>
@@ -297,12 +297,15 @@
 <td>$43</td><td>$4,000</td>
 <td>8.3%</td>
 <td>open</td>
-<td>$-9</td></tr></tbody>
+<td>$-44</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>SPY close</th><th>Realized</th><th>Unrealized</th><th>Open</th><th>Closed</th></tr></thead>
-<tbody><tr><td>2026-09-22</td><td>773.44</td>
+<tbody><tr><td>2026-09-23</td><td>767.93</td>
+<td>$353</td><td>$-199</td>
+<td>6</td><td>14</td></tr>
+<tr><td>2026-09-22</td><td>773.44</td>
 <td>$353</td><td>$-34</td>
 <td>6</td><td>14</td></tr>
 <tr><td>2026-09-21</td><td>773.52</td>
@@ -358,10 +361,7 @@
 <td>0</td><td>6</td></tr>
 <tr><td>2026-09-04</td><td>770.8</td>
 <td>$177</td><td>$0</td>
-<td>0</td><td>6</td></tr>
-<tr><td>2026-09-03</td><td>773.115</td>
-<td>$141</td><td>$50</td>
-<td>2</td><td>4</td></tr></tbody>
+<td>0</td><td>6</td></tr></tbody>
 </table></div>
 <p class="muted">Kill criteria and gates live in PLAN.md. Numbers are pre-cost and pre-tax; nothing here proves anything until months accumulate.</p>
 </body></html>
