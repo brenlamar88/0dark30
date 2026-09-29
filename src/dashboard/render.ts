@@ -221,6 +221,15 @@ ${statTile("SPY same-pool P&L", last ? money(last.spy) : "—", "the null hypoth
 ${statTile("Open / closed", `${open.length} / ${closed.length}`, "shadow positions")}
 ${statTile("Sessions", String(rows.length), "postclose rows recorded")}
 ${statTile("IV-rank confidence", `${Math.min(ivObs, ivTarget)}/${ivTarget}`, ivObs >= ivTarget ? "gate active" : "bootstrapping — gate advisory")}
+${
+  lastRow && lastRow.swing_open_count !== undefined
+    ? statTile(
+        "Swing (shadow)",
+        `${money(lastRow.swing_realized_total ?? 0)}`,
+        `${lastRow.swing_open_count} open — 6-month gate running`,
+      )
+    : ""
+}
 </div>
 <h2>Cumulative P&amp;L vs the null hypothesis</h2>
 ${lineChart(series)}

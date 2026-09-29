@@ -62,9 +62,20 @@ call; the flip is one repository variable.
 - One contract per proposal (100-share lots by design).
 - The store (`data/orders/orders.json`) plus the journal reconstruct every
   transition: staged → working → filled/cancelled/expired/failed.
-- Assignment (shares landing in the account) is **deliberately a freeze** in
-  Phase 2 — the covered-call leg of the wheel is Phase 2.5 work, and silent
-  share positions are exactly what the reconciler exists to catch.
+- **Assignment is now recognized, not frozen** (2026-09-29): a vanished short
+  put plus matching shares is recorded as a wheel assignment with its basis
+  (strike − premium); the next premarket proposes covered calls against the
+  shares (0.20–0.30 delta, 30–45 DTE, above basis where available — below-basis
+  strikes are loudly annotated). CC sales flow through the same approval path
+  and the same 50%/21-DTE management. Called-away shares (expired short call +
+  shares gone) close the wheel cycle and are journaled. Anything else
+  unexplained still freezes.
+- **Risk caps in paper mode compute from the paper book** (broker positions,
+  working sell orders, assigned shares), not the shadow book — the shadow book
+  keeps its own one-position-per-name rule for the counterfactual.
+- Ex-dividend early-assignment checks remain unimplemented (no dividend
+  calendar feed) — a known limitation, journaled here so nobody mistakes
+  silence for coverage.
 
 ## Gate to Phase 3 (unchanged, PLAN.md Part 3)
 

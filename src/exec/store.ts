@@ -12,7 +12,7 @@ export type OrderStatus = "staged" | "working" | "filled" | "cancelled" | "expir
 export interface OrderRecord {
   id: string; // our id (client_order_id at the broker)
   proposalId: string;
-  intent: "open-csp" | "close-profit-target" | "close-manage-dte";
+  intent: "open-csp" | "open-cc" | "close-profit-target" | "close-manage-dte";
   occSymbol: string;
   side: "sell" | "buy";
   qty: number;
@@ -27,6 +27,26 @@ export interface OrderRecord {
 
 const ordersFile = path.join(dataDir, "orders", "orders.json");
 const freezeFile = path.join(dataDir, "state", "freeze.json");
+const sharesFile = path.join(dataDir, "state", "shares.json");
+
+/** Assigned-share holdings the covered-call leg writes against (PLAN.md 2.3). */
+export interface SharesRecord {
+  underlying: string;
+  shares: number;
+  basis: number;
+  acquiredAt: string;
+  viaOcc: string;
+}
+
+export function loadShares(): SharesRecord[] {
+  if (!existsSync(sharesFile)) return [];
+  return JSON.parse(readFileSync(sharesFile, "utf8"));
+}
+
+export function saveShares(shares: SharesRecord[]): void {
+  mkdirSync(path.dirname(sharesFile), { recursive: true });
+  writeFileSync(sharesFile, JSON.stringify(shares, null, 2));
+}
 
 export function loadOrders(): OrderRecord[] {
   if (!existsSync(ordersFile)) return [];

@@ -1,4 +1,5 @@
 import type { Proposal } from "../types.js";
+import type { SwingPosition } from "../signals/swing.js";
 import { explainCheck, verdictHeadline } from "../risk/explain.js";
 
 const money = (n: number) => `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
@@ -15,7 +16,7 @@ function proposalCard(p: Proposal): string {
   return `
   <article class="card${blocked ? " blocked" : ""}">
     <header>
-      <h3>${blocked ? "BLOCKED " : ""}Sell ${esc(p.underlying)} ${p.expiry} $${p.strike} put (${p.dte} DTE, ${p.delta === null ? "?" : Math.abs(p.delta).toFixed(2)}&Delta;)</h3>
+      <h3>${blocked ? "BLOCKED " : ""}Sell ${esc(p.underlying)} ${p.expiry} $${p.strike} ${p.strategy === "cc" ? "call (covered)" : "put"} (${p.dte} DTE, ${p.delta === null ? "?" : Math.abs(p.delta).toFixed(2)}&Delta;)</h3>
       <span class="mono">${esc(p.occSymbol)}</span>
     </header>
     <dl>
@@ -24,7 +25,7 @@ function proposalCard(p: Proposal): string {
       <div><dt>Annualized RoC (bid)</dt><dd>${pct(p.rocAnnualizedAtBid)}</dd></div>
       <div><dt>IV rank</dt><dd>${p.ivRank.rank ?? "n/a"}${p.ivRank.confident ? "" : " (low confidence)"}</dd></div>
       <div><dt>Quote</dt><dd>${p.bid.toFixed(2)} / ${p.ask.toFixed(2)}</dd></div>
-      <div><dt>Effective basis if assigned</dt><dd>${(p.strike - p.mid).toFixed(2)}</dd></div>
+      <div><dt>${p.strategy === "cc" ? "Share basis" : "Effective basis if assigned"}</dt><dd>${p.strategy === "cc" ? (p.coveredBasis === null || p.coveredBasis === undefined ? "?" : p.coveredBasis.toFixed(2)) : (p.strike - p.mid).toFixed(2)}</dd></div>
     </dl>
     <p class="${blocked ? "fail" : "pass"}">${esc(verdictHeadline(p.checks))}</p>
     ${failedChecks
@@ -62,6 +63,7 @@ export function renderBrief(
     llmDegraded: boolean;
     screenedOut?: { symbol: string; reason: string }[];
     mode?: "shadow" | "paper";
+    swing?: { ruleVersion: string; entriesToday: string[]; open: SwingPosition[] };
   },
 ): string {
   const proposed = proposals.filter((p) => p.verdict === "proposed");
@@ -104,6 +106,22 @@ ${
     ? `<h2>Screened out (${context.screenedOut.length})</h2>
 <p class="note">Every universe symbol that produced no proposal today, and which rule eliminated it. "No candidate" is a decision too.</p>
 ${context.screenedOut.map((s) => `<p class="note"><strong>${esc(s.symbol)}</strong> — ${esc(s.reason)}</p>`).join("\n")}`
+    : ""
+}${
+  context.swing
+    ? `<h2>Swing module — ${esc(context.swing.ruleVersion)} (shadow-gated)</h2>
+<p class="note">Signals only, no orders in any mode: this module must beat SPY over a 6-month live-forward window before it touches even paper capital (PLAN.md 2.4). Entry: uptrend + pullback; every position carries a stop, target, and 20-session time stop.</p>
+${context.swing.entriesToday.length ? `<p>New shadow entries today: <strong>${context.swing.entriesToday.map(esc).join(", ")}</strong></p>` : ""}
+${
+  context.swing.open.length
+    ? `<div class="scroll"><table><thead><tr><th>Sym</th><th>Entered</th><th>Entry</th><th>Shares</th><th>Stop</th><th>Target</th><th>Held</th></tr></thead><tbody>${context.swing.open
+        .map(
+          (s) =>
+            `<tr><td>${esc(s.symbol)}</td><td>${s.entryDate}</td><td>${s.entryPrice}</td><td>${s.shares}</td><td>${s.stop}</td><td>${s.target}</td><td>${s.sessionsHeld}d</td></tr>`,
+        )
+        .join("")}</tbody></table></div>`
+    : `<p class="note">No open swing positions.</p>`
+}`
     : ""
 }
 </body></html>`;

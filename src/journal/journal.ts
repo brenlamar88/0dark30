@@ -3,6 +3,7 @@ import path from "node:path";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { dataDir, env } from "../config.js";
 import type { JournalEvent, Proposal } from "../types.js";
+import type { SwingPosition } from "../signals/swing.js";
 
 /**
  * Append-only journal per PLAN.md 2.0 #6. The local backend (JSONL under
@@ -109,5 +110,16 @@ export class Journal {
       .split("\n")
       .filter(Boolean)
       .map((l) => JSON.parse(l));
+  }
+
+  loadSwingPositions(): SwingPosition[] {
+    const file = path.join(dataDir, "swing", "positions.json");
+    if (!existsSync(file)) return [];
+    return JSON.parse(readFileSync(file, "utf8"));
+  }
+
+  saveSwingPositions(positions: SwingPosition[]): void {
+    mkdirSync(path.join(dataDir, "swing"), { recursive: true });
+    writeFileSync(path.join(dataDir, "swing", "positions.json"), JSON.stringify(positions, null, 2));
   }
 }

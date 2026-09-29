@@ -80,9 +80,10 @@ function snapshotToQuote(occ: string, snap: any): OptionQuote | null {
   };
 }
 
-/** Put chain for one underlying within an expiry window. Uses the free indicative feed. */
-export async function putChain(
+/** Option chain for one underlying within an expiry window. Free indicative feed. */
+export async function optionChain(
   underlying: string,
+  type: "put" | "call",
   expiryGte: string,
   expiryLte: string,
 ): Promise<OptionQuote[]> {
@@ -90,7 +91,7 @@ export async function putChain(
   let pageToken: string | null = null;
   do {
     let url =
-      `${DATA_BASE}/v1beta1/options/snapshots/${underlying}?feed=indicative&type=put` +
+      `${DATA_BASE}/v1beta1/options/snapshots/${underlying}?feed=indicative&type=${type}` +
       `&expiration_date_gte=${expiryGte}&expiration_date_lte=${expiryLte}&limit=1000`;
     if (pageToken) url += `&page_token=${encodeURIComponent(pageToken)}`;
     const json = await getJson(url);
@@ -101,6 +102,34 @@ export async function putChain(
     pageToken = json.next_page_token ?? null;
   } while (pageToken);
   return quotes;
+}
+
+/** Put chain for one underlying within an expiry window. Uses the free indicative feed. */
+export async function putChain(
+  underlying: string,
+  expiryGte: string,
+  expiryLte: string,
+): Promise<OptionQuote[]> {
+  return optionChain(underlying, "put", expiryGte, expiryLte);
+}
+
+/** Daily bars (date + close), oldest first. Used by the swing engine and the backtest. */
+export async function dailyBars(symbol: string, days: number): Promise<{ date: string; close: number }[]> {
+  const start = new Date(Date.now() - (days * 1.6 + 30) * 86_400_000).toISOString().slice(0, 10);
+  const out: { date: string; close: number }[] = [];
+  let pageToken: string | null = null;
+  do {
+    let url =
+      `${DATA_BASE}/v2/stocks/bars?symbols=${symbol}&timeframe=1Day&start=${start}` +
+      `&limit=1000&adjustment=split&feed=iex&sort=asc`;
+    if (pageToken) url += `&page_token=${encodeURIComponent(pageToken)}`;
+    const json = await getJson(url);
+    for (const b of json.bars?.[symbol] ?? []) {
+      if (typeof b.c === "number" && typeof b.t === "string") out.push({ date: b.t.slice(0, 10), close: b.c });
+    }
+    pageToken = json.next_page_token ?? null;
+  } while (pageToken);
+  return out.slice(-days);
 }
 
 /** Current bid/ask/mid for specific contracts (staging and marketable closes need the spread). */

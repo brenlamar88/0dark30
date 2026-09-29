@@ -29,11 +29,23 @@
       "spyRealizedVol20dAnnualizedMax": 0.3,
       "comment": "PLAN.md 2.5 specified VIX > 30; Alpaca serves no VIX index, so the freeze uses 20-day SPY realized vol annualized > 30% as the deterministic proxy."
     },
-    "proposalTtlHours": 6
+    "proposalTtlHours": 9
   },
   "maxProposalsPerDay": 5,
   "execution": {
     "limitSpreadFraction": 0.25,
     "comment": "Paper-phase execution mechanics (2026-09-17, after all 5 first orders expired unfilled at mid): entries price at mid - fraction*spread (never below bid+0.01), marketable 21-DTE closes at mid + fraction*spread. Signal rules unchanged - wheel-v1 attribution is unaffected."
+  },
+  "swing": {
+    "ruleVersion": "swing-v1",
+    "shadowOnly": true,
+    "smaLong": 100,
+    "smaShort": 20,
+    "volProxyPeriod": 14,
+    "stopVolMult": 2,
+    "targetVolMult": 3,
+    "timeStopSessions": 20,
+    "notionalPerTradeUsd": 5000,
+    "comment": "PLAN.md 2.4: shadow-only until it beats SPY-on-the-same-dates over a 6-month live-forward window (clock starts at first signal). Entry: close above 100d SMA (uptrend) and below 20d SMA (pullback). Bracket from a close-to-close volatility proxy (no intraday H/L on the free feed). One position per symbol; no orders of any kind in any mode."
   }
 }

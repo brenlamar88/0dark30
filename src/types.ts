@@ -33,6 +33,18 @@ export interface Params {
   };
   maxProposalsPerDay: number;
   execution?: { limitSpreadFraction: number; comment?: string };
+  swing?: {
+    ruleVersion: string;
+    shadowOnly: boolean;
+    smaLong: number;
+    smaShort: number;
+    volProxyPeriod: number;
+    stopVolMult: number;
+    targetVolMult: number;
+    timeStopSessions: number;
+    notionalPerTradeUsd: number;
+    comment?: string;
+  };
 }
 
 export interface OptionQuote {
@@ -110,9 +122,11 @@ export interface Proposal {
   id: string;
   date: string; // YYYY-MM-DD
   ruleVersion: string;
-  strategy: "csp";
+  strategy: "csp" | "cc";
   underlying: string;
   sector: string;
+  /** Covered calls only: cost basis of the assigned shares this call is written against. */
+  coveredBasis?: number | null;
   occSymbol: string;
   expiry: string;
   strike: number;

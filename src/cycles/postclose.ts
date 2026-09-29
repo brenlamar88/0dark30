@@ -1,5 +1,6 @@
 import { daysBetween, executionMode, loadParams, todayEt } from "../config.js";
-import { dailyCloses, optionMids } from "../data/alpaca.js";
+import { dailyBars, dailyCloses, optionMids } from "../data/alpaca.js";
+import { swingExitCheck } from "../signals/swing.js";
 import { Journal } from "../journal/journal.js";
 import { alpacaPaper } from "../broker/alpacaPaper.js";
 import { syncOrders } from "./midday.js";
@@ -102,6 +103,42 @@ export async function runPostclose(): Promise<void> {
     }
   }
 
+  // Swing shadow book (swing-v1): mark open positions at today's close and
+  // fire the mechanical exits. Idempotent per day via sessionsHeld only
+  // advancing when a new close date is seen.
+  let swingRealized = 0;
+  let swingOpenCount = 0;
+  if (params.swing) {
+    const swing = journal.loadSwingPositions();
+    let changed = false;
+    for (let i = 0; i < swing.length; i++) {
+      const pos = swing[i]!;
+      if (pos.status !== "open") continue;
+      if (pos.lastMarkedDate === today) continue; // already marked this session
+      try {
+        const bars = await dailyBars(pos.symbol, 2);
+        const last = bars[bars.length - 1];
+        if (!last || last.date === pos.entryDate) {
+          swingOpenCount++;
+          continue;
+        }
+        const next = swingExitCheck(pos, last.date, last.close, params.swing);
+        next.lastMarkedDate = today;
+        swing[i] = next;
+        changed = true;
+        if (next.status === "closed") {
+          await journal.event("swing.exit", next);
+        } else {
+          swingOpenCount++;
+        }
+      } catch {
+        swingOpenCount++;
+      }
+    }
+    if (changed) journal.saveSwingPositions(swing);
+    swingRealized = swing.filter((s) => s.status === "closed").reduce((a, s) => a + (s.pnl ?? 0), 0);
+  }
+
   await journal.appendScoreboard({
     date: today,
     spy_close: spyClose,
@@ -111,6 +148,8 @@ export async function runPostclose(): Promise<void> {
     shadow_closed_count: closed.length,
     realized_today: realizedToday,
     rule_version: params.ruleVersion,
+    swing_realized_total: swingRealized,
+    swing_open_count: swingOpenCount,
     ...paper,
   });
   const dashboardPath = writeDashboard(journal, params);

@@ -4,7 +4,7 @@ import { optionQuotes } from "../data/alpaca.js";
 import { alpacaPaper } from "../broker/alpacaPaper.js";
 import type { BrokerAdapter } from "../broker/types.js";
 import { Journal } from "../journal/journal.js";
-import { loadOrders, saveOrders, getFreeze, setFreeze, type OrderRecord } from "../exec/store.js";
+import { loadOrders, saveOrders, getFreeze, setFreeze, loadShares, saveShares, type OrderRecord } from "../exec/store.js";
 import { reconcile } from "../exec/reconciler.js";
 import {
   approvalStatus,
@@ -63,9 +63,30 @@ export async function runMidday(): Promise<void> {
   await journal.event("cycle.midday.start", { today, mode });
 
   // 1. Sync order state, then reconcile - broker is truth (PLAN.md 2.0 #5).
+  //    The wheel's own mechanics (assignment, called-away) are recognized and
+  //    recorded; anything else unexplained freezes new trades.
   let orders = await syncOrders(broker, journal);
   const positions = await broker.getPositions();
-  const rec = reconcile(positions, orders);
+  let heldShares = loadShares();
+  const rec = reconcile(positions, orders, heldShares);
+  if (rec.assignments.length > 0) {
+    heldShares = [...heldShares, ...rec.assignments];
+    saveShares(heldShares);
+    for (const a of rec.assignments) {
+      await journal.event("assignment.detected", a);
+      await telegramNotify(
+        `0dark30: assigned ${a.shares} ${a.underlying} @ basis $${a.basis.toFixed(2)} (via ${a.viaOcc}). Covered-call proposals start next premarket.`,
+      );
+    }
+  }
+  if (rec.calledAway.length > 0) {
+    heldShares = heldShares.filter((h) => !rec.calledAway.includes(h.underlying));
+    saveShares(heldShares);
+    for (const u of rec.calledAway) {
+      await journal.event("shares.called-away", { underlying: u });
+      await telegramNotify(`0dark30: ${u} shares called away - wheel cycle complete for this name.`);
+    }
+  }
   if (!rec.green && !getFreeze()) {
     setFreeze({ reason: "reconciler divergence", at: now, detail: rec.divergences });
     await journal.event("freeze.set", rec.divergences);
@@ -106,6 +127,7 @@ export async function runMidday(): Promise<void> {
   //    Management continues even under a freeze - a freeze blocks NEW risk only.
   orders = loadOrders();
   const openOrders = await broker.getOpenOrders();
+  // All short options - puts AND covered calls share the same management rules.
   const shortPuts = positions.filter((p) => p.assetClass === "option" && p.qty < 0);
   const quotes = shortPuts.length
     ? await optionQuotes(shortPuts.map((p) => p.symbol)).catch(
@@ -200,7 +222,7 @@ async function stageEntry(
   const record: OrderRecord = {
     id: randomUUID(),
     proposalId: p.id,
-    intent: "open-csp",
+    intent: p.strategy === "cc" ? "open-cc" : "open-csp",
     occSymbol: p.occSymbol,
     side: "sell",
     qty: 1,
@@ -235,7 +257,9 @@ async function stageEntry(
 }
 
 function findEntryOrder(orders: OrderRecord[], occSymbol: string): OrderRecord | undefined {
-  return orders.find((o) => o.occSymbol === occSymbol && o.intent === "open-csp" && o.status === "filled");
+  return orders.find(
+    (o) => o.occSymbol === occSymbol && (o.intent === "open-csp" || o.intent === "open-cc") && o.status === "filled",
+  );
 }
 
 function occExpiry(occ: string): string | null {

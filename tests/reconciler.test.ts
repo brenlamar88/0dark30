@@ -50,10 +50,10 @@ describe("reconciler", () => {
     expect(r.green).toBe(false);
   });
 
-  it("flags a recorded position the broker no longer shows (expiry/assignment)", () => {
-    const r = reconcile([], [order({})]);
+  it("flags a recorded put the broker no longer shows before expiry, with no shares", () => {
+    const r = reconcile([], [order({ occSymbol: "XLF991231P00044000" })]);
     expect(r.green).toBe(false);
-    expect(r.divergences[0]).toContain("broker shows none");
+    expect(r.divergences[0]).toContain("records explain");
   });
 
   it("is green again after a filled close nets the position to zero", () => {
@@ -61,12 +61,42 @@ describe("reconciler", () => {
     expect(reconcile([], [order({}), close]).green).toBe(true);
   });
 
-  it("flags unexpected equity positions (assignment landed)", () => {
+  it("recognizes a put assignment: missing short put + 100 shares = green + assignment", () => {
     const r = reconcile(
       [{ symbol: "XLF", qty: 100, avgEntryPrice: 44, assetClass: "equity" }],
       [order({})],
     );
+    expect(r.green).toBe(true);
+    expect(r.assignments).toHaveLength(1);
+    expect(r.assignments[0]!.underlying).toBe("XLF");
+    expect(r.assignments[0]!.basis).toBeCloseTo(44 - 0.55, 2);
+  });
+
+  it("keeps a persisted assignment green on later cycles", () => {
+    const held = [{ underlying: "XLF", shares: 100, basis: 43.45, acquiredAt: "2026-09-26", viaOcc: "XLF260925P00044000" }];
+    const r = reconcile(
+      [{ symbol: "XLF", qty: 100, avgEntryPrice: 44, assetClass: "equity" }],
+      [order({})],
+      held,
+    );
+    expect(r.green).toBe(true);
+    expect(r.assignments).toHaveLength(0);
+  });
+
+  it("recognizes called-away shares via an expired filled short call", () => {
+    const held = [{ underlying: "XLF", shares: 100, basis: 43.45, acquiredAt: "2026-09-26", viaOcc: "XLF260925P00044000" }];
+    const cc = order({ id: "o3", occSymbol: "XLF261016C00045000", intent: "open-cc", filledAvgPrice: 0.6 });
+    const r = reconcile([], [order({}), cc], held, "2026-12-01");
+    expect(r.green).toBe(true);
+    expect(r.calledAway).toContain("XLF");
+  });
+
+  it("still freezes on truly unexplained equity", () => {
+    const r = reconcile(
+      [{ symbol: "TSLA", qty: 50, avgEntryPrice: 200, assetClass: "equity" }],
+      [order({})],
+    );
     expect(r.green).toBe(false);
-    expect(r.divergences.some((d) => d.includes("equity"))).toBe(true);
+    expect(r.divergences.some((d) => d.includes("TSLA"))).toBe(true);
   });
 });

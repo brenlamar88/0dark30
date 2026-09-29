@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { dataDir, loadUniverse, repoRoot } from "../config.js";
+import { dailyBars as fetchDailyBars } from "../data/alpaca.js";
 import { backtestSymbol, stats, type BtBar, type BtTrade, type BtVariant } from "./engine.js";
 import { renderBacktestPage, type BacktestResults } from "./report.js";
 
@@ -15,31 +16,6 @@ export const VARIANTS: BtVariant[] = [
   { key: "d30-hold", targetDelta: 0.3, dteTarget: 36, managed: false },
 ];
 
-async function dailyBars(symbol: string, days: number): Promise<BtBar[]> {
-  // dailyCloses returns closes only; re-derive dates by fetching bars directly
-  // would duplicate the adapter, so extend here via the same endpoint shape.
-  const { env } = await import("../config.js");
-  const start = new Date(Date.now() - (days * 1.6 + 30) * 86_400_000).toISOString().slice(0, 10);
-  const out: BtBar[] = [];
-  let pageToken: string | null = null;
-  do {
-    let url =
-      `https://data.alpaca.markets/v2/stocks/bars?symbols=${symbol}&timeframe=1Day&start=${start}` +
-      `&limit=1000&adjustment=split&feed=iex&sort=asc`;
-    if (pageToken) url += `&page_token=${encodeURIComponent(pageToken)}`;
-    const res = await fetch(url, {
-      headers: { "APCA-API-KEY-ID": env.alpacaKeyId, "APCA-API-SECRET-KEY": env.alpacaSecretKey },
-    });
-    if (!res.ok) throw new Error(`Alpaca ${res.status} bars ${symbol}: ${(await res.text()).slice(0, 200)}`);
-    const json: any = await res.json();
-    for (const b of json.bars?.[symbol] ?? []) {
-      if (typeof b.c === "number" && typeof b.t === "string") out.push({ date: b.t.slice(0, 10), close: b.c });
-    }
-    pageToken = json.next_page_token ?? null;
-  } while (pageToken);
-  return out;
-}
-
 export async function runBacktest(): Promise<void> {
   const universe = loadUniverse();
   const allTrades: BtTrade[] = [];
@@ -47,7 +23,7 @@ export async function runBacktest(): Promise<void> {
 
   for (const entry of universe) {
     try {
-      const bars = await dailyBars(entry.symbol, YEARS * 252);
+      const bars = await fetchDailyBars(entry.symbol, YEARS * 252);
       if (bars.length < 100) {
         console.log(`skip ${entry.symbol}: only ${bars.length} bars`);
         continue;
