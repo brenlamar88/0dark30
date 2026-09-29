@@ -63,8 +63,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.225,
-    "currentMid": 1.615,
-    "shadowPnl": -38.99999999999999,
+    "currentMid": 1.7650000000000001,
+    "shadowPnl": -54,
     "closedReason": null
   },
   {
@@ -131,8 +131,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.09,
-    "currentMid": 1.135,
-    "shadowPnl": -4.499999999999993,
+    "currentMid": 1.17,
+    "shadowPnl": -7.999999999999985,
     "closedReason": null
   },
   {
@@ -199,8 +199,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.385,
-    "currentMid": 1.505,
-    "shadowPnl": -11.99999999999999,
+    "currentMid": 3.165,
+    "shadowPnl": -178,
     "closedReason": null
   },
   {
@@ -267,8 +267,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.925,
-    "currentMid": 1.135,
-    "shadowPnl": -20.999999999999996,
+    "currentMid": 1.07,
+    "shadowPnl": -14.500000000000002,
     "closedReason": null
   },
   {
