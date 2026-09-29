@@ -31,13 +31,13 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-29 01:59 UTC.</p>
+<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-09-29 18:09 UTC.</p>
 
-<p><a href="briefs/2026-09-28.html">Latest morning brief (2026-09-28) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
+<p><a href="briefs/2026-09-29.html">Latest morning brief (2026-09-29) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
 <div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$-5</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
 <div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$188</div><div class="tile-note">the null hypothesis</div></div>
-<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">6 / 15</div><div class="tile-note">shadow positions</div></div>
+<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">7 / 15</div><div class="tile-note">shadow positions</div></div>
 <div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">53</div><div class="tile-note">postclose rows recorded</div></div>
 <div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">53/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 
@@ -90,6 +90,41 @@
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>Sym</th><th>Contract</th><th>Δ</th><th>DTE</th><th>Prem</th><th>Collat</th><th>RoC/yr</th><th>Status</th><th>P&amp;L</th></tr></thead>
 <tbody><tr>
+<td>2026-09-29</td><td>XLF</td><td class="mono">XLF261106P00052500</td>
+<td>0.29</td><td>38</td>
+<td>$57</td><td>$5,250</td>
+<td>10.2%</td>
+<td>open</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-29</td><td>XLE</td><td class="mono">XLE261030P00059000</td>
+<td>0.27</td><td>31</td>
+<td>$85</td><td>$5,900</td>
+<td>16.6%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-29</td><td>SLV</td><td class="mono">SLV261106P00052500</td>
+<td>0.30</td><td>38</td>
+<td>$127</td><td>$5,250</td>
+<td>22.7%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-29</td><td>IBIT</td><td class="mono">IBIT261030P00045000</td>
+<td>0.30</td><td>31</td>
+<td>$101</td><td>$4,500</td>
+<td>26.2%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
+<td>2026-09-29</td><td>EWZ</td><td class="mono">EWZ261030P00033500</td>
+<td>0.28</td><td>31</td>
+<td>$121</td><td>$3,350</td>
+<td>41.5%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
 <td>2026-09-28</td><td>KWEB</td><td class="mono">KWEB261030P00023500</td>
 <td>0.25</td><td>32</td>
 <td>$31</td><td>$2,350</td>
@@ -263,42 +298,7 @@
 <td>$93</td><td>$6,000</td>
 <td>14.4%</td>
 <td>open</td>
-<td>$-15</td></tr>
-<tr>
-<td>2026-09-21</td><td>SLV</td><td class="mono">SLV261030P00056500</td>
-<td>0.29</td><td>39</td>
-<td>$139</td><td>$5,650</td>
-<td>22.5%</td>
-<td>open</td>
-<td>$-178</td></tr>
-<tr>
-<td>2026-09-21</td><td>IBIT</td><td class="mono">IBIT261023P00046000</td>
-<td>0.28</td><td>32</td>
-<td>$109</td><td>$4,600</td>
-<td>26.8%</td>
-<td>open</td>
-<td>$-8</td></tr>
-<tr>
-<td>2026-09-21</td><td>EWZ</td><td class="mono">EWZ261030P00035000</td>
-<td>0.28</td><td>39</td>
-<td>$123</td><td>$3,500</td>
-<td>31.6%</td>
-<td>open</td>
-<td>$-54</td></tr>
-<tr>
-<td>2026-09-18</td><td>XLU</td><td class="mono">XLU261030P00040000</td>
-<td>0.28</td><td>42</td>
-<td>$47</td><td>$4,000</td>
-<td>10.0%</td>
-<td title="post-trade XLU exposure $8000 vs cap $6000">blocked by the single-name cap</td>
-<td>—</td></tr>
-<tr>
-<td>2026-09-18</td><td>XLF</td><td class="mono">XLF261023P00054500</td>
-<td>0.29</td><td>35</td>
-<td>$55</td><td>$5,450</td>
-<td>10.1%</td>
-<td title="post-trade XLF exposure $10950 vs cap $6000">blocked by the single-name cap</td>
-<td>—</td></tr></tbody>
+<td>$-15</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
 <div class="scroll"><table>
