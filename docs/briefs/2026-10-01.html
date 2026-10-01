@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>0dark30 - 2026-10-01</title>
+<style>
+  :root { color-scheme: dark; }
+  body { background:#0d1117; color:#e6edf3; font: 15px/1.5 system-ui, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.3rem; } h3 { font-size: 1rem; margin: 0; }
+  .mono { font-family: ui-monospace, monospace; color: #8b949e; font-size: .85em; }
+  .card { border: 1px solid #30363d; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+  .card.blocked { opacity: .6; border-style: dashed; }
+  .card header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+  dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .5rem; margin: .8rem 0; }
+  dt { color: #8b949e; font-size: .8em; } dd { margin: 0; font-weight: 600; }
+  .fail { color: #f85149; } .pass { color: #199e70; } .ok { color: #199e70; } .flag.warning { color: #d29922; } .flag.veto { color: #f85149; } .flag.info, .note { color: #8b949e; font-size: .9em; }
+  .why { color: #8b949e; font-size: .88em; font-style: italic; }
+  details.checks { margin: .5rem 0; } details.checks summary { cursor: pointer; color: #8b949e; font-size: .85em; }
+  details.checks p { margin: .4rem 0 .4rem .8rem; font-size: .9em; }
+  .rationale { border-left: 3px solid #30363d; padding-left: .8rem; color: #c9d1d9; }
+  footer { color: #8b949e; font-size: .8em; margin-top: .5rem; }
+  .banner { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: .8rem 1rem; }
+</style></head><body>
+<h1>0dark30 morning brief - 2026-10-01</h1>
+<p class="banner"><strong>PAPER MODE (Phase 2).</strong> Proposals below are staged to the Alpaca <em>paper</em> account only after your approval - no real money anywhere. Approve/reject by short id before the TTL: commit <span class="mono">approvals/2026-10-01.json</span> (<span class="mono">{"approve": ["ab12cd34"], "reject": []}</span>) or reply to the Telegram bot if configured. Unapproved proposals expire and are journaled. Rule version <span class="mono">wheel-v1</span>; not financial advice.</p>
+
+<p class="note">LLM analyst layer unavailable this run - mechanical output only (by design, the brief never depends on it).</p>
+<p class="note">SPY 20d realized vol: 10.7% - open shadow positions: 7</p>
+<h2>Proposals (2)</h2>
+
+  <article class="card">
+    <header>
+      <h3>Sell IBIT 2026-11-06 $45.5 put (36 DTE, 0.29&Delta;)</h3>
+      <span class="mono">IBIT261106P00045500</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$112</dd></div>
+      <div><dt>Collateral</dt><dd>$4,550</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>24.1%</dd></div>
+      <div><dt>IV rank</dt><dd>41 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>1.08 / 1.16</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>44.38</dd></div>
+    </dl>
+    <p class="pass">Cleared all 6 risk checks.</p>
+    
+    <details class="checks"><summary>All 6 risk checks</summary>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.7% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="ok">✓ <strong>per-name-cap</strong> - post-trade IBIT exposure $4550 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade bitcoin exposure $4550 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $45450 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+    </details>
+    
+    
+    
+    <p class="note">iv-rank low confidence (17/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
+    <footer>Approval id: <strong class="mono">4c4b25cf</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+
+  <article class="card">
+    <header>
+      <h3>Sell SLV 2026-11-06 $52 put (36 DTE, 0.28&Delta;)</h3>
+      <span class="mono">SLV261106P00052000</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$113</dd></div>
+      <div><dt>Collateral</dt><dd>$5,200</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>21.8%</dd></div>
+      <div><dt>IV rank</dt><dd>10 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>1.12 / 1.13</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>50.88</dd></div>
+    </dl>
+    <p class="pass">Cleared all 6 risk checks.</p>
+    
+    <details class="checks"><summary>All 6 risk checks</summary>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.7% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="ok">✓ <strong>per-name-cap</strong> - post-trade SLV exposure $5200 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade silver exposure $5200 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $40250 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+    </details>
+    
+    
+    
+    <p class="note">iv-rank low confidence (20/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
+    <footer>Approval id: <strong class="mono">3c13bb61</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+
+<h2>Screened out (18)</h2>
+<p class="note">Every universe symbol that produced no proposal today, and which rule eliminated it. "No candidate" is a decision too.</p>
+<p class="note"><strong>XLF</strong> — no contract survived the screen: 49 contracts outside the 0.2-0.3 delta band; 4 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>KRE</strong> — no contract survived the screen: 50 contracts outside the 0.2-0.3 delta band; 9 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>XLU</strong> — no contract survived the screen: 49 contracts outside the 0.2-0.3 delta band; 3 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>XLRE</strong> — no contract survived the screen: no quoted puts in the 30-45 DTE window at all</p>
+<p class="note"><strong>XBI</strong> — no contract survived the screen: 71 contracts outside the 0.2-0.3 delta band; 14 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>GDX</strong> — no contract survived the screen: 72 contracts outside the 0.2-0.3 delta band; 4 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>GDXJ</strong> — no contract survived the screen: 79 contracts outside the 0.2-0.3 delta band; 11 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>URA</strong> — no contract survived the screen: 46 contracts outside the 0.2-0.3 delta band; 5 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>XLE</strong> — no contract survived the screen: 50 contracts outside the 0.2-0.3 delta band; 7 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>KWEB</strong> — no contract survived the screen: 32 contracts outside the 0.2-0.3 delta band; 1 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>FXI</strong> — no contract survived the screen: 46 contracts outside the 0.2-0.3 delta band; 3 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>EWZ</strong> — no contract survived the screen: 40 contracts outside the 0.2-0.3 delta band; 5 with bid-ask spreads over 10% of mid (too expensive to trade); 1 with no usable quote</p>
+<p class="note"><strong>EWW</strong> — no contract survived the screen: no quoted puts in the 30-45 DTE window at all</p>
+<p class="note"><strong>INDA</strong> — no contract survived the screen: no quoted puts in the 30-45 DTE window at all</p>
+<p class="note"><strong>EEM</strong> — no contract survived the screen: 48 contracts outside the 0.2-0.3 delta band; 4 with bid-ask spreads over 10% of mid (too expensive to trade); 1 with no usable quote</p>
+<p class="note"><strong>ARKK</strong> — no contract survived the screen: 55 contracts outside the 0.2-0.3 delta band; 5 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>JETS</strong> — no contract survived the screen: 35 contracts outside the 0.2-0.3 delta band; 3 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>IWM</strong> — no contract survived the screen: 145 contracts outside the 0.2-0.3 delta band</p><h2>Swing module — swing-v1 (shadow-gated)</h2>
+<p class="note">Signals only, no orders in any mode: this module must beat SPY over a 6-month live-forward window before it touches even paper capital (PLAN.md 2.4). Entry: uptrend + pullback; every position carries a stop, target, and 20-session time stop.</p>
+
+<div class="scroll"><table><thead><tr><th>Sym</th><th>Entered</th><th>Entry</th><th>Shares</th><th>Stop</th><th>Target</th><th>Held</th></tr></thead><tbody><tr><td>XBI</td><td>2026-09-28</td><td>156.61</td><td>31</td><td>152.01</td><td>163.51</td><td>2d</td></tr><tr><td>GDX</td><td>2026-09-28</td><td>87.88</td><td>56</td><td>83.81</td><td>93.99</td><td>2d</td></tr><tr><td>GDXJ</td><td>2026-09-28</td><td>114.1</td><td>43</td><td>107.55</td><td>123.93</td><td>2d</td></tr><tr><td>XLE</td><td>2026-09-28</td><td>62.12</td><td>80</td><td>60.76</td><td>64.17</td><td>2d</td></tr><tr><td>EWZ</td><td>2026-09-28</td><td>36.23</td><td>138</td><td>35.43</td><td>37.43</td><td>2d</td></tr><tr><td>EEM</td><td>2026-09-28</td><td>67.21</td><td>74</td><td>65.58</td><td>69.66</td><td>2d</td></tr></tbody></table></div>
+</body></html>
