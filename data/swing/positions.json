@@ -7,13 +7,13 @@
     "shares": 31,
     "stop": 152.01,
     "target": 163.51,
-    "lastMarkedDate": "2026-09-30",
+    "lastMarkedDate": "2026-10-01",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 2
+    "sessionsHeld": 3
   },
   {
     "symbol": "GDX",
@@ -23,13 +23,13 @@
     "shares": 56,
     "stop": 83.81,
     "target": 93.99,
-    "lastMarkedDate": "2026-09-30",
+    "lastMarkedDate": "2026-10-01",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 2
+    "sessionsHeld": 3
   },
   {
     "symbol": "GDXJ",
@@ -39,13 +39,13 @@
     "shares": 43,
     "stop": 107.55,
     "target": 123.93,
-    "lastMarkedDate": "2026-09-30",
+    "lastMarkedDate": "2026-10-01",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 2
+    "sessionsHeld": 3
   },
   {
     "symbol": "XLE",
@@ -55,13 +55,13 @@
     "shares": 80,
     "stop": 60.76,
     "target": 64.17,
-    "lastMarkedDate": "2026-09-30",
+    "lastMarkedDate": "2026-10-01",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 2
+    "sessionsHeld": 3
   },
   {
     "symbol": "EWZ",
@@ -71,13 +71,13 @@
     "shares": 138,
     "stop": 35.43,
     "target": 37.43,
-    "lastMarkedDate": "2026-09-30",
+    "lastMarkedDate": "2026-10-01",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 2
+    "sessionsHeld": 3
   },
   {
     "symbol": "EEM",
@@ -87,12 +87,12 @@
     "shares": 74,
     "stop": 65.58,
     "target": 69.66,
-    "lastMarkedDate": "2026-09-30",
+    "lastMarkedDate": "2026-10-01",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 2
+    "sessionsHeld": 3
   }
 ]
