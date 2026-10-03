@@ -63,8 +63,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.225,
-    "currentMid": 1.48,
-    "shadowPnl": -25.49999999999999,
+    "currentMid": 1.22,
+    "shadowPnl": 0.5000000000000115,
     "closedReason": null
   },
   {
@@ -129,11 +129,11 @@
       "iv-rank low confidence (9/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 1.09,
-    "currentMid": 0.81,
-    "shadowPnl": 28.000000000000004,
-    "closedReason": null
+    "currentMid": 0.77,
+    "shadowPnl": 32.00000000000001,
+    "closedReason": "managed-at-21dte"
   },
   {
     "id": "11857789-3402-479a-ac2c-e3f4cd411cd1",
@@ -199,8 +199,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 1.385,
-    "currentMid": 2.8600000000000003,
-    "shadowPnl": -147.50000000000003,
+    "currentMid": 2.955,
+    "shadowPnl": -157,
     "closedReason": null
   },
   {
@@ -267,8 +267,8 @@
     "llm": null,
     "shadowStatus": "open",
     "entryMid": 0.925,
-    "currentMid": 0.73,
-    "shadowPnl": 19.500000000000007,
+    "currentMid": 0.78,
+    "shadowPnl": 14.500000000000002,
     "closedReason": null
   },
   {
