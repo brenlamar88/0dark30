@@ -232,12 +232,12 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.5,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "339ee684-cbe6-4ec2-8657-fa44e2bebb69",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-10-07T20:04:36.157Z",
-    "updatedAt": "2026-10-07T20:04:36.157Z"
+    "updatedAt": "2026-10-07T21:46:07.736Z"
   },
   {
     "id": "02a3a63d-6f93-481f-a39d-0276938f955a",
@@ -247,12 +247,12 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.31,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "2c811391-a59e-4d4c-bcaf-b5b5bd977884",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-10-07T20:04:36.157Z",
-    "updatedAt": "2026-10-07T20:04:36.157Z"
+    "updatedAt": "2026-10-07T21:46:07.737Z"
   },
   {
     "id": "c5046ae6-3509-4e25-ac9d-d366201a7bc7",
@@ -262,11 +262,56 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.23,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "1aae73f0-5df1-4b41-a9b3-acebfe2e7300",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-10-07T20:04:36.157Z",
-    "updatedAt": "2026-10-07T20:04:36.157Z"
+    "updatedAt": "2026-10-07T21:46:07.737Z"
+  },
+  {
+    "id": "03ca7c7f-65ff-4a0b-b2e6-8dec896a9a85",
+    "proposalId": "f8a2d4be-4cb8-4bf9-a006-5b48c96c41c2",
+    "intent": "close-profit-target",
+    "occSymbol": "IBIT261106P00046000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.5,
+    "status": "working",
+    "brokerOrderId": "e58ae381-5fac-4c8e-801c-fc02177ebd9e",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-07T21:46:07.460Z",
+    "updatedAt": "2026-10-07T21:46:07.460Z"
+  },
+  {
+    "id": "8a2261c4-dded-4b6d-9dc3-99ae3ad329c5",
+    "proposalId": "ba984c38-0ca3-40bc-aaf2-34a49f711548",
+    "intent": "close-profit-target",
+    "occSymbol": "XLE261106P00060000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.31,
+    "status": "working",
+    "brokerOrderId": "7bb02454-179c-4362-a336-63f88e15657d",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-07T21:46:07.460Z",
+    "updatedAt": "2026-10-07T21:46:07.460Z"
+  },
+  {
+    "id": "67e281e2-377b-4ef4-9aee-bb0962fa0775",
+    "proposalId": "526bdd89-95bb-4e49-9156-9f1d9bda8750",
+    "intent": "close-profit-target",
+    "occSymbol": "XLF261113P00052000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.23,
+    "status": "working",
+    "brokerOrderId": "d50e69fe-6823-4326-b654-58f83aeacb69",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-07T21:46:07.460Z",
+    "updatedAt": "2026-10-07T21:46:07.460Z"
   }
 ]
