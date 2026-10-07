@@ -31,13 +31,13 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-10-07 00:44 UTC.</p>
+<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-10-07 18:59 UTC.</p>
 
-<p><a href="briefs/2026-10-06.html">Latest morning brief (2026-10-06) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
+<p><a href="briefs/2026-10-07.html">Latest morning brief (2026-10-07) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
 <div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$389</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
 <div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$1,080</div><div class="tile-note">the null hypothesis</div></div>
-<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">6 / 18</div><div class="tile-note">shadow positions</div></div>
+<div class="tile"><div class="tile-label">Open / closed</div><div class="tile-value">7 / 18</div><div class="tile-note">shadow positions</div></div>
 <div class="tile"><div class="tile-label">Sessions</div><div class="tile-value">59</div><div class="tile-note">postclose rows recorded</div></div>
 <div class="tile"><div class="tile-label">IV-rank confidence</div><div class="tile-value">59/60</div><div class="tile-note">bootstrapping — gate advisory</div></div>
 <div class="tile"><div class="tile-label">Swing (shadow)</div><div class="tile-value">$97</div><div class="tile-note">4 open — 6-month gate running</div></div>
@@ -90,6 +90,41 @@
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>Sym</th><th>Contract</th><th>Δ</th><th>DTE</th><th>Prem</th><th>Collat</th><th>RoC/yr</th><th>Status</th><th>P&amp;L</th></tr></thead>
 <tbody><tr>
+<td>2026-10-07</td><td>KWEB</td><td class="mono">KWEB261120P00023000</td>
+<td>0.25</td><td>44</td>
+<td>$39</td><td>$2,300</td>
+<td>13.7%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
+<td>2026-10-07</td><td>SLV</td><td class="mono">SLV261113P00051500</td>
+<td>0.30</td><td>37</td>
+<td>$119</td><td>$5,150</td>
+<td>22.0%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
+<td>2026-10-07</td><td>IBIT</td><td class="mono">IBIT261106P00045000</td>
+<td>0.30</td><td>30</td>
+<td>$100</td><td>$4,500</td>
+<td>26.5%</td>
+<td title="post-trade IBIT exposure $9100 vs cap $6000">blocked by the single-name cap (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
+<td>2026-10-07</td><td>URA</td><td class="mono">URA261113P00037500</td>
+<td>0.29</td><td>37</td>
+<td>$107</td><td>$3,750</td>
+<td>26.8%</td>
+<td>open</td>
+<td>—</td></tr>
+<tr>
+<td>2026-10-07</td><td>EWZ</td><td class="mono">EWZ261106P00040000</td>
+<td>0.28</td><td>30</td>
+<td>$101</td><td>$4,000</td>
+<td>29.5%</td>
+<td>blocked (shadow-duplicate)</td>
+<td>—</td></tr>
+<tr>
 <td>2026-10-06</td><td>XLF</td><td class="mono">XLF261106P00052500</td>
 <td>0.27</td><td>31</td>
 <td>$46</td><td>$5,250</td>
@@ -262,41 +297,6 @@
 <td>0.30</td><td>31</td>
 <td>$101</td><td>$4,500</td>
 <td>26.2%</td>
-<td>blocked (shadow-duplicate)</td>
-<td>—</td></tr>
-<tr>
-<td>2026-09-29</td><td>EWZ</td><td class="mono">EWZ261030P00033500</td>
-<td>0.28</td><td>31</td>
-<td>$121</td><td>$3,350</td>
-<td>41.5%</td>
-<td>blocked (shadow-duplicate)</td>
-<td>—</td></tr>
-<tr>
-<td>2026-09-28</td><td>KWEB</td><td class="mono">KWEB261030P00023500</td>
-<td>0.25</td><td>32</td>
-<td>$31</td><td>$2,350</td>
-<td>14.6%</td>
-<td>open</td>
-<td>$6</td></tr>
-<tr>
-<td>2026-09-28</td><td>XLE</td><td class="mono">XLE261030P00059500</td>
-<td>0.28</td><td>32</td>
-<td>$92</td><td>$5,950</td>
-<td>17.1%</td>
-<td>blocked (shadow-duplicate)</td>
-<td>—</td></tr>
-<tr>
-<td>2026-09-28</td><td>SLV</td><td class="mono">SLV261030P00052000</td>
-<td>0.28</td><td>32</td>
-<td>$108</td><td>$5,200</td>
-<td>23.3%</td>
-<td>blocked (shadow-duplicate)</td>
-<td>—</td></tr>
-<tr>
-<td>2026-09-28</td><td>IBIT</td><td class="mono">IBIT261030P00045000</td>
-<td>0.30</td><td>32</td>
-<td>$106</td><td>$4,500</td>
-<td>26.1%</td>
 <td>blocked (shadow-duplicate)</td>
 <td>—</td></tr></tbody>
 </table></div>
