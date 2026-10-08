@@ -94,5 +94,37 @@
     "pnl": null,
     "exitReason": null,
     "sessionsHeld": 7
+  },
+  {
+    "symbol": "ARKK",
+    "ruleVersion": "swing-v1",
+    "entryDate": "2026-10-08",
+    "entryPrice": 87.18,
+    "shares": 57,
+    "stop": 84.22,
+    "target": 91.61,
+    "lastMarkedDate": null,
+    "status": "open",
+    "exitDate": null,
+    "exitPrice": null,
+    "pnl": null,
+    "exitReason": null,
+    "sessionsHeld": 0
+  },
+  {
+    "symbol": "IBIT",
+    "ruleVersion": "swing-v1",
+    "entryDate": "2026-10-08",
+    "entryPrice": 46.11,
+    "shares": 108,
+    "stop": 44.82,
+    "target": 48.04,
+    "lastMarkedDate": null,
+    "status": "open",
+    "exitDate": null,
+    "exitPrice": null,
+    "pnl": null,
+    "exitReason": null,
+    "sessionsHeld": 0
   }
 ]
