@@ -277,12 +277,12 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.5,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "e58ae381-5fac-4c8e-801c-fc02177ebd9e",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-10-07T21:46:07.460Z",
-    "updatedAt": "2026-10-07T21:46:07.460Z"
+    "updatedAt": "2026-10-08T20:02:15.686Z"
   },
   {
     "id": "8a2261c4-dded-4b6d-9dc3-99ae3ad329c5",
@@ -292,12 +292,12 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.31,
-    "status": "working",
+    "status": "filled",
     "brokerOrderId": "7bb02454-179c-4362-a336-63f88e15657d",
-    "filledQty": 0,
-    "filledAvgPrice": null,
+    "filledQty": 1,
+    "filledAvgPrice": 0.31,
     "createdAt": "2026-10-07T21:46:07.460Z",
-    "updatedAt": "2026-10-07T21:46:07.460Z"
+    "updatedAt": "2026-10-08T20:02:15.686Z"
   },
   {
     "id": "67e281e2-377b-4ef4-9aee-bb0962fa0775",
@@ -307,11 +307,41 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.23,
-    "status": "working",
+    "status": "expired",
     "brokerOrderId": "d50e69fe-6823-4326-b654-58f83aeacb69",
     "filledQty": 0,
     "filledAvgPrice": null,
     "createdAt": "2026-10-07T21:46:07.460Z",
-    "updatedAt": "2026-10-07T21:46:07.460Z"
+    "updatedAt": "2026-10-08T20:02:15.686Z"
+  },
+  {
+    "id": "eb9e4a5f-70ed-462a-ac84-b4fffd64e4b3",
+    "proposalId": "f8a2d4be-4cb8-4bf9-a006-5b48c96c41c2",
+    "intent": "close-profit-target",
+    "occSymbol": "IBIT261106P00046000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.5,
+    "status": "working",
+    "brokerOrderId": "cfbb879f-d14d-4d31-a916-b53d7c8d1352",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-08T20:02:15.394Z",
+    "updatedAt": "2026-10-08T20:02:15.394Z"
+  },
+  {
+    "id": "8c4ded1d-472f-4682-8abf-07e138773ee8",
+    "proposalId": "526bdd89-95bb-4e49-9156-9f1d9bda8750",
+    "intent": "close-profit-target",
+    "occSymbol": "XLF261113P00052000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.23,
+    "status": "working",
+    "brokerOrderId": "4e27cab2-2b7a-4e4f-b6b6-7697675827dc",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-08T20:02:15.394Z",
+    "updatedAt": "2026-10-08T20:02:15.394Z"
   }
 ]
