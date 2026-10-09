@@ -373,5 +373,50 @@
     "filledAvgPrice": null,
     "createdAt": "2026-10-08T21:49:38.344Z",
     "updatedAt": "2026-10-08T21:49:38.344Z"
+  },
+  {
+    "id": "9d1c732e-ef1e-48b4-8d4d-5e42a4a44be7",
+    "proposalId": "bac6dcb6-8ce0-4f4c-9d85-f8a7b4259130",
+    "intent": "open-csp",
+    "occSymbol": "EWZ261120P00041000",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 1.19,
+    "status": "working",
+    "brokerOrderId": "7ce49795-a161-4204-a93d-a55dc4508884",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-09T15:33:31.067Z",
+    "updatedAt": "2026-10-09T15:33:31.067Z"
+  },
+  {
+    "id": "1788a460-1476-4e1f-9b82-c4757d04fd4f",
+    "proposalId": "020121cf-ff89-47b4-9bc8-ce11940f64c4",
+    "intent": "open-csp",
+    "occSymbol": "SLV261113P00052500",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 1.1,
+    "status": "working",
+    "brokerOrderId": "6c07d147-65a9-4181-9282-48144f7089a7",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-09T15:33:31.269Z",
+    "updatedAt": "2026-10-09T15:33:31.269Z"
+  },
+  {
+    "id": "12b1d6b4-410e-45c8-955c-6a67e3135c71",
+    "proposalId": "fc7c5887-05d9-4db1-8ee7-6f699f7afa1d",
+    "intent": "open-csp",
+    "occSymbol": "URA261120P00035000",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 0.66,
+    "status": "working",
+    "brokerOrderId": "dc9cb40c-b7f5-4a33-907f-c1686bcf3b75",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-09T15:33:31.392Z",
+    "updatedAt": "2026-10-09T15:33:31.392Z"
   }
 ]
