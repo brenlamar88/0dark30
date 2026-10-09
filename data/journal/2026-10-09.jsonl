@@ -1,0 +1,3 @@
+{"ts":"2026-10-09T01:14:12.017Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-10-08"}}
+{"ts":"2026-10-09T01:14:12.777Z","type":"swing.exit","ruleVersion":"wheel-v1","payload":{"symbol":"XLE","ruleVersion":"swing-v1","entryDate":"2026-09-28","entryPrice":62.12,"shares":80,"stop":60.76,"target":64.17,"lastMarkedDate":"2026-10-08","status":"closed","exitDate":"2026-10-08","exitPrice":65.22,"pnl":248,"exitReason":"target","sessionsHeld":8}}
+{"ts":"2026-10-09T01:14:12.906Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":773.88,"realizedTotal":464.25,"unrealized":-339,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}
