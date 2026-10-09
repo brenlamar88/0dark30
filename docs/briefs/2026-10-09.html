@@ -23,151 +23,151 @@
 <p class="banner"><strong>PAPER MODE (Phase 2).</strong> Proposals below are staged to the Alpaca <em>paper</em> account only after your approval - no real money anywhere. Approve/reject by short id before the TTL: commit <span class="mono">approvals/2026-10-09.json</span> (<span class="mono">{"approve": ["ab12cd34"], "reject": []}</span>) or reply to the Telegram bot if configured. Unapproved proposals expire and are journaled. Rule version <span class="mono">wheel-v1</span>; not financial advice.</p>
 
 <p class="note">LLM analyst layer unavailable this run - mechanical output only (by design, the brief never depends on it).</p>
-<p class="note">SPY 20d realized vol: 9.9% - open shadow positions: 7</p>
-<h2>Proposals (3)</h2>
+<p class="note">SPY 20d realized vol: 10.0% - open shadow positions: 7</p>
+<h2>Proposals (1)</h2>
 
   <article class="card">
     <header>
-      <h3>Sell EWZ 2026-11-20 $41 put (42 DTE, 0.29&Delta;)</h3>
-      <span class="mono">EWZ261120P00041000</span>
+      <h3>Sell FXI 2026-11-13 $33 put (35 DTE, 0.26&Delta;)</h3>
+      <span class="mono">FXI261113P00033000</span>
     </header>
     <dl>
-      <div><dt>Premium (mid)</dt><dd>$117</dd></div>
-      <div><dt>Collateral</dt><dd>$4,100</dd></div>
-      <div><dt>Annualized RoC (bid)</dt><dd>24.6%</dd></div>
-      <div><dt>IV rank</dt><dd>46 (low confidence)</dd></div>
-      <div><dt>Quote</dt><dd>1.16 / 1.18</dd></div>
-      <div><dt>Effective basis if assigned</dt><dd>39.83</dd></div>
+      <div><dt>Premium (mid)</dt><dd>$38</dd></div>
+      <div><dt>Collateral</dt><dd>$3,300</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>11.4%</dd></div>
+      <div><dt>IV rank</dt><dd>73 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>0.36 / 0.39</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>32.63</dd></div>
     </dl>
     <p class="pass">Cleared all 6 risk checks.</p>
     
     <details class="checks"><summary>All 6 risk checks</summary>
-      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 9.9% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="ok">✓ <strong>per-name-cap</strong> - post-trade EWZ exposure $4100 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade brazil exposure $4100 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $36100 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.0% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="ok">✓ <strong>per-name-cap</strong> - post-trade FXI exposure $3300 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade china-largecap exposure $3300 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $24050 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+    </details>
+    
+    
+    
+    <p class="note">iv-rank low confidence (26/60 observations) - threshold not yet enforced</p>
+    <footer>Approval id: <strong class="mono">550ceb7c</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+<h2>Blocked by risk engine (4)</h2>
+  <article class="card blocked">
+    <header>
+      <h3>BLOCKED Sell EWZ 2026-11-13 $41 put (35 DTE, 0.29&Delta;)</h3>
+      <span class="mono">EWZ261113P00041000</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$113</dd></div>
+      <div><dt>Collateral</dt><dd>$4,100</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>27.7%</dd></div>
+      <div><dt>IV rank</dt><dd>46 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>1.09 / 1.16</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>39.88</dd></div>
+    </dl>
+    <p class="fail">Blocked by the single-name cap.</p>
+    <p class="fail">✗ post-trade EWZ exposure $8200 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p>
+    <details class="checks"><summary>All 6 risk checks</summary>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.0% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="fail">✗ <strong>per-name-cap</strong> - post-trade EWZ exposure $8200 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade brazil exposure $8200 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $23250 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
     </details>
     
     
     
     <p class="note">iv-rank low confidence (26/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
-    <footer>Approval id: <strong class="mono">bac6dcb6</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+    <footer>Approval id: <strong class="mono">6a0d7c20</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
   </article>
 
-  <article class="card">
+  <article class="card blocked">
     <header>
-      <h3>Sell SLV 2026-11-13 $52.5 put (35 DTE, 0.30&Delta;)</h3>
+      <h3>BLOCKED Sell IBIT 2026-11-13 $44 put (35 DTE, 0.28&Delta;)</h3>
+      <span class="mono">IBIT261113P00044000</span>
+    </header>
+    <dl>
+      <div><dt>Premium (mid)</dt><dd>$99</dd></div>
+      <div><dt>Collateral</dt><dd>$4,400</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>23.0%</dd></div>
+      <div><dt>IV rank</dt><dd>30 (low confidence)</dd></div>
+      <div><dt>Quote</dt><dd>0.97 / 1.01</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>43.01</dd></div>
+    </dl>
+    <p class="fail">Blocked by the single-name cap.</p>
+    <p class="fail">✗ post-trade IBIT exposure $9000 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p>
+    <details class="checks"><summary>All 6 risk checks</summary>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.0% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="fail">✗ <strong>per-name-cap</strong> - post-trade IBIT exposure $9000 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade bitcoin exposure $9000 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $22950 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+    </details>
+    
+    
+    
+    <p class="note">iv-rank low confidence (23/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
+    <footer>Approval id: <strong class="mono">d6c4ec84</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+  </article>
+
+  <article class="card blocked">
+    <header>
+      <h3>BLOCKED Sell SLV 2026-11-13 $52.5 put (35 DTE, 0.30&Delta;)</h3>
       <span class="mono">SLV261113P00052500</span>
     </header>
     <dl>
       <div><dt>Premium (mid)</dt><dd>$112</dd></div>
       <div><dt>Collateral</dt><dd>$5,250</dd></div>
-      <div><dt>Annualized RoC (bid)</dt><dd>21.7%</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>21.9%</dd></div>
       <div><dt>IV rank</dt><dd>0 (low confidence)</dd></div>
-      <div><dt>Quote</dt><dd>1.09 / 1.14</dd></div>
+      <div><dt>Quote</dt><dd>1.10 / 1.13</dd></div>
       <div><dt>Effective basis if assigned</dt><dd>51.38</dd></div>
     </dl>
-    <p class="pass">Cleared all 6 risk checks.</p>
-    
+    <p class="fail">Blocked by the single-name cap.</p>
+    <p class="fail">✗ post-trade SLV exposure $10500 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p>
     <details class="checks"><summary>All 6 risk checks</summary>
-      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 9.9% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="ok">✓ <strong>per-name-cap</strong> - post-trade SLV exposure $5250 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade silver exposure $5250 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $30850 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.0% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="fail">✗ <strong>per-name-cap</strong> - post-trade SLV exposure $10500 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade silver exposure $10500 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $22100 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
     </details>
     
     
     
     <p class="note">iv-rank low confidence (26/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
-    <footer>Approval id: <strong class="mono">020121cf</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
-  </article>
-
-  <article class="card">
-    <header>
-      <h3>Sell URA 2026-11-20 $35 put (42 DTE, 0.20&Delta;)</h3>
-      <span class="mono">URA261120P00035000</span>
-    </header>
-    <dl>
-      <div><dt>Premium (mid)</dt><dd>$70</dd></div>
-      <div><dt>Collateral</dt><dd>$3,500</dd></div>
-      <div><dt>Annualized RoC (bid)</dt><dd>16.6%</dd></div>
-      <div><dt>IV rank</dt><dd>39 (low confidence)</dd></div>
-      <div><dt>Quote</dt><dd>0.67 / 0.73</dd></div>
-      <div><dt>Effective basis if assigned</dt><dd>34.30</dd></div>
-    </dl>
-    <p class="pass">Cleared all 6 risk checks.</p>
-    
-    <details class="checks"><summary>All 6 risk checks</summary>
-      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 9.9% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="ok">✓ <strong>per-name-cap</strong> - post-trade URA exposure $3500 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade uranium exposure $3500 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $27350 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
-    </details>
-    
-    
-    
-    <p class="note">iv-rank low confidence (23/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
-    <footer>Approval id: <strong class="mono">fc7c5887</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
-  </article>
-<h2>Blocked by risk engine (2)</h2>
-  <article class="card blocked">
-    <header>
-      <h3>BLOCKED Sell IBIT 2026-11-13 $44.5 put (35 DTE, 0.29&Delta;)</h3>
-      <span class="mono">IBIT261113P00044500</span>
-    </header>
-    <dl>
-      <div><dt>Premium (mid)</dt><dd>$109</dd></div>
-      <div><dt>Collateral</dt><dd>$4,450</dd></div>
-      <div><dt>Annualized RoC (bid)</dt><dd>24.6%</dd></div>
-      <div><dt>IV rank</dt><dd>61 (low confidence)</dd></div>
-      <div><dt>Quote</dt><dd>1.05 / 1.12</dd></div>
-      <div><dt>Effective basis if assigned</dt><dd>43.41</dd></div>
-    </dl>
-    <p class="fail">Blocked by the single-name cap.</p>
-    <p class="fail">✗ post-trade IBIT exposure $9050 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p>
-    <details class="checks"><summary>All 6 risk checks</summary>
-      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 9.9% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="fail">✗ <strong>per-name-cap</strong> - post-trade IBIT exposure $9050 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade bitcoin exposure $9050 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $35750 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
-    </details>
-    
-    
-    
-    <p class="note">iv-rank low confidence (23/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
-    <footer>Approval id: <strong class="mono">1ea1b21a</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+    <footer>Approval id: <strong class="mono">117ba151</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
   </article>
 
   <article class="card blocked">
     <header>
-      <h3>BLOCKED Sell XLF 2026-11-20 $53 put (42 DTE, 0.28&Delta;)</h3>
+      <h3>BLOCKED Sell XLF 2026-11-20 $53 put (42 DTE, 0.27&Delta;)</h3>
       <span class="mono">XLF261120P00053000</span>
     </header>
     <dl>
-      <div><dt>Premium (mid)</dt><dd>$58</dd></div>
+      <div><dt>Premium (mid)</dt><dd>$57</dd></div>
       <div><dt>Collateral</dt><dd>$5,300</dd></div>
-      <div><dt>Annualized RoC (bid)</dt><dd>9.3%</dd></div>
+      <div><dt>Annualized RoC (bid)</dt><dd>9.2%</dd></div>
       <div><dt>IV rank</dt><dd>92 (low confidence)</dd></div>
-      <div><dt>Quote</dt><dd>0.57 / 0.59</dd></div>
-      <div><dt>Effective basis if assigned</dt><dd>52.42</dd></div>
+      <div><dt>Quote</dt><dd>0.56 / 0.58</dd></div>
+      <div><dt>Effective basis if assigned</dt><dd>52.43</dd></div>
     </dl>
     <p class="fail">Blocked by the single-name cap.</p>
     <p class="fail">✗ post-trade XLF exposure $10500 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p>
     <details class="checks"><summary>All 6 risk checks</summary>
-      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 9.9% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="fail">✗ <strong>per-name-cap</strong> - post-trade XLF exposure $10500 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade financials exposure $10500 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $22050 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
+      <p class="ok">✓ <strong>reconciler-green</strong> - no unexplained broker divergence<br><span class="why">The system's records must match the broker exactly before any new risk is added - if they disagree, every other number here could be fiction.</span></p><p class="ok">✓ <strong>drawdown-halt</strong> - drawdown 0.0% of HWM (halt at 25%)<br><span class="why">If the pool falls 25% from its high-water mark, all new trades stop until a human reviews and journals a reason to continue. Prevents digging while in a hole.</span></p><p class="ok">✓ <strong>vol-regime-freeze</strong> - SPY 20d realized vol 10.0% (freeze above 30%)<br><span class="why">When the market itself turns violent (SPY's realized volatility above 30%), premium looks richest exactly when gap risk is worst - so new premium-selling pauses.</span></p><p class="fail">✗ <strong>per-name-cap</strong> - post-trade XLF exposure $10500 vs cap $6000<br><span class="why">No more than 12% of the pool may be exposed to one underlying. Options premiums are small; one bad gap in a concentrated name would not be.</span></p><p class="ok">✓ <strong>sector-cap</strong> - post-trade financials exposure $10500 vs cap $12500<br><span class="why">No more than 25% of the pool in one sector - names in a sector gap down together, so per-name caps alone are not enough.</span></p><p class="ok">✓ <strong>cash-buffer</strong> - post-trade cash $18750 vs buffer $5000<br><span class="why">At least 10% of the pool stays in cash at all times, so a drawdown never forces selling positions at the worst moment.</span></p>
     </details>
     
     
     
     <p class="note">iv-rank low confidence (26/60 observations) - threshold not yet enforced</p><p class="note">shadow book already holds this name - the counterfactual skips it, the paper book may still take it</p>
-    <footer>Approval id: <strong class="mono">b8234da5</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
+    <footer>Approval id: <strong class="mono">987a76a1</strong> · TTL 9h from creation · Management once filled: buy-to-close at 50% of premium, manage at 21 DTE.</footer>
   </article>
 <h2>Screened out (15)</h2>
 <p class="note">Every universe symbol that produced no proposal today, and which rule eliminated it. "No candidate" is a decision too.</p>
 <p class="note"><strong>KRE</strong> — no contract survived the screen: 69 contracts outside the 0.2-0.3 delta band; 5 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>XLU</strong> — no contract survived the screen: 42 contracts outside the 0.2-0.3 delta band; 2 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>XLRE</strong> — no contract survived the screen: 13 contracts outside the 0.2-0.3 delta band; 1 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>XBI</strong> — no contract survived the screen: 110 contracts outside the 0.2-0.3 delta band; 10 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>GDX</strong> — no contract survived the screen: 109 contracts outside the 0.2-0.3 delta band; 6 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>XBI</strong> — no contract survived the screen: 109 contracts outside the 0.2-0.3 delta band; 9 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>GDX</strong> — no contract survived the screen: 110 contracts outside the 0.2-0.3 delta band; 5 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
 <p class="note"><strong>GDXJ</strong> — no contract survived the screen: 125 contracts outside the 0.2-0.3 delta band; 10 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>XLE</strong> — no contract survived the screen: 52 contracts outside the 0.2-0.3 delta band; 1 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>KWEB</strong> — no contract survived the screen: 43 contracts outside the 0.2-0.3 delta band; 1 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>FXI</strong> — no contract survived the screen: 54 contracts outside the 0.2-0.3 delta band; 3 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>EWW</strong> — no contract survived the screen: 22 contracts outside the 0.2-0.3 delta band; 3 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>INDA</strong> — no contract survived the screen: 15 contracts outside the 0.2-0.3 delta band; 1 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>EEM</strong> — no contract survived the screen: 88 contracts outside the 0.2-0.3 delta band; 6 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>ARKK</strong> — no contract survived the screen: 65 contracts outside the 0.2-0.3 delta band; 7 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>JETS</strong> — no contract survived the screen: 38 contracts outside the 0.2-0.3 delta band; 3 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
-<p class="note"><strong>IWM</strong> — no contract survived the screen: 231 contracts outside the 0.2-0.3 delta band</p><h2>Swing module — swing-v1 (shadow-gated)</h2>
+<p class="note"><strong>URA</strong> — no contract survived the screen: 45 contracts outside the 0.2-0.3 delta band; 5 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>XLE</strong> — no contract survived the screen: 56 contracts outside the 0.2-0.3 delta band</p>
+<p class="note"><strong>KWEB</strong> — no contract survived the screen: 45 contracts outside the 0.2-0.3 delta band; 1 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>EWW</strong> — no contract survived the screen: 23 contracts outside the 0.2-0.3 delta band; 2 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>INDA</strong> — no contract survived the screen: 16 contracts outside the 0.2-0.3 delta band</p>
+<p class="note"><strong>EEM</strong> — no contract survived the screen: 87 contracts outside the 0.2-0.3 delta band; 6 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>ARKK</strong> — no contract survived the screen: 63 contracts outside the 0.2-0.3 delta band; 7 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>JETS</strong> — no contract survived the screen: 39 contracts outside the 0.2-0.3 delta band; 2 with bid-ask spreads over 10% of mid (too expensive to trade)</p>
+<p class="note"><strong>IWM</strong> — no contract survived the screen: 232 contracts outside the 0.2-0.3 delta band</p>
+<p class="note"><strong>XLU</strong> — passed the screen but ranked below the top 5 by annualized return-on-capital</p>
+<p class="note"><strong>XLRE</strong> — passed the screen but ranked below the top 5 by annualized return-on-capital</p><h2>Swing module — swing-v1 (shadow-gated)</h2>
 <p class="note">Signals only, no orders in any mode: this module must beat SPY over a 6-month live-forward window before it touches even paper capital (PLAN.md 2.4). Entry: uptrend + pullback; every position carries a stop, target, and 20-session time stop.</p>
-<p>New shadow entries today: <strong>XBI</strong></p>
+
 <div class="scroll"><table><thead><tr><th>Sym</th><th>Entered</th><th>Entry</th><th>Shares</th><th>Stop</th><th>Target</th><th>Held</th></tr></thead><tbody><tr><td>GDX</td><td>2026-09-28</td><td>87.88</td><td>56</td><td>83.81</td><td>93.99</td><td>8d</td></tr><tr><td>GDXJ</td><td>2026-09-28</td><td>114.1</td><td>43</td><td>107.55</td><td>123.93</td><td>8d</td></tr><tr><td>EEM</td><td>2026-09-28</td><td>67.21</td><td>74</td><td>65.58</td><td>69.66</td><td>8d</td></tr><tr><td>ARKK</td><td>2026-10-08</td><td>87.18</td><td>57</td><td>84.22</td><td>91.61</td><td>0d</td></tr><tr><td>IBIT</td><td>2026-10-08</td><td>46.11</td><td>108</td><td>44.82</td><td>48.04</td><td>0d</td></tr><tr><td>XBI</td><td>2026-10-09</td><td>152.39</td><td>32</td><td>148.09</td><td>158.83</td><td>0d</td></tr></tbody></table></div>
 </body></html>
