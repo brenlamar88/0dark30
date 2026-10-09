@@ -382,12 +382,12 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 1.19,
-    "status": "working",
+    "status": "filled",
     "brokerOrderId": "7ce49795-a161-4204-a93d-a55dc4508884",
-    "filledQty": 0,
-    "filledAvgPrice": null,
+    "filledQty": 1,
+    "filledAvgPrice": 1.19,
     "createdAt": "2026-10-09T15:33:31.067Z",
-    "updatedAt": "2026-10-09T15:33:31.067Z"
+    "updatedAt": "2026-10-09T19:37:33.207Z"
   },
   {
     "id": "1788a460-1476-4e1f-9b82-c4757d04fd4f",
@@ -397,12 +397,12 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 1.1,
-    "status": "working",
+    "status": "filled",
     "brokerOrderId": "6c07d147-65a9-4181-9282-48144f7089a7",
-    "filledQty": 0,
-    "filledAvgPrice": null,
+    "filledQty": 1,
+    "filledAvgPrice": 1.1,
     "createdAt": "2026-10-09T15:33:31.269Z",
-    "updatedAt": "2026-10-09T15:33:31.269Z"
+    "updatedAt": "2026-10-09T19:37:33.207Z"
   },
   {
     "id": "12b1d6b4-410e-45c8-955c-6a67e3135c71",
@@ -418,5 +418,35 @@
     "filledAvgPrice": null,
     "createdAt": "2026-10-09T15:33:31.392Z",
     "updatedAt": "2026-10-09T15:33:31.392Z"
+  },
+  {
+    "id": "da0432ac-fe30-4390-9540-cf6a875f2914",
+    "proposalId": "bac6dcb6-8ce0-4f4c-9d85-f8a7b4259130",
+    "intent": "close-profit-target",
+    "occSymbol": "EWZ261120P00041000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.6,
+    "status": "working",
+    "brokerOrderId": "41965759-9b06-4fad-8d09-e9b194b63655",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-09T19:37:33.108Z",
+    "updatedAt": "2026-10-09T19:37:33.108Z"
+  },
+  {
+    "id": "abe3f74f-1496-4185-a5a7-a4faf1e230c3",
+    "proposalId": "020121cf-ff89-47b4-9bc8-ce11940f64c4",
+    "intent": "close-profit-target",
+    "occSymbol": "SLV261113P00052500",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.55,
+    "status": "working",
+    "brokerOrderId": "185a28d2-88bd-41eb-b826-155be1f5ce17",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-09T19:37:33.108Z",
+    "updatedAt": "2026-10-09T19:37:33.108Z"
   }
 ]
