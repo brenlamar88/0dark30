@@ -126,5 +126,21 @@
     "pnl": null,
     "exitReason": null,
     "sessionsHeld": 0
+  },
+  {
+    "symbol": "XBI",
+    "ruleVersion": "swing-v1",
+    "entryDate": "2026-10-09",
+    "entryPrice": 152.39,
+    "shares": 32,
+    "stop": 148.09,
+    "target": 158.83,
+    "lastMarkedDate": null,
+    "status": "open",
+    "exitDate": null,
+    "exitPrice": null,
+    "pnl": null,
+    "exitReason": null,
+    "sessionsHeld": 0
   }
 ]
