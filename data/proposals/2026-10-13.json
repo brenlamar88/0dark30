@@ -1,0 +1,350 @@
+[
+  {
+    "id": "87453812-c92c-4924-a0d0-d3a6d53060ca",
+    "date": "2026-10-13",
+    "createdAt": "2026-10-13T19:23:30.376Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "EWZ",
+    "sector": "brazil",
+    "occSymbol": "EWZ261113P00040000",
+    "expiry": "2026-11-13",
+    "strike": 40,
+    "dte": 31,
+    "delta": -0.2755,
+    "bid": 1.03,
+    "ask": 1.11,
+    "mid": 1.07,
+    "collateral": 4000,
+    "premiumAtMid": 107,
+    "rocAnnualizedAtBid": 0.3031854838709677,
+    "ivRank": {
+      "rank": 57,
+      "observations": 28,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade EWZ exposure $8100 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade brazil exposure $8100 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $26850 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (28/60 observations) - threshold not yet enforced",
+      "shadow book already holds this name - the counterfactual skips it, the paper book may still take it"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 1.07,
+    "currentMid": 1.07,
+    "shadowPnl": null,
+    "closedReason": "shadow-duplicate"
+  },
+  {
+    "id": "aba2735f-2190-4dca-b2be-05e2687ad92f",
+    "date": "2026-10-13",
+    "createdAt": "2026-10-13T19:23:30.376Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "IBIT",
+    "sector": "bitcoin",
+    "occSymbol": "IBIT261113P00044500",
+    "expiry": "2026-11-13",
+    "strike": 44.5,
+    "dte": 31,
+    "delta": -0.2769,
+    "bid": 0.92,
+    "ask": 0.99,
+    "mid": 0.9550000000000001,
+    "collateral": 4450,
+    "premiumAtMid": 95.5,
+    "rocAnnualizedAtBid": 0.24342152953968826,
+    "ivRank": {
+      "rank": 56,
+      "observations": 25,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade IBIT exposure $9050 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade bitcoin exposure $9050 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $26400 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (25/60 observations) - threshold not yet enforced",
+      "shadow book already holds this name - the counterfactual skips it, the paper book may still take it"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.9550000000000001,
+    "currentMid": 0.9550000000000001,
+    "shadowPnl": null,
+    "closedReason": "shadow-duplicate"
+  },
+  {
+    "id": "70b230d7-7853-4c55-9a98-da275a4f9a72",
+    "date": "2026-10-13",
+    "createdAt": "2026-10-13T19:23:30.376Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "SLV",
+    "sector": "silver",
+    "occSymbol": "SLV261113P00051000",
+    "expiry": "2026-11-13",
+    "strike": 51,
+    "dte": 31,
+    "delta": -0.2835,
+    "bid": 0.96,
+    "ask": 0.98,
+    "mid": 0.97,
+    "collateral": 5100,
+    "premiumAtMid": 97,
+    "rocAnnualizedAtBid": 0.22163187855787472,
+    "ivRank": {
+      "rank": 4,
+      "observations": 28,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": false,
+        "detail": "post-trade SLV exposure $10350 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade silver exposure $10350 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $25750 vs buffer $5000"
+      }
+    ],
+    "verdict": "blocked",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (28/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.97,
+    "currentMid": 0.97,
+    "shadowPnl": null,
+    "closedReason": null
+  },
+  {
+    "id": "fe473797-3c21-408d-b7ea-d8572b9d4c76",
+    "date": "2026-10-13",
+    "createdAt": "2026-10-13T19:23:30.377Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "URA",
+    "sector": "uranium",
+    "occSymbol": "URA261120P00034000",
+    "expiry": "2026-11-20",
+    "strike": 34,
+    "dte": 38,
+    "delta": -0.2012,
+    "bid": 0.58,
+    "ask": 0.63,
+    "mid": 0.605,
+    "collateral": 3400,
+    "premiumAtMid": 60.5,
+    "rocAnnualizedAtBid": 0.16385448916408665,
+    "ivRank": {
+      "rank": 4,
+      "observations": 25,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": true,
+        "detail": "post-trade URA exposure $3400 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade uranium exposure $3400 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $27450 vs buffer $5000"
+      }
+    ],
+    "verdict": "proposed",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (25/60 observations) - threshold not yet enforced",
+      "shadow book already holds this name - the counterfactual skips it, the paper book may still take it"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.605,
+    "currentMid": 0.605,
+    "shadowPnl": null,
+    "closedReason": "shadow-duplicate"
+  },
+  {
+    "id": "2b1ba70e-e41d-4fb1-b0dd-9f55012602bd",
+    "date": "2026-10-13",
+    "createdAt": "2026-10-13T19:23:30.377Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "KWEB",
+    "sector": "china-internet",
+    "occSymbol": "KWEB261120P00023000",
+    "expiry": "2026-11-20",
+    "strike": 23,
+    "dte": 38,
+    "delta": -0.2022,
+    "bid": 0.28,
+    "ask": 0.3,
+    "mid": 0.29000000000000004,
+    "collateral": 2300,
+    "premiumAtMid": 29.000000000000004,
+    "rocAnnualizedAtBid": 0.11693363844393594,
+    "ivRank": {
+      "rank": 46,
+      "observations": 28,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 9.6% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": true,
+        "detail": "post-trade KWEB exposure $2300 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade china-internet exposure $2300 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $25150 vs buffer $5000"
+      }
+    ],
+    "verdict": "proposed",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (28/60 observations) - threshold not yet enforced"
+    ],
+    "llm": null,
+    "shadowStatus": "open",
+    "entryMid": 0.29000000000000004,
+    "currentMid": 0.29000000000000004,
+    "shadowPnl": null,
+    "closedReason": null
+  }
+]
