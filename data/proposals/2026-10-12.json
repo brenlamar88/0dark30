@@ -204,7 +204,7 @@
     "shadowStatus": "open",
     "entryMid": 0.315,
     "currentMid": 0.315,
-    "shadowPnl": null,
+    "shadowPnl": 0,
     "closedReason": null
   }
 ]
