@@ -23,13 +23,13 @@
     "shares": 56,
     "stop": 83.81,
     "target": 93.99,
-    "lastMarkedDate": "2026-10-13",
-    "status": "open",
-    "exitDate": null,
-    "exitPrice": null,
-    "pnl": null,
-    "exitReason": null,
-    "sessionsHeld": 11
+    "lastMarkedDate": "2026-10-14",
+    "status": "closed",
+    "exitDate": "2026-10-14",
+    "exitPrice": 83.42,
+    "pnl": -250.04,
+    "exitReason": "stop",
+    "sessionsHeld": 12
   },
   {
     "symbol": "GDXJ",
@@ -39,13 +39,13 @@
     "shares": 43,
     "stop": 107.55,
     "target": 123.93,
-    "lastMarkedDate": "2026-10-13",
-    "status": "open",
-    "exitDate": null,
-    "exitPrice": null,
-    "pnl": null,
-    "exitReason": null,
-    "sessionsHeld": 11
+    "lastMarkedDate": "2026-10-14",
+    "status": "closed",
+    "exitDate": "2026-10-14",
+    "exitPrice": 104.74,
+    "pnl": -402.48,
+    "exitReason": "stop",
+    "sessionsHeld": 12
   },
   {
     "symbol": "XLE",
@@ -87,13 +87,13 @@
     "shares": 74,
     "stop": 65.58,
     "target": 69.66,
-    "lastMarkedDate": "2026-10-13",
-    "status": "open",
-    "exitDate": null,
-    "exitPrice": null,
-    "pnl": null,
-    "exitReason": null,
-    "sessionsHeld": 11
+    "lastMarkedDate": "2026-10-14",
+    "status": "closed",
+    "exitDate": "2026-10-14",
+    "exitPrice": 64.4,
+    "pnl": -207.94,
+    "exitReason": "stop",
+    "sessionsHeld": 12
   },
   {
     "symbol": "ARKK",
@@ -103,13 +103,13 @@
     "shares": 57,
     "stop": 84.22,
     "target": 91.61,
-    "lastMarkedDate": "2026-10-13",
+    "lastMarkedDate": "2026-10-14",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 3
+    "sessionsHeld": 4
   },
   {
     "symbol": "IBIT",
@@ -119,13 +119,13 @@
     "shares": 108,
     "stop": 44.82,
     "target": 48.04,
-    "lastMarkedDate": "2026-10-13",
+    "lastMarkedDate": "2026-10-14",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 3
+    "sessionsHeld": 4
   },
   {
     "symbol": "XBI",
