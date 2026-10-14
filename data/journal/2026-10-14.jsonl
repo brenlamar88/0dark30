@@ -1,0 +1,3 @@
+{"ts":"2026-10-14T00:19:05.944Z","type":"cycle.postclose.start","ruleVersion":"wheel-v1","payload":{"today":"2026-10-13"}}
+{"ts":"2026-10-14T00:19:07.052Z","type":"swing.exit","ruleVersion":"wheel-v1","payload":{"symbol":"XBI","ruleVersion":"swing-v1","entryDate":"2026-10-09","entryPrice":152.39,"shares":32,"stop":148.09,"target":158.83,"lastMarkedDate":"2026-10-13","status":"closed","exitDate":"2026-10-13","exitPrice":146.81,"pnl":-178.56,"exitReason":"stop","sessionsHeld":2}}
+{"ts":"2026-10-14T00:19:07.062Z","type":"cycle.postclose.done","ruleVersion":"wheel-v1","payload":{"spyClose":778.03,"realizedTotal":403.25,"unrealized":-82.99999999999999,"dashboardPath":"/home/runner/work/0dark30/0dark30/docs/index.html"}}
