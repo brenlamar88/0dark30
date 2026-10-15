@@ -103,13 +103,13 @@
     "shares": 57,
     "stop": 84.22,
     "target": 91.61,
-    "lastMarkedDate": "2026-10-14",
+    "lastMarkedDate": "2026-10-15",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 4
+    "sessionsHeld": 5
   },
   {
     "symbol": "IBIT",
@@ -119,13 +119,13 @@
     "shares": 108,
     "stop": 44.82,
     "target": 48.04,
-    "lastMarkedDate": "2026-10-14",
+    "lastMarkedDate": "2026-10-15",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 4
+    "sessionsHeld": 5
   },
   {
     "symbol": "XBI",
