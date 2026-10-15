@@ -772,11 +772,11 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 0.23,
-    "status": "working",
+    "status": "filled",
     "brokerOrderId": "92ae4b16-95ea-434f-98a7-856e412094e0",
-    "filledQty": 0,
-    "filledAvgPrice": null,
+    "filledQty": 1,
+    "filledAvgPrice": 0.23,
     "createdAt": "2026-10-14T20:27:16.561Z",
-    "updatedAt": "2026-10-14T20:27:16.561Z"
+    "updatedAt": "2026-10-15T18:30:23.405Z"
   }
 ]
