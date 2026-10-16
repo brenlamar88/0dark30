@@ -142,5 +142,21 @@
     "pnl": -178.56,
     "exitReason": "stop",
     "sessionsHeld": 2
+  },
+  {
+    "symbol": "GDX",
+    "ruleVersion": "swing-v1",
+    "entryDate": "2026-10-16",
+    "entryPrice": 87.28,
+    "shares": 57,
+    "stop": 84.16,
+    "target": 91.96,
+    "lastMarkedDate": null,
+    "status": "open",
+    "exitDate": null,
+    "exitPrice": null,
+    "pnl": null,
+    "exitReason": null,
+    "sessionsHeld": 0
   }
 ]
