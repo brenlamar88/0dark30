@@ -62,11 +62,11 @@
       "iv-rank low confidence (19/60 observations) - threshold not yet enforced"
     ],
     "llm": null,
-    "shadowStatus": "open",
+    "shadowStatus": "closed",
     "entryMid": 1.02,
-    "currentMid": 1.44,
-    "shadowPnl": -41.99999999999999,
-    "closedReason": null
+    "currentMid": 1.57,
+    "shadowPnl": -55.00000000000001,
+    "closedReason": "managed-at-21dte"
   },
   {
     "id": "9e9deda2-3a85-4ae1-b788-17f3391da4c8",
