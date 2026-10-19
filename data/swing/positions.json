@@ -158,5 +158,21 @@
     "pnl": null,
     "exitReason": null,
     "sessionsHeld": 0
+  },
+  {
+    "symbol": "ARKK",
+    "ruleVersion": "swing-v1",
+    "entryDate": "2026-10-19",
+    "entryPrice": 82.88,
+    "shares": 60,
+    "stop": 79.46,
+    "target": 88.01,
+    "lastMarkedDate": null,
+    "status": "open",
+    "exitDate": null,
+    "exitPrice": null,
+    "pnl": null,
+    "exitReason": null,
+    "sessionsHeld": 0
   }
 ]
