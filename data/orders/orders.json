@@ -937,12 +937,12 @@
     "side": "buy",
     "qty": 1,
     "limitPrice": 1.58,
-    "status": "working",
+    "status": "filled",
     "brokerOrderId": "c4d07550-d5a5-4571-8313-eb176f5e01f7",
-    "filledQty": 0,
-    "filledAvgPrice": null,
+    "filledQty": 1,
+    "filledAvgPrice": 1.4,
     "createdAt": "2026-10-16T22:10:12.718Z",
-    "updatedAt": "2026-10-16T22:10:12.718Z"
+    "updatedAt": "2026-10-19T16:31:30.342Z"
   },
   {
     "id": "0a99fe27-c85b-45ae-bfff-1b2f77dbe845",
@@ -988,5 +988,50 @@
     "filledAvgPrice": null,
     "createdAt": "2026-10-16T22:10:12.718Z",
     "updatedAt": "2026-10-16T22:10:12.718Z"
+  },
+  {
+    "id": "2ff979d3-b5a2-4606-b0f1-b8f78827963a",
+    "proposalId": "f5d390ab-0af0-408e-a770-d4959235a109",
+    "intent": "open-csp",
+    "occSymbol": "IBIT261120P00044000",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 1.05,
+    "status": "working",
+    "brokerOrderId": "6386ecf2-34c3-4aa0-a20f-ab71980dfbaa",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-19T16:31:30.422Z",
+    "updatedAt": "2026-10-19T16:31:30.422Z"
+  },
+  {
+    "id": "be82ceb0-8498-44f0-b3e8-98a96f05a2e8",
+    "proposalId": "10371d16-762d-4c5a-98e1-b818ef28da71",
+    "intent": "open-csp",
+    "occSymbol": "JETS261120P00024500",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 0.43,
+    "status": "working",
+    "brokerOrderId": "37c171f4-96f5-4a6b-b8fb-b2e26e38bad6",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-19T16:31:30.819Z",
+    "updatedAt": "2026-10-19T16:31:30.819Z"
+  },
+  {
+    "id": "ad560bdc-bc9e-4a8d-9b76-7cfb6e9091f5",
+    "proposalId": "09eb8f8a-eccb-4fb4-9851-f8cb2c4ed4d7",
+    "intent": "open-csp",
+    "occSymbol": "KWEB261120P00023000",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 0.31,
+    "status": "working",
+    "brokerOrderId": "b69cc1de-e6af-467c-9a77-07c626fed8f4",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-19T16:31:31.008Z",
+    "updatedAt": "2026-10-19T16:31:31.008Z"
   }
 ]
