@@ -119,13 +119,13 @@
     "shares": 108,
     "stop": 44.82,
     "target": 48.04,
-    "lastMarkedDate": "2026-10-19",
+    "lastMarkedDate": "2026-10-20",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 7
+    "sessionsHeld": 8
   },
   {
     "symbol": "XBI",
@@ -151,13 +151,13 @@
     "shares": 57,
     "stop": 84.16,
     "target": 91.96,
-    "lastMarkedDate": "2026-10-19",
+    "lastMarkedDate": "2026-10-20",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 1
+    "sessionsHeld": 2
   },
   {
     "symbol": "ARKK",
@@ -167,12 +167,12 @@
     "shares": 60,
     "stop": 79.46,
     "target": 88.01,
-    "lastMarkedDate": null,
+    "lastMarkedDate": "2026-10-20",
     "status": "open",
     "exitDate": null,
     "exitPrice": null,
     "pnl": null,
     "exitReason": null,
-    "sessionsHeld": 0
+    "sessionsHeld": 1
   }
 ]
