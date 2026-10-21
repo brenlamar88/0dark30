@@ -1297,11 +1297,26 @@
     "side": "sell",
     "qty": 1,
     "limitPrice": 0.55,
-    "status": "working",
+    "status": "filled",
     "brokerOrderId": "e9850288-b7ba-4a92-9362-b0f9fb0a94b3",
+    "filledQty": 1,
+    "filledAvgPrice": 0.56,
+    "createdAt": "2026-10-21T18:33:57.155Z",
+    "updatedAt": "2026-10-21T18:49:01.321Z"
+  },
+  {
+    "id": "d7d950a4-bb15-4d6d-baae-1d9935a11c93",
+    "proposalId": "8f14df5a-99f7-412f-b926-8f3833f2f6cb",
+    "intent": "close-profit-target",
+    "occSymbol": "EEM261120P00060000",
+    "side": "buy",
+    "qty": 1,
+    "limitPrice": 0.28,
+    "status": "working",
+    "brokerOrderId": "d7b7fbe3-519f-4c46-a84f-16058ecb3ac8",
     "filledQty": 0,
     "filledAvgPrice": null,
-    "createdAt": "2026-10-21T18:33:57.155Z",
-    "updatedAt": "2026-10-21T18:33:57.155Z"
+    "createdAt": "2026-10-21T18:49:01.149Z",
+    "updatedAt": "2026-10-21T18:49:01.149Z"
   }
 ]
