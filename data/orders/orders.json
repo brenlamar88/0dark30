@@ -1273,5 +1273,35 @@
     "filledAvgPrice": null,
     "createdAt": "2026-10-20T20:17:36.694Z",
     "updatedAt": "2026-10-20T20:17:36.694Z"
+  },
+  {
+    "id": "c7629a7d-1e1e-4257-b2d2-2b184da4b8f7",
+    "proposalId": "17b04e36-a578-4446-ac2b-512bde3c2715",
+    "intent": "open-csp",
+    "occSymbol": "JETS261120P00025000",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 0.36,
+    "status": "working",
+    "brokerOrderId": "d2b5ccab-a7fb-443d-abbf-bb3a9e2256d2",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-21T18:33:56.656Z",
+    "updatedAt": "2026-10-21T18:33:56.656Z"
+  },
+  {
+    "id": "4dcaf191-2e5a-42af-85a9-df91de132606",
+    "proposalId": "8f14df5a-99f7-412f-b926-8f3833f2f6cb",
+    "intent": "open-csp",
+    "occSymbol": "EEM261120P00060000",
+    "side": "sell",
+    "qty": 1,
+    "limitPrice": 0.55,
+    "status": "working",
+    "brokerOrderId": "e9850288-b7ba-4a92-9362-b0f9fb0a94b3",
+    "filledQty": 0,
+    "filledAvgPrice": null,
+    "createdAt": "2026-10-21T18:33:57.155Z",
+    "updatedAt": "2026-10-21T18:33:57.155Z"
   }
 ]
