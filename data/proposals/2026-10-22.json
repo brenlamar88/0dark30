@@ -1,8 +1,8 @@
 [
   {
-    "id": "6fdcc5b2-46be-4e17-94c4-3d7c8bc12a98",
+    "id": "10616183-f50b-4911-a9b9-88f3832128d1",
     "date": "2026-10-22",
-    "createdAt": "2026-10-22T14:58:30.267Z",
+    "createdAt": "2026-10-22T17:23:09.488Z",
     "ruleVersion": "wheel-v1",
     "strategy": "csp",
     "coveredBasis": null,
@@ -12,13 +12,13 @@
     "expiry": "2026-11-27",
     "strike": 38,
     "dte": 36,
-    "delta": -0.2933,
-    "bid": 1.84,
-    "ask": 1.99,
-    "mid": 1.915,
+    "delta": -0.2948,
+    "bid": 1.9,
+    "ask": 2.05,
+    "mid": 1.9749999999999999,
     "collateral": 3800,
-    "premiumAtMid": 191.5,
-    "rocAnnualizedAtBid": 0.4909356725146199,
+    "premiumAtMid": 197.5,
+    "rocAnnualizedAtBid": 0.5069444444444445,
     "ivRank": {
       "rank": 100,
       "observations": 35,
@@ -38,7 +38,7 @@
       {
         "name": "vol-regime-freeze",
         "pass": true,
-        "detail": "SPY 20d realized vol 10.1% (freeze above 30%)"
+        "detail": "SPY 20d realized vol 10.0% (freeze above 30%)"
       },
       {
         "name": "per-name-cap",
@@ -63,15 +63,15 @@
     ],
     "llm": null,
     "shadowStatus": "blocked",
-    "entryMid": 1.915,
-    "currentMid": 1.915,
+    "entryMid": 1.9749999999999999,
+    "currentMid": 1.9749999999999999,
     "shadowPnl": null,
     "closedReason": null
   },
   {
-    "id": "a3c2908c-eb33-4e7e-8a95-a3e52b5739de",
+    "id": "fa393a20-0dae-4e27-8e3b-a2c90757b36d",
     "date": "2026-10-22",
-    "createdAt": "2026-10-22T14:58:30.267Z",
+    "createdAt": "2026-10-22T17:23:09.488Z",
     "ruleVersion": "wheel-v1",
     "strategy": "csp",
     "coveredBasis": null,
@@ -81,15 +81,15 @@
     "expiry": "2026-11-27",
     "strike": 43.5,
     "dte": 36,
-    "delta": -0.2804,
-    "bid": 1.06,
-    "ask": 1.08,
-    "mid": 1.07,
+    "delta": -0.2951,
+    "bid": 1.13,
+    "ask": 1.15,
+    "mid": 1.14,
     "collateral": 4350,
-    "premiumAtMid": 107,
-    "rocAnnualizedAtBid": 0.2470625798212005,
+    "premiumAtMid": 113.99999999999999,
+    "rocAnnualizedAtBid": 0.26337803320561937,
     "ivRank": {
-      "rank": 75,
+      "rank": 78,
       "observations": 32,
       "confident": false
     },
@@ -107,7 +107,7 @@
       {
         "name": "vol-regime-freeze",
         "pass": true,
-        "detail": "SPY 20d realized vol 10.1% (freeze above 30%)"
+        "detail": "SPY 20d realized vol 10.0% (freeze above 30%)"
       },
       {
         "name": "per-name-cap",
@@ -132,15 +132,15 @@
     ],
     "llm": null,
     "shadowStatus": "blocked",
-    "entryMid": 1.07,
-    "currentMid": 1.07,
+    "entryMid": 1.14,
+    "currentMid": 1.14,
     "shadowPnl": null,
     "closedReason": null
   },
   {
-    "id": "3427c15c-752e-4062-9a84-d16187eb0640",
+    "id": "e7884755-1eae-4815-8b5a-a15e99ad60c2",
     "date": "2026-10-22",
-    "createdAt": "2026-10-22T14:58:30.267Z",
+    "createdAt": "2026-10-22T17:23:09.488Z",
     "ruleVersion": "wheel-v1",
     "strategy": "csp",
     "coveredBasis": null,
@@ -150,13 +150,13 @@
     "expiry": "2026-11-27",
     "strike": 47,
     "dte": 36,
-    "delta": -0.2729,
-    "bid": 1.03,
-    "ask": 1.06,
-    "mid": 1.045,
+    "delta": -0.2966,
+    "bid": 1.19,
+    "ask": 1.2,
+    "mid": 1.1949999999999998,
     "collateral": 4700,
-    "premiumAtMid": 104.5,
-    "rocAnnualizedAtBid": 0.22219267139479906,
+    "premiumAtMid": 119.49999999999999,
+    "rocAnnualizedAtBid": 0.25670803782505913,
     "ivRank": {
       "rank": 66,
       "observations": 35,
@@ -176,7 +176,7 @@
       {
         "name": "vol-regime-freeze",
         "pass": true,
-        "detail": "SPY 20d realized vol 10.1% (freeze above 30%)"
+        "detail": "SPY 20d realized vol 10.0% (freeze above 30%)"
       },
       {
         "name": "per-name-cap",
@@ -201,9 +201,149 @@
     ],
     "llm": null,
     "shadowStatus": "blocked",
-    "entryMid": 1.045,
-    "currentMid": 1.045,
+    "entryMid": 1.1949999999999998,
+    "currentMid": 1.1949999999999998,
     "shadowPnl": null,
     "closedReason": null
+  },
+  {
+    "id": "e560738f-ccdd-4aa3-b35b-a34383bf7d01",
+    "date": "2026-10-22",
+    "createdAt": "2026-10-22T17:23:09.488Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "KWEB",
+    "sector": "china-internet",
+    "occSymbol": "KWEB261127P00022000",
+    "expiry": "2026-11-27",
+    "strike": 22,
+    "dte": 36,
+    "delta": -0.2683,
+    "bid": 0.38,
+    "ask": 0.42,
+    "mid": 0.4,
+    "collateral": 2200,
+    "premiumAtMid": 40,
+    "rocAnnualizedAtBid": 0.17512626262626263,
+    "ivRank": {
+      "rank": 100,
+      "observations": 35,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 10.0% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": true,
+        "detail": "post-trade KWEB exposure $4500 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade china-internet exposure $4500 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $17400 vs buffer $5000"
+      }
+    ],
+    "verdict": "proposed",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (35/60 observations) - threshold not yet enforced",
+      "shadow book already holds this name - the counterfactual skips it, the paper book may still take it"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.4,
+    "currentMid": 0.4,
+    "shadowPnl": null,
+    "closedReason": "shadow-duplicate"
+  },
+  {
+    "id": "aef5cada-abd9-4a8d-a31d-85b0b54e60c8",
+    "date": "2026-10-22",
+    "createdAt": "2026-10-22T17:23:09.488Z",
+    "ruleVersion": "wheel-v1",
+    "strategy": "csp",
+    "coveredBasis": null,
+    "underlying": "XLF",
+    "sector": "financials",
+    "occSymbol": "XLF261127P00055000",
+    "expiry": "2026-11-27",
+    "strike": 55,
+    "dte": 36,
+    "delta": -0.2789,
+    "bid": 0.55,
+    "ask": 0.58,
+    "mid": 0.565,
+    "collateral": 5500,
+    "premiumAtMid": 56.49999999999999,
+    "rocAnnualizedAtBid": 0.10138888888888892,
+    "ivRank": {
+      "rank": 54,
+      "observations": 35,
+      "confident": false
+    },
+    "checks": [
+      {
+        "name": "reconciler-green",
+        "pass": true,
+        "detail": "no unexplained broker divergence"
+      },
+      {
+        "name": "drawdown-halt",
+        "pass": true,
+        "detail": "drawdown 0.0% of HWM (halt at 25%)"
+      },
+      {
+        "name": "vol-regime-freeze",
+        "pass": true,
+        "detail": "SPY 20d realized vol 10.0% (freeze above 30%)"
+      },
+      {
+        "name": "per-name-cap",
+        "pass": true,
+        "detail": "post-trade XLF exposure $5500 vs cap $6000"
+      },
+      {
+        "name": "sector-cap",
+        "pass": true,
+        "detail": "post-trade financials exposure $5500 vs cap $12500"
+      },
+      {
+        "name": "cash-buffer",
+        "pass": true,
+        "detail": "post-trade cash $11900 vs buffer $5000"
+      }
+    ],
+    "verdict": "proposed",
+    "ttlHours": 9,
+    "screenNotes": [
+      "iv-rank low confidence (35/60 observations) - threshold not yet enforced",
+      "shadow book already holds this name - the counterfactual skips it, the paper book may still take it"
+    ],
+    "llm": null,
+    "shadowStatus": "blocked",
+    "entryMid": 0.565,
+    "currentMid": 0.565,
+    "shadowPnl": null,
+    "closedReason": "shadow-duplicate"
   }
 ]
