@@ -31,9 +31,9 @@
   a { color:#3987e5; }
 </style></head><body>
 <h1>0dark30 — shadow dashboard</h1>
-<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-10-22 23:59 UTC.</p>
+<p class="banner">Phase 2, <strong>paper mode</strong>: approved orders go to the Alpaca paper account; the shadow book continues in parallel as the all-proposals counterfactual. $50,000 pool, rule version <span class="mono">wheel-v1</span>. No real money anywhere. Not financial advice. Generated 2026-10-23 17:18 UTC.</p>
 
-<p><a href="briefs/2026-10-22.html">Latest morning brief (2026-10-22) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
+<p><a href="briefs/2026-10-23.html">Latest morning brief (2026-10-23) →</a> · <a href="backtest.html">Model-based backtest study →</a></p>
 <div class="tiles">
 <div class="tile"><div class="tile-label">Shadow book P&amp;L</div><div class="tile-value">$-109</div><div class="tile-note">realized + unrealized, pre-cost</div></div>
 <div class="tile"><div class="tile-label">SPY same-pool P&amp;L</div><div class="tile-value">$92</div><div class="tile-note">the null hypothesis</div></div>
@@ -90,6 +90,27 @@
 <div class="scroll"><table>
 <thead><tr><th>Date</th><th>Sym</th><th>Contract</th><th>Δ</th><th>DTE</th><th>Prem</th><th>Collat</th><th>RoC/yr</th><th>Status</th><th>P&amp;L</th></tr></thead>
 <tbody><tr>
+<td>2026-10-23</td><td>IBIT</td><td class="mono">IBIT261204P00043500</td>
+<td>0.29</td><td>42</td>
+<td>$117</td><td>$4,350</td>
+<td>23.4%</td>
+<td title="post-trade IBIT exposure $8750 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-10-23</td><td>SLV</td><td class="mono">SLV261127P00046000</td>
+<td>0.29</td><td>35</td>
+<td>$113</td><td>$4,600</td>
+<td>24.9%</td>
+<td title="post-trade SLV exposure $9850 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
+<td>2026-10-23</td><td>EWZ</td><td class="mono">EWZ261127P00038000</td>
+<td>0.28</td><td>35</td>
+<td>$181</td><td>$3,800</td>
+<td>48.6%</td>
+<td title="post-trade EWZ exposure $7900 vs cap $6000">blocked by the single-name cap</td>
+<td>—</td></tr>
+<tr>
 <td>2026-10-22</td><td>XLF</td><td class="mono">XLF261127P00055000</td>
 <td>0.28</td><td>36</td>
 <td>$56</td><td>$5,500</td>
@@ -277,27 +298,6 @@
 <td>$158</td><td>$3,900</td>
 <td>40.0%</td>
 <td title="post-trade EWZ exposure $8000 vs cap $6000">blocked by the single-name cap (shadow-duplicate)</td>
-<td>—</td></tr>
-<tr>
-<td>2026-10-14</td><td>XLU</td><td class="mono">XLU261120P00040000</td>
-<td>0.22</td><td>37</td>
-<td>$34</td><td>$4,000</td>
-<td>8.1%</td>
-<td>blocked (shadow-duplicate)</td>
-<td>—</td></tr>
-<tr>
-<td>2026-10-14</td><td>XLF</td><td class="mono">XLF261113P00053000</td>
-<td>0.30</td><td>30</td>
-<td>$54</td><td>$5,300</td>
-<td>11.9%</td>
-<td title="post-trade XLF exposure $10500 vs cap $6000">blocked by the single-name cap</td>
-<td>—</td></tr>
-<tr>
-<td>2026-10-14</td><td>SLV</td><td class="mono">SLV261113P00047000</td>
-<td>0.24</td><td>30</td>
-<td>$80</td><td>$4,700</td>
-<td>20.5%</td>
-<td title="post-trade SLV exposure $9950 vs cap $6000">blocked by the single-name cap</td>
 <td>—</td></tr></tbody>
 </table></div>
 <h2>Scoreboard (last 20 sessions)</h2>
